@@ -17,7 +17,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "tb_doctor")
@@ -41,7 +40,6 @@ public class Doctor implements Serializable {
 
 	private String phone;
 
-	@Email
 	private String email;
 
 	private LocalDate birthDate;
