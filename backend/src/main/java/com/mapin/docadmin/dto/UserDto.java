@@ -7,6 +7,8 @@ import java.util.Set;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.data.domain.Page;
+
 import com.mapin.docadmin.entities.User;
 
 public class UserDto implements Serializable {
@@ -69,6 +71,10 @@ public class UserDto implements Serializable {
 
 	public Set<RoleDto> getRoles() {
 		return roles;
+	}
+
+	public static Page<UserDto> converter(Page<User> page) {
+		return page.map(UserDto::new);
 	}
 
 }
