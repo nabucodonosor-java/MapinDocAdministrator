@@ -25,8 +25,8 @@ public class PlaceServiceService {
 	private PlaceServiceRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<PlaceServiceDto> findAllPaged(PageRequest pageRequest, String street) {
-		Page<PlaceService> page = repository.findStreet(street, pageRequest);
+	public Page<PlaceServiceDto> findAllPaged(PageRequest pageRequest) {
+		Page<PlaceService> page = repository.findAll(pageRequest);
 		return PlaceServiceDto.converter(page);
 	}
 	

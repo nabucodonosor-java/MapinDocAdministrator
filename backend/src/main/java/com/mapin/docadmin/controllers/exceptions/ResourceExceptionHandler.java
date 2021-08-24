@@ -1,5 +1,6 @@
 package com.mapin.docadmin.controllers.exceptions;
 
+import java.sql.SQLException;
 import java.time.Instant;
 
 import javax.servlet.http.HttpServletRequest;
@@ -96,4 +97,15 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(status).body(err);
 	}
 	
+	@ExceptionHandler(SQLException.class)
+	public ResponseEntity<StandardError> sqlException(SQLException e, HttpServletRequest request) {
+		HttpStatus status = HttpStatus.BAD_REQUEST;
+		StandardError err = new StandardError();
+		err.setTimestamp(Instant.now());
+		err.setStatus(status.value());
+		err.setError("Erro de chave primária");
+		err.setMessage("Recurso já cadastrado!");
+		err.setPath(request.getRequestURI());
+		return ResponseEntity.status(status).body(err);
+	}
 }

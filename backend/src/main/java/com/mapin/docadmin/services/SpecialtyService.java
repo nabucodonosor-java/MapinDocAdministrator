@@ -25,8 +25,8 @@ public class SpecialtyService {
 	private SpecialtyRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<SpecialtyDto> findAllPaged(PageRequest pageRequest, String name) {
-		Page<Specialty> page = repository.find(name, pageRequest);
+	public Page<SpecialtyDto> findAllPaged(PageRequest pageRequest) {
+		Page<Specialty> page = repository.findAll(pageRequest);
 		return SpecialtyDto.converter(page);
 	}
 	
