@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.mapin.docadmin.dto.OfficeHoursDto;
+
 @Entity
 @Table(name = "tb_office_hours")
 public class OfficeHours implements Serializable {
@@ -33,6 +35,19 @@ public class OfficeHours implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "place_service_id")
 	private PlaceService placeService;
+	
+	public OfficeHours() {}
+
+	public OfficeHours(OfficeHoursDto dto) {
+		id = dto.getId();
+		seg = dto.isSeg();
+		ter = dto.isTer();
+		qua = dto.isQua();
+		qui = dto.isQui();
+		sex = dto.isSex();
+		description = dto.getDescription();
+		placeService = new PlaceService(dto.getPlaceService());
+	}
 
 	public Long getId() {
 		return id;

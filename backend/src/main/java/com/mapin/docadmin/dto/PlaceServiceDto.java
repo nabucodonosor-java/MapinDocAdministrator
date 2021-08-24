@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.data.domain.Page;
+
 import com.mapin.docadmin.entities.PlaceService;
 
 public class PlaceServiceDto implements Serializable {
@@ -85,6 +87,10 @@ public class PlaceServiceDto implements Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public static Page<PlaceServiceDto> converter(Page<PlaceService> page) {
+		return page.map(PlaceServiceDto::new);
 	}
 
 }

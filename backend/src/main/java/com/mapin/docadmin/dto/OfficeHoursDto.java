@@ -2,6 +2,8 @@ package com.mapin.docadmin.dto;
 
 import java.io.Serializable;
 
+import org.springframework.data.domain.Page;
+
 import com.mapin.docadmin.entities.OfficeHours;
 
 public class OfficeHoursDto implements Serializable {
@@ -93,6 +95,10 @@ public class OfficeHoursDto implements Serializable {
 
 	public void setPlaceService(PlaceServiceDto placeService) {
 		this.placeService = placeService;
+	}
+
+	public static Page<OfficeHoursDto> converter(Page<OfficeHours> page) {
+		return page.map(OfficeHoursDto::new);
 	}
 
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.data.domain.Page;
+
 import com.mapin.docadmin.entities.Specialization;
 
 public class SpecializationDto implements Serializable {
@@ -36,6 +38,10 @@ public class SpecializationDto implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public static Page<SpecializationDto> converter(Page<Specialization> page) {
+		return page.map(SpecializationDto::new);
 	}
 
 }

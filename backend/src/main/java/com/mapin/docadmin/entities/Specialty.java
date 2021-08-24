@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.mapin.docadmin.dto.SpecialtyDto;
+
 @Entity
 @Table(name = "tb_specialty")
 public class Specialty implements Serializable {
@@ -27,6 +29,13 @@ public class Specialty implements Serializable {
 
 	@OneToMany(mappedBy = "specialty")
 	private List<Doctor> doctors = new ArrayList<>();
+	
+	public Specialty() {}
+
+	public Specialty(SpecialtyDto dto) {
+		id = dto.getId();
+		name = dto.getName();
+	}
 
 	public Long getId() {
 		return id;

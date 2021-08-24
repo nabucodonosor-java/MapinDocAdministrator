@@ -20,6 +20,6 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 	Page<Doctor> find(List<Specialization> specializations, String name, Pageable pageable);
 	
 	@Query("SELECT obj FROM Doctor obj JOIN FETCH obj.specializations WHERE obj IN :doctors")
-	List<Doctor> find(List<Doctor> doctors);
+	List<Doctor> findDoctorsWithSpecializations(List<Doctor> doctors);
 	
 }

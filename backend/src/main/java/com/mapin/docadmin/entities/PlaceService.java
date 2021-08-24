@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.mapin.docadmin.dto.PlaceServiceDto;
+
 @Entity
 @Table(name = "tb_place_service")
 public class PlaceService implements Serializable {
@@ -24,6 +26,18 @@ public class PlaceService implements Serializable {
 	private String district;
 	private String city;
 	private String state;
+	
+	public PlaceService() {}
+
+	public PlaceService(PlaceServiceDto entity) {
+		id = entity.getId();
+		cep = entity.getCep();
+		street = entity.getStreet();
+		complement = entity.getComplement();
+		district = entity.getDistrict();
+		city = entity.getCity();
+		state = entity.getState();
+	}
 
 	public Long getId() {
 		return id;
