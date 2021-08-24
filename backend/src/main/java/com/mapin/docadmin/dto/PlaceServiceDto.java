@@ -15,6 +15,7 @@ public class PlaceServiceDto implements Serializable {
 
 	@NotBlank(message = "Campo obrigatório")
 	private String cep;
+	private String name;
 	private String street;
 	private String complement;
 	private String district;
@@ -26,6 +27,8 @@ public class PlaceServiceDto implements Serializable {
 
 	public PlaceServiceDto(PlaceService entity) {
 		id = entity.getId();
+		cep = entity.getCep();
+		name = entity.getName();
 		street = entity.getStreet();
 		complement = entity.getComplement();
 		district = entity.getDistrict();
@@ -39,6 +42,14 @@ public class PlaceServiceDto implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCep() {

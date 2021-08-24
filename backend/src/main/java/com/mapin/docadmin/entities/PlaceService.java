@@ -19,7 +19,8 @@ public class PlaceService implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
+	private String name;
 	private String cep;
 	private String street;
 	private String complement;
@@ -29,14 +30,15 @@ public class PlaceService implements Serializable {
 	
 	public PlaceService() {}
 
-	public PlaceService(PlaceServiceDto entity) {
-		id = entity.getId();
-		cep = entity.getCep();
-		street = entity.getStreet();
-		complement = entity.getComplement();
-		district = entity.getDistrict();
-		city = entity.getCity();
-		state = entity.getState();
+	public PlaceService(PlaceServiceDto dto) {
+		id = dto.getId();
+		name = dto.getName();
+		cep = dto.getCep();
+		street = dto.getStreet();
+		complement = dto.getComplement();
+		district = dto.getDistrict();
+		city = dto.getCity();
+		state = dto.getState();
 	}
 
 	public Long getId() {
@@ -45,6 +47,14 @@ public class PlaceService implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCep() {

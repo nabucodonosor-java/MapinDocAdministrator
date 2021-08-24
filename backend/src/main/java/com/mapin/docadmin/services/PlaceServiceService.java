@@ -47,6 +47,7 @@ public class PlaceServiceService {
 	
 	private void copyDtoToEntity(PlaceService entity, PlaceServiceDto dto) {
 		
+		entity.setName(dto.getName());
 		entity.setCep(dto.getCep());
 		entity.setStreet(dto.getStreet());
 		entity.setComplement(dto.getComplement());
