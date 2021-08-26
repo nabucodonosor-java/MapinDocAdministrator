@@ -1,8 +1,6 @@
-import React from 'react';
-
 import './styles.css';
 
-type Props = { 
+type Props = {
   text: string;
   img: string;
 };
@@ -11,11 +9,11 @@ const ButtonIcon = ({ text, img }: Props) => (
   <div className="btn-container">
     <div className="btn-text-area">
       <button className="btn-text">
-          <h6>{text}</h6>
+        <h6>{text}</h6>
       </button>
     </div>
     <div className="btn-arrow">
-        <img src={img} alt={img} />
+      <img src={img} alt={img} />
     </div>
   </div>
 );
