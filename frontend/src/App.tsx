@@ -1,10 +1,11 @@
-import './assets/styles/custom.scss';
+import React from 'react';
 import './App.css';
-import Routes from 'Routes';
 
 function App() {
   return (
-    <Routes />
+    <div className="App">
+      
+    </div>
   );
 }
 

@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@types/jwt-decode": "2.2.1",
+    "@types/qs": "6.9.5",
+    "@types/react-input-mask": "3.0.0",
+    "@types/react-paginate": "6.2.1",
+    "@types/react-router-dom": "5.1.5",
+    "@types/react-select": "3.0.26",
+    "axios": "0.21.1",
+    "bootstrap": "^5.1.0",
+    "date-fns": "2.22.1",
+    "jwt-decode": "3.0.0",
+    "node-sass": "4.14.1",
+    "qs": "6.9.4",
+    "react-content-loader": "5.1.2",
+    "react-hook-form": "6.9.6",
+    "react-input-mask": "2.0.4",
+    "react-paginate": "7.0.0",
+    "react-router-dom": "5.2.0",
+    "react-select": "3.1.0",
+    "react-toastify": "6.1.0"
+  }
+}

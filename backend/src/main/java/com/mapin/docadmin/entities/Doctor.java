@@ -15,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -54,10 +53,18 @@ public class Doctor implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "specialty_id")
 	private Specialty specialty;
-
-	@OneToOne
+	
+	@ManyToOne
 	@JoinColumn(name = "office_hours_id")
 	private OfficeHours officeHours;
+	
+	public OfficeHours getOfficeHours() {
+		return officeHours;
+	}
+
+	public void setOfficeHours(OfficeHours officeHours) {
+		this.officeHours = officeHours;
+	}
 
 	public Long getId() {
 		return id;
@@ -137,14 +144,6 @@ public class Doctor implements Serializable {
 
 	public void setSpecialty(Specialty specialty) {
 		this.specialty = specialty;
-	}
-
-	public OfficeHours getOfficeHours() {
-		return officeHours;
-	}
-
-	public void setOfficeHours(OfficeHours officeHours) {
-		this.officeHours = officeHours;
 	}
 
 	public Set<Specialization> getSpecializations() {

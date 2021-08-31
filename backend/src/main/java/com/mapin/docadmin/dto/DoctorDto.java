@@ -38,7 +38,7 @@ public class DoctorDto implements Serializable {
 	private List<SpecializationDto> specializations = new ArrayList<>();
 
 	private SpecialtyDto specialty;
-
+	
 	private OfficeHoursDto officeHours;
 
 	public DoctorDto() {
@@ -61,6 +61,14 @@ public class DoctorDto implements Serializable {
 	public DoctorDto(Doctor entity, Set<Specialization> specializations) {
 		this(entity);
 		specializations.forEach(specialization -> this.specializations.add(new SpecializationDto(specialization)));
+	}
+	
+	public OfficeHoursDto getOfficeHours() {
+		return officeHours;
+	}
+
+	public void setOfficeHours(OfficeHoursDto officeHours) {
+		this.officeHours = officeHours;
 	}
 
 	public Long getId() {
@@ -141,14 +149,6 @@ public class DoctorDto implements Serializable {
 
 	public void setSpecialty(SpecialtyDto specialty) {
 		this.specialty = specialty;
-	}
-
-	public OfficeHoursDto getOfficeHours() {
-		return officeHours;
-	}
-
-	public void setOfficeHours(OfficeHoursDto officeHours) {
-		this.officeHours = officeHours;
 	}
 
 	public List<SpecializationDto> getSpecializations() {
