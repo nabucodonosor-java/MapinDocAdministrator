@@ -49,7 +49,7 @@ const DoctorFilters = ({ name, handleChangeName, specialization, handleChangeSpe
                 getOptionValue={(option: Specialization) => String(option.id)}
                 className="doctor-filter-select-container"
                 classNamePrefix="doctor-specializations-select"
-                placeholder="Pesquisar por Especialidade"
+                placeholder="Pesquisar por Especialização"
                 inputId="specializations"
                 onChange={value => handleChangeSpecialization(value as Specialization)}
                 isClearable

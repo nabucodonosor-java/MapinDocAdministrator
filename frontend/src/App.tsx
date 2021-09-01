@@ -1,6 +1,6 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './core/assets/styles/custom.scss';
+import './assets/styles/custom.scss';
 import './App.css';
 import Routes from './Routes';
 

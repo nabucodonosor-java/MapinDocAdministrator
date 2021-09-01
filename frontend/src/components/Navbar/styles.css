@@ -39,6 +39,10 @@
     font-weight: bold;
 }
 
+.navbar-user-info {
+    display: none;
+}
+
 @media (min-width: 576px) {
 
     .navbar-logo h4 {
@@ -50,6 +54,14 @@
         width: 300px;  
     }
    
+ }
+ 
+ @media (min-width: 768px) {
+
+    .navbar-user-info {
+        display: flex;
+    }
+
  }
 
  @media (min-width: 992px) {

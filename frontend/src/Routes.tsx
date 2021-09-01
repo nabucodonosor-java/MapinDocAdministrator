@@ -1,5 +1,6 @@
 import { Router, Switch, Route, Redirect  } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 import history from './utils/history';
 
 const Routes = () => (
@@ -7,7 +8,7 @@ const Routes = () => (
     <Navbar />
         <Switch>
             <Route path="/" exact>
-                // Home
+                <Home />
             </Route>
             <Route path="/doctors"  exact>
                 // DoctorCatalog
