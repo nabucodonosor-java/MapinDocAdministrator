@@ -1,4 +1,4 @@
-import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
+import { ReactComponent as ArrowIcon } from 'src/assets/images/arrow.svg';
 import ReactPaginate from 'react-paginate';
 
 import './styles.scss';
