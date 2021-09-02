@@ -1,5 +1,6 @@
 import { Router, Switch, Route, Redirect  } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Auth from './pages/Auth';
 import Catalog from './pages/Catalog';
 import DoctorDetails from './pages/Catalog/components/DoctorDetails';
 import Home from './pages/Home';
@@ -20,11 +21,11 @@ const Routes = () => (
             </Route>
             <Redirect from="/auth" to="/auth/login" exact/>
             <Route path="/auth">
-                // Auth
+                <Auth />
             </Route>
             <Redirect from="/admin" to="/admin/doctors" exact/>
             <Route path="/admin">
-                // Admin
+               
             </Route>
         </Switch>
     </Router>
