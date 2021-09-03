@@ -83,3 +83,17 @@ INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, spe
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (2, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (2, 4);
+
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, specialty_id, office_hours_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/RENAN+DE+PAULA+SILVEIRA+RE.png', '140517X', 'GUILHERME ARAVECHIA', 
+'', '', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
+'Médico preceptor da residência médica vascular da Santa Casa de Ribeirão Preto', 5, 1);
+
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (3, 7);
+
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, specialty_id, office_hours_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/RENAN+DE+PAULA+SILVEIRA+RE.png', '170517X', 'JOSE LUIZ LADEIRA', 
+'', '', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
+'Médico preceptor da residência médica vascular da Santa Casa de Ribeirão Preto', 3, 1);
+
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (4, 9);
