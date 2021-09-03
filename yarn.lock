@@ -2,6 +2,25 @@
 # yarn lockfile v1
 
 
+"-@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/-/-/--0.0.1.tgz#db6db7cd866142880dd03e5b8781d1b4fac0e5bd"
+  integrity sha512-3HfneK3DGAm05fpyj20sT3apkNcvPpCuccOThOPdzz8sY7GgQGe0l93XH9bt+YzibcTIgUAIMoyVJI740RtgyQ==
+
+"2@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/2/-/2-1.0.2.tgz#356a6f50b4851a311547570c616c6e8ef4b464c1"
+  integrity sha1-NWpvULSFGjEVR1cMYWxujvS0ZME=
+
+"3@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/3/-/3-2.1.0.tgz#08c61a6de22b4d35ee744b7fa2badd5180b4b4e3"
+  integrity sha512-rEoeK/qBZCLzqt9a3Q3Dnb5TUyXnZlxVaWr9ZXBV65Ppzcz59dx3Ik5YUxtni+36CtZgJdhQaYkLgHBdqjxjoA==
+  dependencies:
+    "2" "^1.0.2"
+    chunk-array "^1.0.2"
+    enforce-range "^1.0.0"
+
 "@babel/code-frame@^7.0.0":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.14.5.tgz#23b08d740e83f49c5e59945fbf1b43e80bbf4edb"
@@ -368,10 +387,10 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bootstrap@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.0.tgz#543ef8f44f4b9af67b0230f19508542fec38ef55"
-  integrity sha512-bs74WNI9BgBo3cEovmdMHikSKoXnDgA6VQjJ7TyTotU6L7d41ZyCEEelPwkYEzsG/Zjv3ie9IE3EMAje0W9Xew==
+bootstrap@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.5.2.tgz#a85c4eda59155f0d71186b6e6ad9b875813779ab"
+  integrity sha512-vlGn0bcySYl/iV+BGA544JkkZP5LB3jsmkeKLFQakCOwCM3AOk7VkldBz4jrzSe+Z0Ezn99NVXa1o45cQY4R6A==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -428,6 +447,11 @@ chalk@^2.0.0:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
+
+chunk-array@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/chunk-array/-/chunk-array-1.0.2.tgz#78211ff5502bc57b6c76043d8cc606a4423b79ef"
+  integrity sha1-eCEf9VArxXtsdgQ9jMYGpEI7ee8=
 
 cliui@^5.0.0:
   version "5.0.0"
@@ -577,6 +601,13 @@ emoji-regex@^7.0.1:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
   integrity sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA==
+
+enforce-range@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/enforce-range/-/enforce-range-1.0.0.tgz#f10ccc0396e23684b413d73661d020d192e5ba70"
+  integrity sha1-8QzMA5biNoS0E9c2YdAg0ZLlunA=
+  dependencies:
+    "2" "^1.0.2"
 
 error-ex@^1.2.0, error-ex@^1.3.1:
   version "1.3.2"
@@ -906,6 +937,11 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
+
+jquery@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-1.9.1.tgz#e4cd4835faaefbade535857613c0fc3ff2adaf34"
+  integrity sha1-5M1INfqu+63lNYV2E8D8P/KtrzQ=
 
 js-base64@^2.1.8:
   version "2.6.4"
@@ -1294,6 +1330,11 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
+
+popper.js@1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"

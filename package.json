@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "3": "^2.1.0",
+    "-": "^0.0.1",
     "@types/jwt-decode": "2.2.1",
     "@types/qs": "6.9.5",
     "@types/react-input-mask": "3.0.0",
@@ -7,10 +9,12 @@
     "@types/react-router-dom": "5.1.5",
     "@types/react-select": "3.0.26",
     "axios": "0.21.1",
-    "bootstrap": "^5.1.0",
+    "bootstrap": "4.5.2",
     "date-fns": "2.22.1",
+    "jquery": "1.9.1",
     "jwt-decode": "3.0.0",
     "node-sass": "4.14.1",
+    "popper.js": "1.16.1",
     "qs": "6.9.4",
     "react-content-loader": "5.1.2",
     "react-hook-form": "6.9.6",
