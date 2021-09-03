@@ -32,7 +32,7 @@ const Login = () => {
       })
       .catch(() => {
         setHasError(true);
-      });
+      }); 
   };
 
   return (
@@ -43,7 +43,7 @@ const Login = () => {
         </div>
       )}
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="">
+        <div className="login-input">
           <input
             type="email"
             className={`form-control base-input ${
@@ -65,7 +65,7 @@ const Login = () => {
             </div>
           )}
         </div>
-        <div className="">
+        <div className="login-input">
           <input
             type="password"
             className={`form-control base-input ${

@@ -2,20 +2,22 @@ import { Route, Switch } from 'react-router-dom';
 import LoginImage from 'src/assets/images/auth-image.jpeg';
 import Login from './components/Login';
 
-import './styles.css';
+import './styles.css'; 
 
 const Auth = () => ( 
     <div className="auth-container">
         <div className="auth-info">
-            <h1 className="auth-info-title">
+            <h1>
                 Base de Dados <br/> Jácomo Ortopedia
             </h1>
-            <p className="auth-info-subtile">
+            <p>
                 Base de visitação médica da Jácomo Ortopedia Técnica
             </p>
-           <img src={LoginImage} alt="logo" />
+            <div className="auth-image">
+             <img src={LoginImage} alt="logo" />
+           </div>
         </div>
-        <div className="auth-content">
+        <div className="auth-form-content">
             <Switch>
                 <Route path="/auth/login">
                     <Login />

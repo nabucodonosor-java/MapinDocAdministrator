@@ -29,7 +29,7 @@ a, a:hover {
   letter-spacing: -0.015em;
   color: #263238;
   height: 50px;
-
+  margin-bottom: 10px;
 }
 
 .base-input::placeholder {
