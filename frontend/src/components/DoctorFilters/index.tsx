@@ -28,7 +28,7 @@ const DoctorFilters = ({ name, handleChangeName, specialization, handleChangeSpe
     }, []);
 
     return (
-        <div className="card-base doctor-filters-container">
+        <div className="card-base doctor-filters-container"> 
             <div className="doctor-input-search">
                 <input
                     type="text"
@@ -55,7 +55,7 @@ const DoctorFilters = ({ name, handleChangeName, specialization, handleChangeSpe
                 isClearable
             />
             <button 
-                className="btn btn-outline-secondary"
+                className="btn btn-outline-primary"
                 onClick={clearFilters}
                 >
                 LIMPAR FILTRO

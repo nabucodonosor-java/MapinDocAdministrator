@@ -134,7 +134,7 @@ const Navbar = () => {
               LOGIN
             </Link>
           )}
-        </div>
+        </div> 
       </div>
     </nav>
   );

@@ -68,16 +68,16 @@ INSERT INTO tb_office_hours (seg, ter, qua, qui, sex, description, place_service
 INSERT INTO tb_office_hours (seg, ter, qua, qui, sex, description, place_service_id) VALUES 
 (false, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00', 4);
 
-INSERT INTO tb_doctor (img_url, crm, name, card_name, phone, email, birth_date, resume, specialty_id, office_hours_id) VALUES 
-('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/LUIZ+CLAUDIO+FONTES+MEGA.png', '67598', 'LUIZ CLAUDIO FONTES MEGA', 'LUIZ MEGA', 
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, specialty_id, office_hours_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/LUIZ+CLAUDIO+FONTES+MEGA.png', '67598', 'LUIZ CLAUDIO FONTES MEGA', 
 '', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
 'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto', 6, 1);
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 4);
 
-INSERT INTO tb_doctor (img_url, crm, name, card_name, phone, email, birth_date, resume, specialty_id, office_hours_id) VALUES 
-('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/RENAN+DE+PAULA+SILVEIRA+RE.png', '140517', 'RENAN DE PAULA SILVEIRA RE', 'RENAN RE', 
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, specialty_id, office_hours_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/RENAN+DE+PAULA+SILVEIRA+RE.png', '140517', 'RENAN DE PAULA SILVEIRA RE', 
 '', '', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
 'Médico preceptor da residência médica vascular da Santa Casa de Ribeirão Preto', 6, 2);
 

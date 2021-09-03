@@ -56,8 +56,9 @@ const Catalog = () => {
 
 
   return (
+  
     <div className="doctor-catalog-container">
-      <div className="catalog-filter-container">
+      <div className="catalog-filter-container"> 
         <DoctorFilters
         name={name}
         specialization={specialization}
@@ -66,20 +67,28 @@ const Catalog = () => {
         clearFilters={clearFilters}
         />
       </div>
-      {isLoading ? <DoctorCardLoader /> : (
-        <div className="col-sm-6 col-lg-4 col-xl-3">
-          {doctorResponse?.content.map(doc => (
-            <Link to={`/doctors/${doc.id}`} key={doc.id}>
-              <DoctorCard doctor={doc} />
-            </Link>
-          ))}
+    {isLoading ? <DoctorCardLoader  /> : (
+      <div className="list-container">
+        <div className="row">
+          {doctorResponse?.content.map((doc) => {
+            return (
+              <div className="col-sm-6 col-lg-4 col-xl-3" key={doc.id}>
+                <Link to={`/doctors/${doc.id}`}>
+                <DoctorCard doctor={doc} />
+                </Link>
+              </div>
+            );
+          })}
         </div>
-      )}
-      {doctorResponse && (
+        <div className="row">
+        {doctorResponse && (
         <Pagination totalPages={doctorResponse.totalPages} onChange={page => setActivePage(page)} />
       )}
-    </div>
-  );
+        </div>
+      </div>
+    )}
+  </div>
+);
 };
 
 export default Catalog;

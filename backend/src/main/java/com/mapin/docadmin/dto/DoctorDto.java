@@ -50,6 +50,13 @@ public class DoctorDto implements Serializable {
 		crm = entity.getCrm();
 		name = entity.getName();
 		cardName = entity.getName();
+		
+		String[] cardNameArray = name.split(" ");
+		 
+		 for (int i = 0; i < cardNameArray.length; i++) {
+			 cardName = cardNameArray[0] + " " +cardNameArray[cardNameArray.length - 1];
+		 }
+		 
 		phone = entity.getPhone();
 		email = entity.getEmail();
 		birthDate = entity.getBirthDate();

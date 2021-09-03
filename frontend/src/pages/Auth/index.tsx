@@ -14,7 +14,7 @@ const Auth = () => (
                 Base de visitação médica da Jácomo Ortopedia Técnica
             </p>
             <div className="auth-image">
-             <img src={LoginImage} alt="logo" />
+             <img src={LoginImage} alt="logo" /> 
            </div>
         </div>
         <div className="auth-form-content">
