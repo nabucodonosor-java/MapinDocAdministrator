@@ -1,0 +1,34 @@
+.btn-container {
+   display: flex;
+   justify-content: center;
+}
+
+.btn-text {
+   border-radius: 10px 0px 0px 10px;
+   background-color: #24231f;
+   border: #24231f;
+   text-transform: uppercase;
+   color: #FFF;
+   width: 250px;
+   height: 70px;
+}
+
+.btn-text h6 {
+  font-size: 18px;
+}
+
+.btn-arrow {
+   padding: 5px;
+   background-color: #2d769a;
+   border-radius: 0px 10px 10px 0;
+   display: flex;
+   justify-content: center;
+}
+
+.btn-arrow img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+
+

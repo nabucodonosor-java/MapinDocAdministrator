@@ -1,0 +1,36 @@
+.home-container {
+    padding: 20px 10px;
+    text-align: center;
+    background-color: #c6d1d5 !important; 
+}
+
+.home-card-container {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.home-card-container h1 {
+    margin-bottom: 10px;
+}
+
+.home-card-container p {
+    color: #9e9e9e;
+}
+
+.home-card-container img {
+    width: 60%;
+    border-radius: 50%;
+}
+
+@media (min-width: 1200px) {
+
+    .home-container {
+        padding: 50px 30px 50px 60px;
+        display: flex;
+    }
+
+    .home-card-container {
+        margin-right: 50px;
+    }
+}
