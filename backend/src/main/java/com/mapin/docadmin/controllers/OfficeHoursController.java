@@ -20,38 +20,38 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.mapin.docadmin.dto.OfficeHoursDto;
-import com.mapin.docadmin.services.OfficeHoursService;
+import com.mapin.docadmin.dto.PlaceServiceDto;
+import com.mapin.docadmin.services.PlaceServiceService;
 
 @RestController
 @RequestMapping("/hours")
 public class OfficeHoursController {
 	
 	@Autowired
-	private OfficeHoursService service;	
+	private PlaceServiceService service;	
 
 	@GetMapping
-	public ResponseEntity<Page<OfficeHoursDto>> findAll(
+	public ResponseEntity<Page<PlaceServiceDto>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "12") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "sort", defaultValue = "id") String sort) {
 				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
-		Page<OfficeHoursDto> list = service.findAllPaged(pageRequest);
+		Page<PlaceServiceDto> list = service.findAllPaged(pageRequest);
 		
 		return ResponseEntity.ok().body(list);
 
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<OfficeHoursDto> findById(@PathVariable Long id) {
-		OfficeHoursDto entity = service.findById(id);
+	public ResponseEntity<PlaceServiceDto> findById(@PathVariable Long id) {
+		PlaceServiceDto entity = service.findById(id);
 		return ResponseEntity.ok().body(entity);
 	}
 	
 	@PostMapping
-	public ResponseEntity<OfficeHoursDto> insert(@Valid @RequestBody OfficeHoursDto dto) {
+	public ResponseEntity<PlaceServiceDto> insert(@Valid @RequestBody PlaceServiceDto dto) {
 		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(dto.getId()).toUri();
@@ -59,7 +59,7 @@ public class OfficeHoursController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<OfficeHoursDto> update(@PathVariable Long id, @Valid @RequestBody OfficeHoursDto dto) {
+	public ResponseEntity<PlaceServiceDto> update(@PathVariable Long id, @Valid @RequestBody PlaceServiceDto dto) {
 		dto = service.update(id, dto);
 		return ResponseEntity.ok().body(dto);
 	}

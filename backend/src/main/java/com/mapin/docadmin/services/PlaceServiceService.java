@@ -33,19 +33,47 @@ public class PlaceServiceService {
 	@Transactional(readOnly = true)
 	public PlaceServiceDto findById(Long id) {
 		Optional<PlaceService> optional = repository.findById(id);
-		PlaceService entity = optional.orElseThrow(() -> new ResourceNotFoundException("Local de atentimento não encontrado!"));
+		PlaceService entity = optional.orElseThrow(() -> new ResourceNotFoundException("Local não encontrado!"));
 		return new PlaceServiceDto(entity);
 	}
 	
 	@Transactional
 	public PlaceServiceDto insert(PlaceServiceDto dto) {
 		PlaceService entity = new PlaceService();
-		copyDtoToEntity(entity, dto);
+		copyDtoToEntity(dto, entity);
 		entity = repository.save(entity);
 		return new PlaceServiceDto(entity);
 	}
 	
-	private void copyDtoToEntity(PlaceService entity, PlaceServiceDto dto) {
+	@Transactional
+	public PlaceServiceDto update(Long id, PlaceServiceDto dto) {
+		
+		try {
+			
+			PlaceService entity = new PlaceService();
+			copyDtoToEntity(dto, entity);
+			entity = repository.save(entity);
+			return new PlaceServiceDto(entity);
+			
+		} catch (EntityNotFoundException e) {
+			
+			throw new ResourceNotFoundException("Local não encontrado!");
+		}
+	}
+	
+	public void delete(Long id) {
+		try {
+			
+			repository.deleteById(id);
+			
+		} catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException("Local não encontrado!");
+		} catch (DataIntegrityViolationException e) {
+			throw new DatabaseException("Violação no DB");
+		}
+	}
+
+	private void copyDtoToEntity(PlaceServiceDto dto, PlaceService entity) {
 		
 		entity.setName(dto.getName());
 		entity.setCep(dto.getCep());
@@ -57,28 +85,4 @@ public class PlaceServiceService {
 		
 	}
 
-	@Transactional
-	public PlaceServiceDto update(Long id, PlaceServiceDto dto) {
-		try {
-			PlaceService entity = repository.getOne(id);
-			copyDtoToEntity(entity, dto);
-			entity = repository.save(entity);
-			return new PlaceServiceDto(entity);
-			
-		} catch (EntityNotFoundException e) {
-			throw new ResourceNotFoundException("Local de atentimento não encontrado!");
-		}
-	}
-	
-	public void delete(Long id) {
-		try {
-			
-			repository.deleteById(id);
-			
-		} catch (EmptyResultDataAccessException e) {
-			throw new ResourceNotFoundException("Local de atentimento não encontrado!");
-		} catch (DataIntegrityViolationException e) {
-			throw new DatabaseException("Violação de integridade do DB");
-		}
-	}
 }

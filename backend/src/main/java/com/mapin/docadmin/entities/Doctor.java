@@ -45,6 +45,15 @@ public class Doctor implements Serializable {
 
 	@Column(columnDefinition = "TEXT")
 	private String resume;
+	
+	private boolean seg;
+	private boolean ter;
+	private boolean qua;
+	private boolean qui;
+	private boolean sex;
+
+	@Column(columnDefinition = "TEXT")
+	private String officeHours;
 
 	@ManyToMany
 	@JoinTable(name = "tb_doctor_specialization", joinColumns = @JoinColumn(name = "doctor_id"), inverseJoinColumns = @JoinColumn(name = "specialization_id"))
@@ -55,17 +64,9 @@ public class Doctor implements Serializable {
 	private Specialty specialty;
 	
 	@ManyToOne
-	@JoinColumn(name = "office_hours_id")
-	private OfficeHours officeHours;
+	@JoinColumn(name = "place_service_id")
+	private PlaceService placeServices;
 	
-	public OfficeHours getOfficeHours() {
-		return officeHours;
-	}
-
-	public void setOfficeHours(OfficeHours officeHours) {
-		this.officeHours = officeHours;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -138,12 +139,68 @@ public class Doctor implements Serializable {
 		this.resume = resume;
 	}
 
+	public boolean isSeg() {
+		return seg;
+	}
+
+	public void setSeg(boolean seg) {
+		this.seg = seg;
+	}
+
+	public boolean isTer() {
+		return ter;
+	}
+
+	public void setTer(boolean ter) {
+		this.ter = ter;
+	}
+
+	public boolean isQua() {
+		return qua;
+	}
+
+	public void setQua(boolean qua) {
+		this.qua = qua;
+	}
+
+	public boolean isQui() {
+		return qui;
+	}
+
+	public void setQui(boolean qui) {
+		this.qui = qui;
+	}
+
+	public boolean isSex() {
+		return sex;
+	}
+
+	public void setSex(boolean sex) {
+		this.sex = sex;
+	}
+
+	public String getOfficeHours() {
+		return officeHours;
+	}
+
+	public void setOfficeHours(String officeHours) {
+		this.officeHours = officeHours;
+	}
+
 	public Specialty getSpecialty() {
 		return specialty;
 	}
 
 	public void setSpecialty(Specialty specialty) {
 		this.specialty = specialty;
+	}
+
+	public PlaceService getPlaceServices() {
+		return placeServices;
+	}
+
+	public void setPlaceServices(PlaceService placeServices) {
+		this.placeServices = placeServices;
 	}
 
 	public Set<Specialization> getSpecializations() {

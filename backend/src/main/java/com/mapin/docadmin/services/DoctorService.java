@@ -20,11 +20,13 @@ import com.mapin.docadmin.dto.DoctorDto;
 import com.mapin.docadmin.dto.SpecializationDto;
 import com.mapin.docadmin.dto.UriDto;
 import com.mapin.docadmin.entities.Doctor;
-import com.mapin.docadmin.entities.OfficeHours;
+import com.mapin.docadmin.entities.PlaceService;
 import com.mapin.docadmin.entities.Specialization;
 import com.mapin.docadmin.entities.Specialty;
 import com.mapin.docadmin.repositories.DoctorRepository;
+import com.mapin.docadmin.repositories.PlaceServiceRepository;
 import com.mapin.docadmin.repositories.SpecializationRepository;
+import com.mapin.docadmin.repositories.SpecialtyRepository;
 import com.mapin.docadmin.services.exception.DatabaseException;
 import com.mapin.docadmin.services.exception.ResourceNotFoundException;
 
@@ -39,6 +41,12 @@ public class DoctorService {
 	
 	@Autowired
 	private SpecializationRepository specializationRepository;
+	
+	@Autowired
+	private PlaceServiceRepository placeRepository;
+	
+	@Autowired
+	private SpecialtyRepository specialtyRepository;
 	
 	@Transactional(readOnly = true)
 	public Page<DoctorDto> findAllPaged(Long specializationId, String name, Pageable pageable) {
@@ -107,8 +115,26 @@ public class DoctorService {
 		entity.setEmail(dto.getEmail());
 		entity.setBirthDate(dto.getBirthDate());
 		entity.setResume(dto.getResume());
-		entity.setSpecialty(new Specialty(dto.getSpecialty()));
-		entity.setOfficeHours(new OfficeHours(dto.getOfficeHours()));
+		entity.setSeg(dto.isSeg());
+		entity.setTer(dto.isTer());
+		entity.setQua(dto.isQua());
+		entity.setQui(dto.isQui());
+		entity.setSex(dto.isSex());
+		entity.setOfficeHours(dto.getOfficeHours());
+		
+		if (dto.getSpecialty() == null) {
+			Specialty s = specialtyRepository.getOne(1L);
+			entity.setSpecialty(s);
+		} else {
+			entity.setSpecialty(new Specialty(dto.getSpecialty()));
+		}
+		
+		if (dto.getPlaceServices() == null) {
+			PlaceService ps = placeRepository.getOne(1L);
+			entity.setPlaceServices(ps);
+		} else {
+			entity.setPlaceServices(new PlaceService(dto.getPlaceServices()));
+		}
 		
 		entity.getSpecializations().clear();
 		

@@ -1,12 +1,15 @@
 package com.mapin.docadmin.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.mapin.docadmin.dto.PlaceServiceDto;
@@ -19,7 +22,7 @@ public class PlaceService implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String name;
 	private String cep;
 	private String street;
@@ -27,8 +30,12 @@ public class PlaceService implements Serializable {
 	private String district;
 	private String city;
 	private String state;
-	
-	public PlaceService() {}
+
+	@OneToMany(mappedBy = "placeServices")
+	private List<Doctor> doctors = new ArrayList<>();
+
+	public PlaceService() {
+	}
 
 	public PlaceService(PlaceServiceDto dto) {
 		id = dto.getId();
@@ -48,7 +55,7 @@ public class PlaceService implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -103,6 +110,10 @@ public class PlaceService implements Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public List<Doctor> getDoctors() {
+		return doctors;
 	}
 
 	@Override

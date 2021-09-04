@@ -35,11 +35,19 @@ public class DoctorDto implements Serializable {
 
 	private String resume;
 
+	private boolean seg;
+	private boolean ter;
+	private boolean qua;
+	private boolean qui;
+	private boolean sex;
+
+	private String officeHours;
+
 	private List<SpecializationDto> specializations = new ArrayList<>();
 
 	private SpecialtyDto specialty;
-	
-	private OfficeHoursDto officeHours;
+
+	private PlaceServiceDto placeServices;
 
 	public DoctorDto() {
 	}
@@ -50,32 +58,30 @@ public class DoctorDto implements Serializable {
 		crm = entity.getCrm();
 		name = entity.getName();
 		cardName = entity.getName();
-		
+
 		String[] cardNameArray = name.split(" ");
-		 
-		 for (int i = 0; i < cardNameArray.length; i++) {
-			 cardName = cardNameArray[0] + " " +cardNameArray[cardNameArray.length - 1];
-		 }
-		 
+
+		for (int i = 0; i < cardNameArray.length; i++) {
+			cardName = cardNameArray[0] + " " + cardNameArray[cardNameArray.length - 1];
+		}
+
 		phone = entity.getPhone();
 		email = entity.getEmail();
 		birthDate = entity.getBirthDate();
 		resume = entity.getResume();
+		seg = entity.isSeg();
+		ter = entity.isTer();
+		qua = entity.isQua();
+		qui = entity.isQui();
+		sex = entity.isSex();
+		officeHours = entity.getOfficeHours();
 		specialty = new SpecialtyDto(entity.getSpecialty());
-		officeHours = new OfficeHoursDto(entity.getOfficeHours());
+		placeServices = new PlaceServiceDto(entity.getPlaceServices());
 	}
 
 	public DoctorDto(Doctor entity, Set<Specialization> specializations) {
 		this(entity);
 		specializations.forEach(specialization -> this.specializations.add(new SpecializationDto(specialization)));
-	}
-	
-	public OfficeHoursDto getOfficeHours() {
-		return officeHours;
-	}
-
-	public void setOfficeHours(OfficeHoursDto officeHours) {
-		this.officeHours = officeHours;
 	}
 
 	public Long getId() {
@@ -150,12 +156,68 @@ public class DoctorDto implements Serializable {
 		this.resume = resume;
 	}
 
+	public boolean isSeg() {
+		return seg;
+	}
+
+	public void setSeg(boolean seg) {
+		this.seg = seg;
+	}
+
+	public boolean isTer() {
+		return ter;
+	}
+
+	public void setTer(boolean ter) {
+		this.ter = ter;
+	}
+
+	public boolean isQua() {
+		return qua;
+	}
+
+	public void setQua(boolean qua) {
+		this.qua = qua;
+	}
+
+	public boolean isQui() {
+		return qui;
+	}
+
+	public void setQui(boolean qui) {
+		this.qui = qui;
+	}
+
+	public boolean isSex() {
+		return sex;
+	}
+
+	public void setSex(boolean sex) {
+		this.sex = sex;
+	}
+
+	public String getOfficeHours() {
+		return officeHours;
+	}
+
+	public void setOfficeHours(String officeHours) {
+		this.officeHours = officeHours;
+	}
+
 	public SpecialtyDto getSpecialty() {
 		return specialty;
 	}
 
 	public void setSpecialty(SpecialtyDto specialty) {
 		this.specialty = specialty;
+	}
+
+	public PlaceServiceDto getPlaceServices() {
+		return placeServices;
+	}
+
+	public void setPlaceServices(PlaceServiceDto placeServices) {
+		this.placeServices = placeServices;
 	}
 
 	public List<SpecializationDto> getSpecializations() {

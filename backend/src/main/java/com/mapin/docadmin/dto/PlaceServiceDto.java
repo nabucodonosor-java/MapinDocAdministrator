@@ -2,8 +2,6 @@ package com.mapin.docadmin.dto;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotBlank;
-
 import org.springframework.data.domain.Page;
 
 import com.mapin.docadmin.entities.PlaceService;
@@ -12,10 +10,8 @@ public class PlaceServiceDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-
-	@NotBlank(message = "Campo obrigatório")
-	private String cep;
 	private String name;
+	private String cep;
 	private String street;
 	private String complement;
 	private String district;
@@ -27,8 +23,8 @@ public class PlaceServiceDto implements Serializable {
 
 	public PlaceServiceDto(PlaceService entity) {
 		id = entity.getId();
-		cep = entity.getCep();
 		name = entity.getName();
+		cep = entity.getCep();
 		street = entity.getStreet();
 		complement = entity.getComplement();
 		district = entity.getDistrict();
@@ -43,7 +39,7 @@ public class PlaceServiceDto implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
