@@ -47,7 +47,7 @@ public class DoctorDto implements Serializable {
 
 	private SpecialtyDto specialty;
 
-	private PlaceServiceDto placeServices;
+	private PlaceServiceDto placeService;
 
 	public DoctorDto() {
 	}
@@ -76,7 +76,7 @@ public class DoctorDto implements Serializable {
 		sex = entity.isSex();
 		officeHours = entity.getOfficeHours();
 		specialty = new SpecialtyDto(entity.getSpecialty());
-		placeServices = new PlaceServiceDto(entity.getPlaceServices());
+		placeService = new PlaceServiceDto(entity.getPlaceService());
 	}
 
 	public DoctorDto(Doctor entity, Set<Specialization> specializations) {
@@ -212,12 +212,12 @@ public class DoctorDto implements Serializable {
 		this.specialty = specialty;
 	}
 
-	public PlaceServiceDto getPlaceServices() {
-		return placeServices;
+	public PlaceServiceDto getPlaceService() {
+		return placeService;
 	}
 
-	public void setPlaceServices(PlaceServiceDto placeServices) {
-		this.placeServices = placeServices;
+	public void setPlaceService(PlaceServiceDto placeService) {
+		this.placeService = placeService;
 	}
 
 	public List<SpecializationDto> getSpecializations() {

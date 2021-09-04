@@ -1,0 +1,27 @@
+.admin-card-container {
+    display: flex;
+}
+
+.admin-card-img {
+    border-right: 1px solid #E1E1E1;
+    padding: 15px 5px 0 5px;
+    text-align: center;
+}
+
+.admin-card-img img {
+    margin-bottom: 5px;
+}
+
+.admin-card-specializations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.admin-card-specializations h6 {
+    margin-bottom: 20px;
+}
+

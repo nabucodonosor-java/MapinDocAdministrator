@@ -37,7 +37,7 @@ public class DoctorController {
 			@RequestParam(value = "specializationId", defaultValue = "0") Long specializationId,
 			@RequestParam(value = "name", defaultValue = "") String name,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "size", defaultValue = "12") Integer size,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "sort", defaultValue = "name") String sort) {
 				

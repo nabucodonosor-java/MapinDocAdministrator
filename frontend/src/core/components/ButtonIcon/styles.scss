@@ -9,8 +9,9 @@
    border: #24231f;
    text-transform: uppercase;
    color: #FFF;
-   width: 250px;
+   width: 200px;
    height: 70px;
+   padding: 5px;
 }
 
 .btn-text h6 {
@@ -28,6 +29,34 @@
 .btn-arrow img {
   max-width: 100px;
   max-height: 100px;
+}
+
+@media (min-width: 576px) {
+   .btn-text {
+  
+      width: 300px;
+   }
+}
+
+@media (min-width: 768px) {
+   .btn-text {
+  
+      width: 400px;
+   }
+}
+
+@media (min-width: 1024px) {
+   .btn-text {
+  
+      width: 500px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .btn-text {
+  
+      width: 300px;
+   }
 }
 
 

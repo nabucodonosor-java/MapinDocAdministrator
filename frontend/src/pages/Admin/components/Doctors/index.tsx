@@ -3,14 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import Form from './Form';
 import List from './List';
 
-const Medicos = () => {
+const Doctors = () => {
     return (
        <div>
            <Switch>
-               <Route path="/admin/medicos" exact>
+               <Route path="/admin/doctors" exact>
                     <List />
                </Route>
-               <Route path="/admin/medicos/:medicoId">
+               <Route path="/admin/doctors/:doctorId">
                     <Form />
                </Route>
            </Switch>
@@ -18,4 +18,4 @@ const Medicos = () => {
     );
 }
 
-export default Medicos;
+export default Doctors;

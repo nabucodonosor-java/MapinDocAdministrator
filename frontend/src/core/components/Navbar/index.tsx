@@ -40,16 +40,11 @@ const Navbar = () => {
                     <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/" activeClassName="active" exact>HOME</NavLink>
                     </li>
                     <li>
-                    <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/medicos" activeClassName="active" exact>LISTA</NavLink>
+                    <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/doctors" activeClassName="active" exact>MÉDICOS</NavLink>
                     </li>
                     {isAllowebByRole(['ROLE_ADMIN']) && (
                         <li>
                         <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/admin" activeClassName="active" exact>ADMIN</NavLink>
-                    </li>
-                    )}
-                    {isAllowebByRole(['ROLE_ADMIN']) && (
-                        <li>
-                        <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/report" activeClassName="active" exact>RELATÓRIOS</NavLink>
                     </li>
                     )}
                     {drawerActive && (

@@ -10,7 +10,7 @@ import MedicoFilters from 'core/components/Filters/MedicosFilters';
 import './styles.scss';
 
 
-const Catalog = () => {
+const Catalog = () => { 
 
     const [doctorResponse, setDoctorResponse] = useState<DoctorResponse>();
     const [isLoading, setIsLoading] = useState(false);

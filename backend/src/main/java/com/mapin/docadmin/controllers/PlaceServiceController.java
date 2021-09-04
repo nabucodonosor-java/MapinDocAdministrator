@@ -24,8 +24,8 @@ import com.mapin.docadmin.dto.PlaceServiceDto;
 import com.mapin.docadmin.services.PlaceServiceService;
 
 @RestController
-@RequestMapping("/hours")
-public class OfficeHoursController {
+@RequestMapping("/places")
+public class PlaceServiceController {
 	
 	@Autowired
 	private PlaceServiceService service;	
@@ -33,7 +33,7 @@ public class OfficeHoursController {
 	@GetMapping
 	public ResponseEntity<Page<PlaceServiceDto>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "size", defaultValue = "12") Integer size,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "sort", defaultValue = "id") String sort) {
 				

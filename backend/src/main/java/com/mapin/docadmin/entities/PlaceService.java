@@ -31,7 +31,7 @@ public class PlaceService implements Serializable {
 	private String city;
 	private String state;
 
-	@OneToMany(mappedBy = "placeServices")
+	@OneToMany(mappedBy = "placeService")
 	private List<Doctor> doctors = new ArrayList<>();
 
 	public PlaceService() {

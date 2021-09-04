@@ -1,6 +1,6 @@
-import { OfficeHours } from "./officeHours"
-import { Specialization } from "./specialization"
-import { Specialty } from "./specialty"
+import { PlaceService } from "./placeService";
+import { Specialization } from "./specialization";
+import { Specialty } from "./specialty";
 
 export type DoctorResponse = {
     content: Doctor[];
@@ -24,7 +24,13 @@ export type Doctor = {
     email: string;
     birthDate: string;
     resume: string;
+    seg: boolean;
+    ter: boolean;
+    qua: boolean;
+    qui: boolean;
+    sex: boolean;
+    officeHours: string;
     specialty: Specialty;
-    officeHours: OfficeHours;
     specializations: Specialization[];
+    placeService: PlaceService;
 }

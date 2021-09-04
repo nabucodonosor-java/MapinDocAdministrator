@@ -17,21 +17,21 @@ const Home = () => {
       .then((response) => response.data)
       .finally(() => setIsLoading(false));
   }, []);
-
+ 
   return (
     <>
       {isLoading ? (
-        <HomeLoader />
+        <HomeLoader /> 
       ) : (
         <div className="home-container">
           <div className="card-base home-card-container">
-            <h1>Base de Médicos</h1>
+            <h1>Marketing</h1>
             <p>
               Base de Dados de visitação de Ribeirão Preto e região,
               Araraquara/São Carlos e micro região.
             </p>
             <img src={MktImg} alt="mkt" className="mb-3"/>
-            <Link to="/medicos">
+            <Link to="/doctors">
             <ButtonIcon
                 text="Busca Médicos"
                 img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
@@ -39,13 +39,13 @@ const Home = () => {
             </Link>
           </div>
           <div className="card-base home-card-container">
-            <h1>Laboratório</h1>
+            <h1>Área Técnica</h1>
             <p>
               Análise via dashboard dos serviços do laboratório ortopédico com
               gráficos por técnico ortopédico
             </p>
             <img src={LabImg} alt="mkt" className="mb-3"/>
-            <Link to="/dashboard">
+            <Link to="/lab">
             <ButtonIcon
                 text="Acompanhe Serviços"
                 img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-lab.png"

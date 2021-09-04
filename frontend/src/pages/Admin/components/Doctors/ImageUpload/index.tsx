@@ -6,13 +6,13 @@ import './styles.scss';
 
 type Props = { 
     onUploadSuccess: (imgUrl: string) => void;
-    medicoImgUrl: string; 
+    doctorImgUrl: string; 
 }
 
-const ImageUpload = ({ onUploadSuccess, medicoImgUrl }: Props) => {
+const ImageUpload = ({ onUploadSuccess, doctorImgUrl }: Props) => {
     const [uploadProgress, setUploadProgress] = useState(0);
     const [uploadedImgUrl, setUploadedImgUrl] = useState('');
-    const imgUrl = uploadedImgUrl || medicoImgUrl;
+    const imgUrl = uploadedImgUrl || doctorImgUrl;
 
     const onUploadProgress = (progressEvent: ProgressEvent) => {
         const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
@@ -26,7 +26,7 @@ const ImageUpload = ({ onUploadSuccess, medicoImgUrl }: Props) => {
         payload.append('file', selectedImage);
 
         makePrivateRequest({ 
-            url: '/medicos/image', 
+            url: '/doctors/image', 
             method: 'POST',
             data: payload,
             onUploadProgress

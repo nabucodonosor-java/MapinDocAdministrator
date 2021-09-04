@@ -76,7 +76,7 @@ public class DoctorService {
 		
 		try {
 			
-		Doctor entity = new Doctor();
+		Doctor entity = repository.getOne(id);
 		copyDtoToEntity(dto, entity);
 		entity = repository.save(entity);
 		return new DoctorDto(entity);
@@ -107,7 +107,12 @@ public class DoctorService {
 
 	private void copyDtoToEntity(DoctorDto dto, Doctor entity) {
 		
-		entity.setImgUrl(dto.getImgUrl());
+		if (dto.getImgUrl() == null) {
+			entity.setImgUrl("https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/padrao-M.png");
+		} else {
+			entity.setImgUrl(dto.getImgUrl());
+		}
+		
 		entity.setCrm(dto.getCrm());
 		entity.setName(dto.getName());
 		entity.setCardName(dto.getCardName());
@@ -122,6 +127,7 @@ public class DoctorService {
 		entity.setSex(dto.isSex());
 		entity.setOfficeHours(dto.getOfficeHours());
 		
+		
 		if (dto.getSpecialty() == null) {
 			Specialty s = specialtyRepository.getOne(1L);
 			entity.setSpecialty(s);
@@ -129,12 +135,13 @@ public class DoctorService {
 			entity.setSpecialty(new Specialty(dto.getSpecialty()));
 		}
 		
-		if (dto.getPlaceServices() == null) {
+		if (dto.getPlaceService() == null) {
 			PlaceService ps = placeRepository.getOne(1L);
-			entity.setPlaceServices(ps);
+			entity.setPlaceService(ps);
 		} else {
-			entity.setPlaceServices(new PlaceService(dto.getPlaceServices()));
+			entity.setPlaceService(new PlaceService(dto.getPlaceService()));
 		}
+		
 		
 		entity.getSpecializations().clear();
 		

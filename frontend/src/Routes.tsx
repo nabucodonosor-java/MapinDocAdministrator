@@ -27,12 +27,12 @@ const Routes = () => (
             <Route path="/auth">
                 <Auth />
             </Route>
-            <Redirect from="/report" to="/report/doctors" exact/>
-            <Route path="/report">
+            <Redirect from="/reports" to="/reports/doctors" exact/>
+            <Route path="/reports">
                 <Report />
             </Route>
-            <Redirect from="/dashboard" to="/dashboard/services" exact/>
-            <Route path="/dashboard">
+            <Redirect from="/lab" to="/lab/services" exact/>
+            <Route path="/lab">
                 <DashBoard />
             </Route>
             <Redirect from="/admin" to="/admin/doctors" exact/>

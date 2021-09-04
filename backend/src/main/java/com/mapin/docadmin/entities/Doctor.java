@@ -65,7 +65,7 @@ public class Doctor implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "place_service_id")
-	private PlaceService placeServices;
+	private PlaceService placeService;
 	
 	public Long getId() {
 		return id;
@@ -195,12 +195,12 @@ public class Doctor implements Serializable {
 		this.specialty = specialty;
 	}
 
-	public PlaceService getPlaceServices() {
-		return placeServices;
+	public PlaceService getPlaceService() {
+		return placeService;
 	}
 
-	public void setPlaceServices(PlaceService placeServices) {
-		this.placeServices = placeServices;
+	public void setPlaceService(PlaceService placeService) {
+		this.placeService = placeService;
 	}
 
 	public Set<Specialization> getSpecializations() {

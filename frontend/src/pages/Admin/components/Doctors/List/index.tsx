@@ -4,7 +4,7 @@ import { DoctorResponse } from 'core/types/doctor';
 import { useHistory } from 'react-router-dom';
 import { makePrivateRequest } from 'core/utils/request';
 import { toast } from 'react-toastify';
-import CardLoader from '../Loaders/MedicoCardLoader';
+import CardLoader from '../Loaders/DoctorCardLoader';
 import Card from '../Card';
 import Pagination from 'core/components/Pagination';
 import MedicosFilters from 'core/components/Filters/MedicosFilters';
