@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { ReactComponent as SearchIcon } from 'core/assets/images/lupa.svg';
-import { Especialidade } from 'core/types/Medico';
+import { Specialization } from 'core/types/specialization';
 import { makePrivateRequest } from 'core/utils/request';
 import Select from 'react-select';
 import './styles.scss';
 
 type Props = {
-    nome?: string;
-    handleChangeName: (nome: string) => void;
-    handleChangeEspecialidade: (especialidade: Especialidade) => void;
+    name?: string;
+    handleChangeName: (name: string) => void;
+    handleChangeSpecialization: (specialization: Specialization) => void;
     clearFilters: () => void;
-    especialidade?: Especialidade; 
+    specialization?: Specialization; 
 }
 
-const MedicoFilters = ({ nome, handleChangeName, especialidade, handleChangeEspecialidade, clearFilters }: Props) => {
+const MedicoFilters = ({ name, handleChangeName, specialization, handleChangeSpecialization, clearFilters }: Props) => {
 
-    const [isLoadingEspecialidade, setIsLoadingEspecialidade] = useState(false);
-    const [especialidades, setEspecialidades] = useState<Especialidade[]>([]);
+    const [isLoadingSpecialization, setIsLoadingSpecialization] = useState(false);
+    const [specializations, setSpecializations] = useState<Specialization[]>([]);
 
     useEffect(() => { 
-        setIsLoadingEspecialidade(true);
-        makePrivateRequest({ url: '/especialidade' })
-            .then(response => setEspecialidades(response.data.content))
-            .finally(() => setIsLoadingEspecialidade(false));
+        setIsLoadingSpecialization(true);
+        makePrivateRequest({ url: '/specializations' })
+            .then(response => setSpecializations(response.data.content))
+            .finally(() => setIsLoadingSpecialization(false));
     }, []);  
 
     return (
@@ -30,7 +30,7 @@ const MedicoFilters = ({ nome, handleChangeName, especialidade, handleChangeEspe
             <div className="medico-input-search">
                 <input
                     type="text"
-                    value={nome}  
+                    value={name}  
                     className="form-control"
                     placeholder="Pesquisar médico"
                     onChange={event => handleChangeName(event.target.value)}                  
@@ -38,18 +38,18 @@ const MedicoFilters = ({ nome, handleChangeName, especialidade, handleChangeEspe
                 <SearchIcon />
             </div>
             <Select
-                name="especialidades"
-                key={`select-${especialidade?.id}`}
-                value={especialidade}
-                isLoading={isLoadingEspecialidade}
-                options={especialidades}
-                getOptionLabel={(option: Especialidade) => option.nome}
-                getOptionValue={(option: Especialidade) => String(option.id)}
+                name="specializations"
+                key={`select-${specialization?.id}`}
+                value={specialization}
+                isLoading={isLoadingSpecialization}
+                options={specializations}
+                getOptionLabel={(option: Specialization) => option.name}
+                getOptionValue={(option: Specialization) => String(option.id)}
                 className="medico-filter-select-container"
                 classNamePrefix="medico-especializacoes-select"
                 placeholder="Pesquisar por Especialidade"
-                inputId="especialidades"
-                onChange={value => handleChangeEspecialidade(value as Especialidade)}
+                inputId="specializations"
+                onChange={value => handleChangeSpecialization(value as Specialization)}
                 isClearable
             />
             <button 

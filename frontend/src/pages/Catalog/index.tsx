@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Especialidade, MedicoResponse } from 'core/types/Medico';
+import { DoctorResponse } from 'core/types/doctor';
+import { Specialization } from 'core/types/specialization';
 import { makePrivateRequest } from 'core/utils/request';
 import MedicoCard from './components/MedicoCard';
 import MedicoCardLoader from './components/Loaders/MedicoCardLoader';
@@ -8,48 +9,49 @@ import Pagination from 'core/components/Pagination';
 import MedicoFilters from 'core/components/Filters/MedicosFilters';
 import './styles.scss';
 
+
 const Catalog = () => {
 
-    const [medicoResponse, setMedicoResponse] = useState<MedicoResponse>();
+    const [doctorResponse, setDoctorResponse] = useState<DoctorResponse>();
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
-    const [nome, setNome] = useState('');
-    const [especialidade, setEspecialidade] = useState<Especialidade>();
+    const [name, setName] = useState('');
+    const [specialization, setSpecialization] = useState<Specialization>();
 
-    const getMedicos = useCallback(() => {
+    const getDoctors = useCallback(() => {
         const params = {
             page: activePage,
             linesPerPage: 15,
-            nome,
-            especialidadeId: especialidade?.id
+            name,
+            specializationId: specialization?.id
         }
 
         setIsLoading(true);
-        makePrivateRequest({ url: '/medicos', params })
-            .then(response => setMedicoResponse(response.data))
+        makePrivateRequest({ url: '/doctors', params })
+            .then(response => setDoctorResponse(response.data))
             .finally(() => {
                 setIsLoading(false);
             })
-    }, [activePage, nome, especialidade]);
+    }, [activePage, name, specialization]);
 
     useEffect(() => {
-        getMedicos();
-    }, [getMedicos]);
+        getDoctors();
+    }, [getDoctors]);
 
     const handleChangeName = (name: string) => {
         setActivePage(0);
-        setNome(name);
+        setName(name);
     }
 
-    const handleChangeEspecialidade = (especialidade: Especialidade) => {
+    const handleChangeSpecialization = (specialization: Specialization) => {
         setActivePage(0);
-        setEspecialidade(especialidade);
+        setSpecialization(specialization);
     }
 
     const clearFilters = () => {
         setActivePage(0);
-        setEspecialidade(undefined);
-        setNome('');
+        setSpecialization(undefined);
+        setName('');
     }
 
     return (
@@ -57,25 +59,25 @@ const Catalog = () => {
             <div className="catalog-filter-container">
 
                 <MedicoFilters
-                    nome={nome}
-                    especialidade={especialidade}
-                    handleChangeEspecialidade={handleChangeEspecialidade}
+                    name={name}
+                    specialization={specialization}
+                    handleChangeSpecialization={handleChangeSpecialization}
                     handleChangeName={handleChangeName}
                     clearFilters={clearFilters}
                 />
             </div>
             <div className="catalog-medicos">
                 {isLoading ? <MedicoCardLoader /> : (
-                    medicoResponse?.content.map(medico => (
-                        <Link to={`/medicos/${medico.id}`} key={medico.id}>
-                            <MedicoCard medico={medico} />
+                    doctorResponse?.content.map(medico => (
+                        <Link to={`/doctors/${medico.id}`} key={medico.id}>
+                            <MedicoCard doctor={medico} />
                         </Link>
                     ))
                 )}
             </div>
-            {medicoResponse && (
+            {doctorResponse && (
                 <Pagination
-                    totalPages={medicoResponse.totalPages}
+                    totalPages={doctorResponse.totalPages}
                     onChange={page => setActivePage(page)}
                 />
             )}

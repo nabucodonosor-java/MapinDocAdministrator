@@ -17,25 +17,25 @@ const Routes = () => (
             <Route path="/" exact>
                 <Home />
             </Route>
-            <Route path="/medicos"  exact>
+            <Route path="/doctors"  exact>
                 <Catalog />
             </Route>
-            <Route path="/medicos/:medicoId">
+            <Route path="/doctors/:doctorId">
                 <MedicoDetails />
             </Route>
             <Redirect from="/auth" to="/auth/login" exact/>
             <Route path="/auth">
                 <Auth />
             </Route>
-            <Redirect from="/report" to="/report/medicos" exact/>
+            <Redirect from="/report" to="/report/doctors" exact/>
             <Route path="/report">
                 <Report />
             </Route>
-            <Redirect from="/dashboard" to="/dashboard/servicos" exact/>
+            <Redirect from="/dashboard" to="/dashboard/services" exact/>
             <Route path="/dashboard">
                 <DashBoard />
             </Route>
-            <Redirect from="/admin" to="/admin/medicos" exact/>
+            <Redirect from="/admin" to="/admin/doctors" exact/>
             <Route path="/admin">
                 <Admin />
             </Route>

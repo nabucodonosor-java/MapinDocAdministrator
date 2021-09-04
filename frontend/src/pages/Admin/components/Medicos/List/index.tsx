@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Especialidade, MedicoResponse } from 'core/types/Medico';
+import { Specialization } from 'core/types/specialization';
+import { DoctorResponse } from 'core/types/doctor';
 import { useHistory } from 'react-router-dom';
 import { makePrivateRequest } from 'core/utils/request';
 import { toast } from 'react-toastify';
@@ -10,62 +11,62 @@ import MedicosFilters from 'core/components/Filters/MedicosFilters';
 import './styles.scss';
 
 const List = () => {
-    const [medicoResponse, setMedicoResponse] = useState<MedicoResponse>();
+    const [doctorResponse, setDoctorResponse] = useState<DoctorResponse>();
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
     const history = useHistory();
-    const [nome, setNome] = useState('');
-    const [especialidade, setEspecialidade] = useState<Especialidade>();
+    const [name, setName] = useState('');
+    const [specialization, setSpecialization] = useState<Specialization>();
 
-    const getMedicos = useCallback(() => {
+    const getDoctors = useCallback(() => {
         const params = {
             page: activePage,
-            linesPerPage: 20,
+            size: 20,
             direction: 'DESC',
             orderBy: 'id',
-            nome,
-            especialidadeId: especialidade?.id
+            name,
+            specializationId: specialization?.id
         }
         setIsLoading(true);
-        makePrivateRequest({ url: '/medicos', params })
-            .then(response => setMedicoResponse(response.data))
+        makePrivateRequest({ url: '/doctors', params })
+            .then(response => setDoctorResponse(response.data))
             .finally(() => {
                 setIsLoading(false);
             })
-    }, [activePage, nome, especialidade]);
+    }, [activePage, name, specialization]);
 
     useEffect(() => {
-        getMedicos();
-    }, [getMedicos]);
+        getDoctors();
+    }, [getDoctors]);
 
     const handleChangeName = (name: string) => {
         setActivePage(0);
-        setNome(name);
+        setName(name);
     }
 
-    const handleChangeEspecialidade = (especialidade: Especialidade) => {
+    const handleChangeSpecialization = (specialization: Specialization) => {
         setActivePage(0);
-        setEspecialidade(especialidade);
+        setSpecialization(specialization);
     }
 
     const clearFilters = () => {
         setActivePage(0);
-        setEspecialidade(undefined);
-        setNome('');
+        setSpecialization(undefined);
+        setName('');
     }
 
     const handleCreate = () => {
-        history.push('/admin/medicos/create');
+        history.push('/admin/doctors/create');
     }
 
-    const onRemove = (medicoId: number) => {
-        const confirm = window.confirm('Deseja realmente excluir este produto?');
+    const onRemove = (doctorId: number) => {
+        const confirm = window.confirm('Deseja realmente excluir este médico(a)?');
 
         if (confirm) {
-            makePrivateRequest({ url: `/medicos/${medicoId}`, method: 'DELETE' })
+            makePrivateRequest({ url: `/doctors/${doctorId}`, method: 'DELETE' })
                 .then(() => {
                     toast.info('Médico deletado com sucesso!');
-                    getMedicos();
+                    getDoctors();
                 })
                 .catch(() => {
                     toast.error('Erro ao deletar médico');
@@ -80,9 +81,9 @@ const List = () => {
                     ADICIONAR
                 </button>
                 <MedicosFilters
-                    nome={nome}
-                    especialidade={especialidade}
-                    handleChangeEspecialidade={handleChangeEspecialidade}
+                    name={name}
+                    specialization={specialization}
+                    handleChangeSpecialization={handleChangeSpecialization}
                     handleChangeName={handleChangeName}
                     clearFilters={clearFilters}
                 />
@@ -90,13 +91,13 @@ const List = () => {
 
             <div className="admin-list-container">
                 {isLoading ? <CardLoader /> : (
-                    medicoResponse?.content.map(medico => (
-                        <Card medico={medico} key={medico.id} onRemove={onRemove} />
+                    doctorResponse?.content.map(medico => (
+                        <Card doctor={medico} key={medico.id} onRemove={onRemove} />
                     ))
                 )}
-                {medicoResponse && (
+                {doctorResponse && (
                     <Pagination
-                        totalPages={medicoResponse.totalPages}
+                        totalPages={doctorResponse.totalPages}
                         onChange={page => setActivePage(page)}
                     />
                 )}

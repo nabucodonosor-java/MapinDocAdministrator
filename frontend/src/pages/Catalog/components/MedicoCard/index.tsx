@@ -1,26 +1,31 @@
-import { Medico } from 'core/types/Medico';
+import { Doctor } from 'core/types/doctor';
 import React from 'react';
 import './styles.scss';
 
 type Props = {
-    medico: Medico; 
+    doctor: Doctor; 
 }
 
-const MedicoCard = ({ medico }: Props) => (
+const MedicoCard = ({ doctor }: Props) => (
     <div className="card-base border-radius-10 medico-card">
-        <img src={medico.imgUrl} alt={medico.nome} className="medico-card-image"/>
+        <img src={doctor.imgUrl} alt={doctor.cardName} className="medico-card-image"/>
         <div className="medico-card-info">
             <h6 className="medico-card-name">
-                {medico.nome}
+                {doctor.cardName}
             </h6>
             <div className="medico-card-especialidade">
-                {medico.especialidades.map(e => e.nome)}
+                {doctor.specialty.name}
             </div>
             <div className="medico-card-especializacao">
-                        
-                <span className="badge rounded-pill bg-secondary mr-2">
-                        {medico?.especializacoes.map(c => " - " + c.nome + " - ")}
-                </span>
+
+                {doctor.specializations.map(s => {
+                    return (
+                        <span className="badge rounded-pill bg-secondary mr-2">
+                        {s.name}
+                    </span>
+                     
+                    )
+                })}        
                          
             </div>  
         </div>

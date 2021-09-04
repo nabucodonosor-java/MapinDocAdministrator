@@ -49,7 +49,7 @@ const Navbar = () => {
                     )}
                     {isAllowebByRole(['ROLE_ADMIN']) && (
                         <li>
-                        <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/report" activeClassName="active" exact>REPORTS</NavLink>
+                        <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/report" activeClassName="active" exact>RELATÓRIOS</NavLink>
                     </li>
                     )}
                     {drawerActive && (
