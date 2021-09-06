@@ -1,6 +1,7 @@
 .admin-card-container {
     text-align: center;
     border-radius: 20px;
+    margin-top: 20px;
     padding: 10px;
 }
 
@@ -75,6 +76,39 @@
         display: flex;
         border-radius: 20px;
         padding: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .admin-card-img {
+        padding: 10px 40px 0 40px;
+        border-bottom: none;
+        width: 500px;
+    }
+
+    .admin-card-img img {
+        width: 30%;
+    }
+
+    .admin-card-img h5 {
+        font-size: 16px;
+    }
+
+    .admin-card-img p {
+        font-size: 12px;
+    }
+
+    .admin-card-specializations {
+        margin-left: 100px;
+     }
+
+    
+
+    .admin-card-btn {
+        width: 100%;
+        justify-content: center;
+        
     }
 }
 

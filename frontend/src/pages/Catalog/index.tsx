@@ -21,7 +21,7 @@ const Catalog = () => {
     const getDoctors = useCallback(() => {
         const params = {
             page: activePage,
-            linesPerPage: 15,
+            size: 9,
             name,
             specializationId: specialization?.id
         }

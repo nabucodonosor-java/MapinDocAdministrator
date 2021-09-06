@@ -17,15 +17,15 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 
 @Service
 public class S3Service {
-	
+
 	private static Logger LOG = LoggerFactory.getLogger(S3Service.class);
-	
+
 	@Autowired
-	private AmazonS3 s3Client;
-	
+	private AmazonS3 s3client;
+
 	@Value("${s3.bucket}")
 	private String bucketName;
-	
+
 	public URL uploadFile(MultipartFile file) {
 		try {
 			
@@ -34,23 +34,24 @@ public class S3Service {
 			String extension = FilenameUtils.getExtension(originalName);
 			String fileName = originalName;
 			
-			InputStream inputStream = file.getInputStream();
+			InputStream is = file.getInputStream();
 			String contentType = file.getContentType();
-			return uploadFile(inputStream, fileName, contentType);
+			return uploadFile(is, fileName, contentType);
 			
 		} catch (IOException e) {
 			throw new IllegalArgumentException(e.getMessage());
 		}
+	
 	}
 
-	private URL uploadFile(InputStream inputStream, String fileName, String contentType) {
+	private URL uploadFile(InputStream is, String fileName, String contentType) {
 		
 		ObjectMetadata meta = new ObjectMetadata();
 		meta.setContentType(contentType);
-		LOG.info("Início do Upload da imagem..");
-		s3Client.putObject(fileName, contentType, inputStream, meta);
-		LOG.info("Upload da imagem concluído!");
-		return s3Client.getUrl(fileName, bucketName);
+		LOG.info("Upload start");
+		s3client.putObject(bucketName, fileName, is, meta);
+		LOG.info("Upload finish");
+		return s3client.getUrl(bucketName, fileName);
+		
 	}
-
 }

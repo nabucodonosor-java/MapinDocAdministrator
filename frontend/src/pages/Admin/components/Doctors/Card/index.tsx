@@ -6,7 +6,7 @@ import "./styles.scss";
 type Props = {
   doctor: Doctor;
   onRemove: (doctorId: number) => void; 
-};
+}; 
 
 const Card = ({ doctor, onRemove }: Props) => {
   return (
@@ -17,7 +17,7 @@ const Card = ({ doctor, onRemove }: Props) => {
         <p>{doctor.specialty.name}</p>
       </div>
 
-      <div className="admin-card-specializations">
+      <div className="admin-card-specializations"> 
         <h6>Especializações</h6>
         {doctor.specializations.map((s) => {
           return (

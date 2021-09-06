@@ -1,13 +1,18 @@
 .home-container {
     padding: 20px 10px;
     text-align: center;
-    background-color: #c6d1d5 !important; 
+    background-color: #c6d1d5 !important;
 }
 
 .home-card-container {
     padding: 10px;
     border-radius: 20px;
     margin-bottom: 10px;
+    transform: scale(0.9);
+    transition: 1s;
+    &:hover {
+        transform: scale(1);
+    }
 }
 
 .home-card-container h1 {
@@ -22,13 +27,14 @@
 .home-card-container img {
     width: 60%;
     border-radius: 50%;
+    
 }
 
 @media (min-width: 1200px) {
 
     .home-container {
         display: flex;
-        padding: 50px 30px 50px 60px;
+        padding: 50px 30px 70px 60px;
 
     }
 

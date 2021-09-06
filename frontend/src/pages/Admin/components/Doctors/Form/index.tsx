@@ -42,7 +42,8 @@ const Form = () => {
     useForm<FormState>();
   const history = useHistory();
   const { doctorId } = useParams<ParamsType>();
-  const [isLoadingSpecializations, setIsLoadingSpecializations] = useState(false);
+  const [isLoadingSpecializations, setIsLoadingSpecializations] =
+    useState(false);
   const [specializations, setSpecializations] = useState<Specialization[]>([]);
   const [isLoadingSpecialties, setIsLoadingSpecialties] = useState(false);
   const [specialties, setSpecialties] = useState<Specialty[]>([]);
@@ -129,7 +130,7 @@ const Form = () => {
       <BaseForm title={formTitle}>
         <div className="row">
           <div className="col-6">
-            <div className="margin-bottom-30">
+            <div className="d-flex mb-2">
               <Controller
                 as={Select}
                 name="specialty"
@@ -139,8 +140,8 @@ const Form = () => {
                 options={specialties}
                 getOptionLabel={(option: Specialty) => option.name}
                 getOptionValue={(option: Specialty) => String(option.id)}
-                classNamePrefix="especializacoes-select"
-                className="input-select"
+                classNamePrefix="combo-base-select"
+                className="input-select mr-2"
                 placeholder="Especialidade Médica"
                 inputId="specialty"
                 defaultValue=""
@@ -150,22 +151,22 @@ const Form = () => {
                   Campo obrigatório!
                 </div>
               )}
-            </div>
 
-            <div className="margin-bottom-30 d-flex">
               <input
                 ref={register({ required: false })}
                 name="crm"
                 type="text"
-                className="form-control input-base input-crm"
+                className="form-control input-base small-input"
                 placeholder="CRM do médico"
               />
+            </div>
 
+            <div className="d-flex mb-2">
               <input
                 ref={register({ required: "Campo obrigatório" })}
                 name="name"
                 type="text"
-                className="form-control input-base"
+                className="form-control input-base mb-2 mr-2"
                 placeholder="Nome do médico"
               />
               {errors.name && (
@@ -173,11 +174,18 @@ const Form = () => {
                   {errors.name.message}
                 </div>
               )}
-            </div>
 
-            <div className="margin-bottom-30 d-flex">
               <input
-                ref={register({ required: "Campo obrigatório" })}
+                ref={register({ required: false })}
+                name="birthDate"
+                type="date"
+                className="form-control input-base mb-2 small-input"
+                placeholder="Data"
+              />
+            </div>
+            <div className="d-flex mb-2">
+              <input
+                ref={register({ required: false })}
                 name="email"
                 type="email"
                 className="form-control input-base mr-2"
@@ -196,72 +204,134 @@ const Form = () => {
                 control={control}
                 mask="(99) 99999-9999"
                 id="phone"
-                className="form-control input-base input-celular"
+                className="form-control input-base small-input"
                 defaultValue=""
                 placeholder="Celular"
               />
             </div>
 
-            <div className="margin-bottom-30">
-              <Controller
-                as={Select}
-                name="specializations"
-                rules={{ required: true }}
-                control={control}
-                isLoading={isLoadingSpecializations}
-                options={specializations}
-                getOptionLabel={(option: Specialization) => option.name}
-                getOptionValue={(option: Specialization) => String(option.id)}
-                classNamePrefix="especializacoes-select"
-                placeholder="Especializações médicas"
-                inputId="specializations"
-                defaultValue=""
-                isMulti
-              />
-              {errors.specializations && (
-                <div className="invalid-feedback d-block">
-                  Campo obrigatório!
-                </div>
-              )}
-            </div>
+            <Controller
+              as={Select}
+              name="specializations"
+              rules={{ required: true }}
+              control={control}
+              isLoading={isLoadingSpecializations}
+              options={specializations}
+              getOptionLabel={(option: Specialization) => option.name}
+              getOptionValue={(option: Specialization) => String(option.id)}
+              classNamePrefix="especializacoes-select"
+              placeholder="Especializações médicas"
+              inputId="specializations"
+              defaultValue=""
+              isMulti
+            />
+            {errors.specializations && (
+              <div className="invalid-feedback d-block">Campo obrigatório!</div>
+            )}
 
-            <div className="margin-bottom-30">
-              <ImageUpload
-                onUploadSuccess={onUploadSuccess}
-                doctorImgUrl={doctorImgUrl}
-              />
-            </div>
+            <ImageUpload
+              onUploadSuccess={onUploadSuccess}
+              doctorImgUrl={doctorImgUrl}
+            />
+
+            <h6>Currículo & Observações</h6>
+            <textarea
+              ref={register({ required: false })}
+              name="resume"
+              className="form-control input-base"
+              placeholder="Currículo e observações..."
+              cols={30}
+              rows={10}
+            />
           </div>
+          <div className="col-6">
 
-          <h6>Horários de Atendimento</h6>
-          <textarea
-            ref={register({ required: false })}
-            name="officeHours"
-            className="form-control input-base mb-3 mt-2"
-            placeholder="Horário de Atendimento"
-            cols={30}
-            rows={10}
-          />
           <Controller
-                as={Select}
-                name="placeService"
-                rules={{ required: true }}
-                control={control}
-                isLoading={isLoadingPlaceServices}
-                options={placeServices}
-                getOptionLabel={(option: PlaceService) => option.name}
-                getOptionValue={(option: PlaceService) => String(option.id)}
-                classNamePrefix="especializacoes-select"
-                className="input-select"
-                placeholder="Local de Atendimento"
-                inputId="placeService"
-                defaultValue=""
-              />
-              {errors.placeService && (
-                <div className="invalid-feedback d-block">
-                  Campo obrigatório!
-                </div>
-              )}
+              as={Select}
+              name="placeService"
+              rules={{ required: true }}
+              control={control}
+              isLoading={isLoadingPlaceServices}
+              options={placeServices}
+              getOptionLabel={(option: PlaceService) => option.name}
+              getOptionValue={(option: PlaceService) => String(option.id)}
+              classNamePrefix="combo-base-select"
+              className="input-select mb-3"
+              placeholder="Local de visitação"
+              inputId="placeService"
+              defaultValue=""
+            />
+            {errors.placeService && (
+              <div className="invalid-feedback d-block">Campo obrigatório!</div>
+            )}
+
+            <table className="table doctor-form-table">
+              <tr>
+                <th>Dia da Semana</th>
+                <th>Atende?</th>
+              </tr>
+              <tr>
+                <td><label>Segunda</label></td>
+                <td>
+                  <input
+                  ref={register({ required: false })}
+                  name="seg"
+                  type="checkbox"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Terça</label></td>
+                <td>
+                  <input
+                  ref={register({ required: false })}
+                  name="ter"
+                  type="checkbox"
+                  />
+                </td>  
+              </tr>
+              <tr>
+                <td><label>Quarta</label></td>
+                <td>
+                  <input
+                  ref={register({ required: false })}
+                  name="qua"
+                  type="checkbox"
+                  />
+                </td>  
+              </tr>
+              <tr>
+                <td><label>Quinta</label></td>
+                <td>
+                  <input
+                  ref={register({ required: false })}
+                  name="qui"
+                  type="checkbox"
+                  />
+                </td>  
+              </tr>
+              <tr>
+                <td><label>Sexta</label></td>
+                <td>
+                  <input
+                  ref={register({ required: false })}
+                  name="sex"
+                  type="checkbox"
+                  />
+                </td>  
+              </tr>
+            </table>
+
+            <h6>Horários de Atendimento</h6>
+            <textarea
+              ref={register({ required: false })}
+              name="officeHours"
+              className="form-control input-base"
+              placeholder="Horário de Atendimento"
+              cols={30}
+              rows={10}
+            />
+          </div>
         </div>
       </BaseForm>
     </form>
