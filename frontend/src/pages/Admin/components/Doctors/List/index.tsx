@@ -18,7 +18,7 @@ const List = () => {
     const [name, setName] = useState('');
     const [specialization, setSpecialization] = useState<Specialization>();
 
-    const getDoctors = useCallback(() => {
+    const getDoctors = useCallback(() => { 
         const params = {
             page: activePage,
             size: 20,
@@ -51,7 +51,7 @@ const List = () => {
 
     const clearFilters = () => {
         setActivePage(0);
-        setSpecialization(undefined);
+        setSpecialization(undefined); 
         setName('');
     }
 
@@ -64,20 +64,20 @@ const List = () => {
 
         if (confirm) {
             makePrivateRequest({ url: `/doctors/${doctorId}`, method: 'DELETE' })
-                .then(() => {
+                .then(() => { 
                     toast.info('Médico deletado com sucesso!');
                     getDoctors();
                 })
-                .catch(() => {
+                .catch(() => { 
                     toast.error('Erro ao deletar médico');
                 })
         }
     }
 
     return (
-        <div>
-            <div className="d-flex justify-content-between admin-div-btn">
-                <button className="btn btn-primary btn-lg admin-btn-add mr-5" onClick={handleCreate}>
+        <div className="admin-doc-list-container"> 
+            <div className="admin-filters-container">
+                <button className="btn btn-primary btn-lg admin-btn-add mb-1" onClick={handleCreate}>
                     ADICIONAR
                 </button>
                 <MedicosFilters
@@ -89,7 +89,7 @@ const List = () => {
                 />
             </div>
 
-            <div className="admin-list-container">
+            <div className="admin-content-container">
                 {isLoading ? <CardLoader /> : (
                     doctorResponse?.content.map(medico => (
                         <Card doctor={medico} key={medico.id} onRemove={onRemove} />

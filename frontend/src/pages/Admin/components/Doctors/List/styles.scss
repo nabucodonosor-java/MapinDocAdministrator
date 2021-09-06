@@ -1,11 +1,13 @@
-@media (max-width: 576px) {
-    .admin-div-btn {
-        display: flex;
-        flex-direction: column;
-    }
-    .admin-btn-add {
-        height: 50px;
-        width: 100%;
-        margin-bottom: 10px;
+.admin-btn-add {
+    width: 100%;
+}
+
+.admin-content-container {
+    margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+    .admin-doc-list-container {
+        padding: 20px;
     }
 }

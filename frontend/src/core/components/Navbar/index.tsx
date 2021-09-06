@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const handleLogout = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
-        logout(); 
+        logout();  
     }
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const Navbar = () => {
                         <li>
                         <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/admin" activeClassName="active" exact>ADMIN</NavLink>
                     </li>
-                    )}
+                    )} 
                     {drawerActive && (
                             <li>
                                 {currentUser && (

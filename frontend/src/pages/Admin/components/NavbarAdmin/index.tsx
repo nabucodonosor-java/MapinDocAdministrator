@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './styles.scss';
+import './styles.scss'; 
 
-const NavbarAdmin = () => (
+const NavbarAdmin = () => (  
     <nav className="admin-nav-admin-container">
         <ul>
             <li>

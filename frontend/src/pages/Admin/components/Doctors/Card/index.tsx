@@ -5,7 +5,7 @@ import "./styles.scss";
 
 type Props = {
   doctor: Doctor;
-  onRemove: (doctorId: number) => void;
+  onRemove: (doctorId: number) => void; 
 };
 
 const Card = ({ doctor, onRemove }: Props) => {
@@ -21,23 +21,24 @@ const Card = ({ doctor, onRemove }: Props) => {
         <h6>Especializações</h6>
         {doctor.specializations.map((s) => {
           return (
-            <span className="badge rounded-pill bg-secondary mb-2">
+            <span className="badge rounded-pill bg-secondary mb-2 mr-1">
               {s.name}
             </span>
           );
         })}
-
+        </div>
+        <div className="admin-card-btn">
         <Link
           to={`/admin/doctors/${doctor.id}`}
           type="button"
-          className="btn btn-outline-secondary btn-block border-radius-10"
+          className="btn btn-outline-secondary border-radius-10 mr-3"
         >
           EDITAR
         </Link>
 
         <button
           type="button"
-          className="btn btn-outline-danger btn-block border-radius-10"
+          className="btn btn-outline-danger border-radius-10"
           onClick={() => onRemove(doctor.id)}
         >
           EXCLUIR

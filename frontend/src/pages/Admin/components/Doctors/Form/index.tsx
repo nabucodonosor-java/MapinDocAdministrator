@@ -42,8 +42,7 @@ const Form = () => {
     useForm<FormState>();
   const history = useHistory();
   const { doctorId } = useParams<ParamsType>();
-  const [isLoadingSpecializations, setIsLoadingSpecializations] =
-    useState(false);
+  const [isLoadingSpecializations, setIsLoadingSpecializations] = useState(false);
   const [specializations, setSpecializations] = useState<Specialization[]>([]);
   const [isLoadingSpecialties, setIsLoadingSpecialties] = useState(false);
   const [specialties, setSpecialties] = useState<Specialty[]>([]);
@@ -79,7 +78,7 @@ const Form = () => {
         setDoctorImgUrl(response.data.imgUrl);
       });
     }
-  }, [doctorId, isEditing]);
+  }, [doctorId, isEditing, setValue]);
 
   useEffect(() => {
     setIsLoadingSpecializations(true);
