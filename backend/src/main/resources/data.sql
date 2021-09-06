@@ -34,10 +34,7 @@ INSERT INTO tb_specialty (name) VALUES ('REUMATOLOGIA');
 INSERT INTO tb_specialty (name) VALUES ('VASCULAR');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('Santa Casa Rib. Preto', '14085000', 'AV SAUDADE', '456', 'CAMPOS ELISIOS', 'RIBEIRAO PRETO', 'SP');
-
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('CEORT', '14025020', 'RUA ELISEU GUILHERME', '708', 'JD SUMARE', 'RIBEIRAO PRETO', 'SP');
+('Local Padrão', '14020050', 'RUA AMADEU AMARAL', '684', 'VILA SEIXAS', 'RIBEIRAO PRETO', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
 ('Santa Casa Araraquara', '14801150', 'RUA JOSE BONIFACIO', '794', 'CENTRO', 'ARARAQUARA', 'SP');
@@ -46,16 +43,26 @@ INSERT INTO tb_place_service (name, cep, street, complement, district, city, sta
 ('IOT Araraquara', '14801250', 'RUA VOLUNTARIOS DA PATRIA', '2199', 'CENTRO', 'ARARAQUARA', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('Santa Casa Rib. Preto', '14085000', 'AV SAUDADE', '456', 'CAMPOS ELISIOS', 'RIBEIRAO PRETO', 'SP');
+('Clínica de Ortopedia e Traumatologia', '14801190', 'AV MAUA', '387', 'CENTRO', 'ARARAQUARA', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('CEORT', '14025020', 'RUA ELISEU GUILHERME', '708', 'JD SUMARE', 'RIBEIRAO PRETO', 'SP');
+('Medicina Esportiva Dr Guido Tsuha', '14800360', 'RUA PADRE DUARTE', '151 SALA 145', 'JD NOVA AMERICA', 'ARARAQUARA', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('Santa Casa Araraquara', '14801150', 'RUA JOSE BONIFACIO', '794', 'CENTRO', 'ARARAQUARA', 'SP');
+('Núcleo de Ortopedia e Coluna', '14800360', 'RUA PADRE DUARTE', '151 SALA 88', 'JD NOVA AMERICA', 'ARARAQUARA', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('IOT Araraquara', '14801250', 'RUA VOLUNTARIOS DA PATRIA', '2199', 'CENTRO', 'ARARAQUARA', 'SP');
+('Instituto de Ortopedia Especializada', '14802408', 'AV DR GASTÃO VIDIGAL', '75', 'JD PRIMAVERA', 'ARARAQUARA', 'SP');
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Clínica Vascular e Estética Dra. Ana Scabello', '14801210', 'AV SÃO GERALDO', '269', 'CENTRO', 'ARARAQUARA', 'SP');
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Dr. Fernando Linares - Consultório Vascular', '14801534', 'AV RODRIGO FERNANDO GRILLO', '207 SALA 208', 'JS DOS MANACÁS', 'ARARAQUARA', 'SP');
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Clínica Dr. Rodrigo Gonçalves', '14801170', 'AV PRUDENTE DE MORAES', '1234', 'SÃO GERALDO', 'ARARAQUARA', 'SP');
+
 
 INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, 
 seg, ter, qua, qui, sex, office_hours, 

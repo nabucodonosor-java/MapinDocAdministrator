@@ -114,7 +114,7 @@ public class DoctorService {
 		}
 		
 		entity.setCrm(dto.getCrm());
-		entity.setName(dto.getName());
+		entity.setName(dto.getName().toUpperCase());
 		entity.setCardName(dto.getCardName());
 		entity.setPhone(dto.getPhone());
 		entity.setEmail(dto.getEmail());

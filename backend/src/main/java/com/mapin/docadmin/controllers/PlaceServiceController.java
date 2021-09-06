@@ -35,7 +35,7 @@ public class PlaceServiceController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
-			@RequestParam(value = "sort", defaultValue = "id") String sort) {
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
 				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
 		Page<PlaceServiceDto> list = service.findAllPaged(pageRequest);
