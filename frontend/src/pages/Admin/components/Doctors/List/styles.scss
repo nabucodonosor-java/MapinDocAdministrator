@@ -11,3 +11,19 @@
         padding: 20px;
     }
 }
+
+@media (min-width: 1200px) {
+    .admin-doc-list-container {
+        min-width: 1050px;
+    }
+
+    .admin-filters-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .admin-filters-container button {
+        width: 20%;
+        margin-right: 5px;
+    }
+}

@@ -1,32 +1,32 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles.scss'; 
-
-const NavbarAdmin = () => (  
-    <nav className="admin-nav-admin-container">
+ 
+const NavbarAdmin = () => (   
+    <nav className="admin-nav-container"> 
         <ul>
             <li>
-                <NavLink to="/admin/doctors" className="admin-nav-admin-item">
+                <NavLink to="/admin/doctors" className="admin-nav-item">
                     Médicos 
                 </NavLink> 
             </li>            
             <li>
-                <NavLink to="/admin/specialties" className="admin-nav-admin-item">
+                <NavLink to="/admin/specialties" className="admin-nav-item">
                     Especialidades
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/admin/specializations" className="admin-nav-admin-item">
+                <NavLink to="/admin/specializations" className="admin-nav-item">
                     Especializações
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/admin/places" className="admin-nav-admin-item">
+                <NavLink to="/admin/places" className="admin-nav-item">
                     Locais de Atendimento
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/admin/lab" className="admin-nav-admin-item">
+                <NavLink to="/admin/lab" className="admin-nav-item">
                     Laboratório
                 </NavLink>
             </li>           

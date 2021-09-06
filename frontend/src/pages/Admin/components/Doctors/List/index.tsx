@@ -72,7 +72,7 @@ const List = () => {
                     toast.error('Erro ao deletar médico');
                 })
         }
-    }
+    } 
 
     return (
         <div className="admin-doc-list-container"> 

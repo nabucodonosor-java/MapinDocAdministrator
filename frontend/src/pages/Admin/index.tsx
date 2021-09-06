@@ -1,4 +1,4 @@
-import { Switch } from 'react-router';
+import { Switch } from 'react-router'; 
 import NavbarAdmin from './components/NavbarAdmin';
 import PrivateRoute from 'core/components/Routes/PrivateRoute';
 import Doctors from './components/Doctors';
