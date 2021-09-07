@@ -61,7 +61,21 @@ INSERT INTO tb_place_service (name, cep, street, complement, district, city, sta
 ('Dr. Fernando Linares - Consultório Vascular', '14801534', 'AV RODRIGO FERNANDO GRILLO', '207 SALA 208', 'JS DOS MANACÁS', 'ARARAQUARA', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
-('Clínica Dr. Rodrigo Gonçalves', '14801170', 'AV PRUDENTE DE MORAES', '1234', 'SÃO GERALDO', 'ARARAQUARA', 'SP');
+('DuoClin', '14801170', 'AV PRUDENTE DE MORAES', '1234', 'SÃO GERALDO', 'ARARAQUARA', 'SP');
+
+
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Instituto de Neurociências', '14801140', 'AV FEIJO', '583', 'CENTRO', 'ARARAQUARA', 'SP');
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Neuroclínica Dr. Edelton A. De Marco', '14801140', 'AV FEIJO', '583', 'CENTRO', 'ARARAQUARA', 'SP');
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Gastro Vita', '14806025', 'AV JOSÉ ZILIOLLI', '807', 'VILA SEDENHO', 'ARARAQUARA', 'SP');
+
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Clínica Nasser Vascular S/S', '14800360', 'AV FEIJO', '809', 'CENTRO', 'ARARAQUARA', 'SP');
 
 
 INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, 

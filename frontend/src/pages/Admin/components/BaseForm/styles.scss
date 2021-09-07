@@ -29,3 +29,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 320px) {
+    .admin-base-form {
+        padding: 5px;
+    }
+}

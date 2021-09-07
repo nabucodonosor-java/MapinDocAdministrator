@@ -1,25 +1,29 @@
+.doctor-form-large {
+    display: none;
+}
+
+.doctor-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-form-double-field {
+    display: flex;
+    flex-direction: row;
+}
+
 .combo-base-select__control {
     height: 50px;
     border-radius: 10px !important;
     border: 1px solid #E1E1E1;
     font-weight: bold;
     margin-bottom: 7px;
-}
-
-.combo-base-select__indicator-separator {
-    display: none;
-}
-
-.combo-base-select__placeholder {
-    color: #9E9E9E; 
-}
-
-.input-select {
     width: 100%;
+    min-width: 183px;
 }
 
 .small-input {
-    max-width: 150px;
+    max-width: 100px;
 }
 
 .especializacoes-select__control {
@@ -38,38 +42,76 @@
     color: #9E9E9E; 
 }
 
-.select-atendimentos {
-    height: 150px;
-}
-
-.admin-local-title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.medicos-descricoes {
-
-    label {
-        margin-bottom: 10px;
-        font-size: 24px;
-    }
-}
-
-.locais-select__control {
-    height: 130px;
-    border-radius: 10px !important;
-    border: 1px solid #E1E1E1;
-    font-weight: bold;
-}
-
-.locais-select__indicator-separator {
+.doctor-form-col-xl {
     display: none;
 }
 
-.locais-select__placeholder {
-    color: #9E9E9E; 
+@media (min-width: 576px) {
+
+    .combo-base-select__control {
+
+        min-width: 307px;
+    }
+
+    .small-input {
+        max-width: 150px;
+    }
+
 }
 
-.doctor-form-table {
-    text-align: center;
+@media (min-width: 768px) {
+
+    .combo-base-select__control {
+
+        min-width: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .doctor-form-mobile {
+        display: none;
+    }
+
+    .doctor-form-large {
+        display: flex;
+    }
+      
+    .combo-base-select__control {
+        height: 50px;
+        border-radius: 10px !important;
+        border: 1px solid #E1E1E1;
+        font-weight: bold;
+        margin-bottom: 7px;
+        width: 100%;
+        min-width: 183px;
+    }
+    
+    .input-select {
+        width: 100%;
+    }
+    
+    .small-input {
+        max-width: 150px;
+    }
+    
+    .especializacoes-select__control {
+        height: 100px;
+        border-radius: 10px !important;
+        border: 1px solid #E1E1E1;
+        font-weight: bold;
+        margin-bottom: 7px;
+    }
+    
+    .especializacoes-select__indicator-separator {
+        display: none;
+    }
+    
+    .especializacoes-select__placeholder {
+        color: #9E9E9E; 
+    }
+        
+    .doctor-form-table {
+        text-align: center;
+    }
 }
