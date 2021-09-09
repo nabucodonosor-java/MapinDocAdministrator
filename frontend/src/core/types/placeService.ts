@@ -13,6 +13,8 @@ export type PlaceServiceResponse = {
 export type PlaceService = {
     id: number;
     name: string;
+    phone: string;
+    cellPhone: string;
     cep: string;
     street: string;
     complement: string;

@@ -24,6 +24,7 @@ INSERT INTO tb_specialization (name) VALUES ('Joelho');
 INSERT INTO tb_specialization (name) VALUES ('Quadril');
 INSERT INTO tb_specialization (name) VALUES ('Mão');
 INSERT INTO tb_specialization (name) VALUES ('Ombro');
+INSERT INTO tb_specialization (name) VALUES ('Ortopedia Geral');
 
 INSERT INTO tb_specialty (name) VALUES ('INDEFINIDA');
 INSERT INTO tb_specialty (name) VALUES ('ENDOCRINOLOGIA');
@@ -63,7 +64,8 @@ INSERT INTO tb_place_service (name, cep, street, complement, district, city, sta
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
 ('DuoClin', '14801170', 'AV PRUDENTE DE MORAES', '1234', 'SÃO GERALDO', 'ARARAQUARA', 'SP');
 
-
+INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+('Consultório Dr. Willer', '14801280', 'RUA MAJ CARVALHO FILHO', '464', 'CENTRO', 'ARARAQUARA', 'SP');
 
 INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
 ('Instituto de Neurociências', '14801140', 'AV FEIJO', '583', 'CENTRO', 'ARARAQUARA', 'SP');
@@ -89,4 +91,7 @@ false, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00'
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 4);
+
+INSERT INTO tb_visit (doctor_id, success, description) VALUES 
+(1, true, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
 

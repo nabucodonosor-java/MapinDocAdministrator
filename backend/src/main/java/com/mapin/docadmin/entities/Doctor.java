@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.mapin.docadmin.dto.DoctorDto;
+
 @Entity
 @Table(name = "tb_doctor")
 public class Doctor implements Serializable {
@@ -67,6 +69,40 @@ public class Doctor implements Serializable {
 	@JoinColumn(name = "place_service_id")
 	private PlaceService placeService;
 	
+	public Doctor() {}
+	
+	public Doctor(DoctorDto dto) {
+		id = dto.getId();
+		imgUrl = dto.getImgUrl();
+		crm = dto.getCrm();
+		name = dto.getName();
+		cardName = dto.getName();
+
+		String[] cardNameArray = name.split(" ");
+
+		for (int i = 0; i < cardNameArray.length; i++) {
+			cardName = cardNameArray[0] + " " + cardNameArray[cardNameArray.length - 1];
+		}
+
+		phone = dto.getPhone();
+		email = dto.getEmail();
+		birthDate = dto.getBirthDate();
+		resume = dto.getResume();
+		seg = dto.isSeg();
+		ter = dto.isTer();
+		qua = dto.isQua();
+		qui = dto.isQui();
+		sex = dto.isSex();
+		officeHours = dto.getOfficeHours();
+		specialty = new Specialty(dto.getSpecialty());
+		placeService = new PlaceService(dto.getPlaceService());
+	}
+
+	public Doctor(DoctorDto dto, Set<Specialization> specializations) {
+		this(dto);
+		specializations.forEach(specialization -> this.specializations.add(specialization));
+	}
+
 	public Long getId() {
 		return id;
 	}

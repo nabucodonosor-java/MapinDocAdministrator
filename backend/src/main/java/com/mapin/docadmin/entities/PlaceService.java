@@ -24,6 +24,8 @@ public class PlaceService implements Serializable {
 	private Long id;
 
 	private String name;
+	private String phone;
+	private String cellPhone;
 	private String cep;
 	private String street;
 	private String complement;
@@ -40,12 +42,30 @@ public class PlaceService implements Serializable {
 	public PlaceService(PlaceServiceDto dto) {
 		id = dto.getId();
 		name = dto.getName();
+		phone = dto.getPhone();
+		cellPhone = dto.getCellPhone();
 		cep = dto.getCep();
 		street = dto.getStreet();
 		complement = dto.getComplement();
 		district = dto.getDistrict();
 		city = dto.getCity();
 		state = dto.getState();
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getCellPhone() {
+		return cellPhone;
+	}
+
+	public void setCellPhone(String cellPhone) {
+		this.cellPhone = cellPhone;
 	}
 
 	public Long getId() {

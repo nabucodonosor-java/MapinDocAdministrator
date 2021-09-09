@@ -20,39 +20,38 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.mapin.docadmin.dto.PlaceServiceDto;
-import com.mapin.docadmin.services.PlaceServiceService;
+import com.mapin.docadmin.dto.VisitDto;
+import com.mapin.docadmin.services.VisitService;
 
 @RestController
-@RequestMapping("/places")
-public class PlaceServiceController {
+@RequestMapping("/visits")
+public class VisitController {
 	
 	@Autowired
-	private PlaceServiceService service;	
+	private VisitService service;	
 
 	@GetMapping
-	public ResponseEntity<Page<PlaceServiceDto>> findAll(
-			@RequestParam(value = "name", defaultValue = "") String name,
+	public ResponseEntity<Page<VisitDto>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
-			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+			@RequestParam(value = "sort", defaultValue = "visitDate") String sort) {
 				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
-		Page<PlaceServiceDto> list = service.findAllPaged(name, pageRequest);
+		Page<VisitDto> list = service.findAllPaged(pageRequest);
 		
 		return ResponseEntity.ok().body(list);
 
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<PlaceServiceDto> findById(@PathVariable Long id) {
-		PlaceServiceDto entity = service.findById(id);
+	public ResponseEntity<VisitDto> findById(@PathVariable Long id) {
+		VisitDto entity = service.findById(id);
 		return ResponseEntity.ok().body(entity);
 	}
 	
 	@PostMapping
-	public ResponseEntity<PlaceServiceDto> insert(@Valid @RequestBody PlaceServiceDto dto) {
+	public ResponseEntity<VisitDto> insert(@Valid @RequestBody VisitDto dto) {
 		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(dto.getId()).toUri();
@@ -60,7 +59,7 @@ public class PlaceServiceController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<PlaceServiceDto> update(@PathVariable Long id, @Valid @RequestBody PlaceServiceDto dto) {
+	public ResponseEntity<VisitDto> update(@PathVariable Long id, @Valid @RequestBody VisitDto dto) {
 		dto = service.update(id, dto);
 		return ResponseEntity.ok().body(dto);
 	}

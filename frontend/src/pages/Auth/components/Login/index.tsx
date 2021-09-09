@@ -81,7 +81,7 @@ const Login = () => {
                 <div className="login-submit">
                 <ButtonIcon
                 text="logar"
-                img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-lab.png"
+                img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-login.jpg"
               />
                 </div>
             </form>

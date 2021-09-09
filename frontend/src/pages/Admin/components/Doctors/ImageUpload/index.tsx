@@ -6,7 +6,7 @@ import './styles.scss';
 
 type Props = { 
     onUploadSuccess: (imgUrl: string) => void;
-    doctorImgUrl: string; 
+    doctorImgUrl: string;  
 }
 
 const ImageUpload = ({ onUploadSuccess, doctorImgUrl }: Props) => {
@@ -62,9 +62,11 @@ const ImageUpload = ({ onUploadSuccess, doctorImgUrl }: Props) => {
                     />
                     <label htmlFor="upload">ADICIONAR IMAGEM</label>
                 </div>
+                <div className="img-description">
                 <small className="upload-text-helper text-primary">
                     As imagens devem ser <strong>JPG</strong> ou <strong>PNG</strong> e não devem ultrapassar <strong>5MB</strong>
                 </small>
+                </div>
             </div>
             <div className="col-6 upload-placeholder">
                {uploadProgress > 0 && (

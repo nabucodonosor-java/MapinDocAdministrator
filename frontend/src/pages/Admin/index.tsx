@@ -3,6 +3,7 @@ import NavbarAdmin from './components/NavbarAdmin';
 import PrivateRoute from 'core/components/Routes/PrivateRoute';
 import Doctors from './components/Doctors';
 import './styles.scss';
+import PlaceService from './components/PlaceService';
  
 const Admin = () => ( 
     <div className="admin-container">
@@ -12,7 +13,9 @@ const Admin = () => (
                 <PrivateRoute path="/admin/doctors">
                     <Doctors />
                 </PrivateRoute>
-                
+                <PrivateRoute path="/admin/places">
+                    <PlaceService />
+                </PrivateRoute>
                 <PrivateRoute path="/admin/users" allowedRoutes={['ROLE_ADMIN']}>
                     <h1>Users</h1>
                 </PrivateRoute>

@@ -23,7 +23,7 @@ const List = () => {
             page: activePage,
             size: 20,
             direction: 'DESC',
-            orderBy: 'id',
+            sort: 'id',
             name,
             specializationId: specialization?.id
         }
