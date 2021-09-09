@@ -7,6 +7,7 @@ import MedicoDetails from 'pages/Catalog/components/MedicoDetails';
 import Auth from 'pages/Auth';
 import Admin from './pages/Admin';
 import history from './core/utils/history';
+import VisitDataTable from 'pages/Reports/VisitDataTable';
 
 const Routes = () => (
     <Router history={history}>
@@ -17,6 +18,10 @@ const Routes = () => (
             </Route>
             <Route path="/doctors"  exact>
                 <Catalog />
+            </Route>
+
+            <Route path="/visits"  exact>
+                <VisitDataTable />
             </Route>
             <Route path="/doctors/:doctorId">
                 <MedicoDetails />
