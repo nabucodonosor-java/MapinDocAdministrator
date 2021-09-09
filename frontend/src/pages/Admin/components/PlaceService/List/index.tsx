@@ -67,7 +67,7 @@ const List = () => {
 
   return (
     <div className="admin-doc-list-container">
-      <div className="admin-filters-container">
+      <div className="admin-filters-container"> 
         <button
           className="btn btn-primary btn-lg admin-btn-add mb-1"
           onClick={handleCreate}

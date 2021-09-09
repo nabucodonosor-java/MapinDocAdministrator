@@ -27,11 +27,11 @@ public class PlaceService implements Serializable {
 	private String phone;
 	private String cellPhone;
 	private String cep;
-	private String street;
-	private String complement;
-	private String district;
-	private String city;
-	private String state;
+	private String logradouro;
+	private String complemento;
+	private String bairro;
+	private String localidade;
+	private String uf;
 
 	@OneToMany(mappedBy = "placeService")
 	private List<Doctor> doctors = new ArrayList<>();
@@ -45,11 +45,11 @@ public class PlaceService implements Serializable {
 		phone = dto.getPhone();
 		cellPhone = dto.getCellPhone();
 		cep = dto.getCep();
-		street = dto.getStreet();
-		complement = dto.getComplement();
-		district = dto.getDistrict();
-		city = dto.getCity();
-		state = dto.getState();
+		logradouro = dto.getLogradouro();
+		complemento = dto.getComplemento();
+		bairro = dto.getBairro();
+		localidade = dto.getLocalidade();
+		uf = dto.getUf();
 	}
 	
 	public String getPhone() {
@@ -92,44 +92,44 @@ public class PlaceService implements Serializable {
 		this.cep = cep;
 	}
 
-	public String getStreet() {
-		return street;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
-	public String getComplement() {
-		return complement;
+	public String getComplemento() {
+		return complemento;
 	}
 
-	public void setComplement(String complement) {
-		this.complement = complement;
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
 	}
 
-	public String getDistrict() {
-		return district;
+	public String getBairro() {
+		return bairro;
 	}
 
-	public void setDistrict(String district) {
-		this.district = district;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
-	public String getCity() {
-		return city;
+	public String getLocalidade() {
+		return localidade;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setLocalidade(String localidade) {
+		this.localidade = localidade;
 	}
 
-	public String getState() {
-		return state;
+	public String getUf() {
+		return uf;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 
 	public List<Doctor> getDoctors() {

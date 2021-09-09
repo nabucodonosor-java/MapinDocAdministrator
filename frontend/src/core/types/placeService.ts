@@ -16,9 +16,9 @@ export type PlaceService = {
     phone: string;
     cellPhone: string;
     cep: string;
-    street: string;
-    complement: string;
-    district: string;
-    city: string;
-    state: string;
+    logradouro: string;
+    complemento: string;
+    bairro: string;
+    localidade: string;
+    uf: string;
 }

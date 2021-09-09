@@ -10,29 +10,29 @@ type Props = {
 
 const Card = ({ place, onRemove }: Props) => {
   return (
-    <div className="card-base admin-card-container">
-      <div className="admin-card-title">
+    <div className="card-base admin-place-card-container">
+      <div className="admin-place-card-title">
         <h5>{place.name}</h5>
-        <p>{place.city}</p>
+        <p>{place.localidade}</p>
       </div> 
 
-      <div className="admin-card-content">
-        <div className="admin-card-address">
-        <table className="table doctor-form-table">
+      <div className="admin-place-card-content">
+        <div className="admin-place-card-address">
+        <table className="table place-form-table">
                 <tr>
-                  <th>Rua</th>
+                  <th>Rua</th> 
                   <th>N.º</th>
                   <th>Bairro</th>
                 </tr>
                 <tr>
                   <td>
-                    <label>{place.street}</label>
+                    <label>{place.logradouro}</label>
                   </td>
                   <td>
-                  <label>{place.complement}</label>
+                  <label>{place.complemento}</label>
                   </td>
                   <td>
-                  <label>{place.district}</label>
+                  <label>{place.bairro}</label>
                   </td>
                 </tr>
                 
@@ -40,7 +40,7 @@ const Card = ({ place, onRemove }: Props) => {
     
         </div>
         </div>
-        <div className="admin-card-btn">
+        <div className="admin-place-card-btn">
         <Link
           to={`/admin/places/${place.id}`}
           type="button"

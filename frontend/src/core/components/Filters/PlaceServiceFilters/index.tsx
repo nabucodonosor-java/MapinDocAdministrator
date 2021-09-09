@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
 import { ReactComponent as SearchIcon } from 'core/assets/images/lupa.svg';
 
 import './styles.scss';
 
 type Props = {
     name?: string;
-    handleChangeName: (name: string) => void;
+    handleChangeName: (name: string) => void; 
     clearFilters: () => void;
 }
 
 const PlaceServiceFilters = ({ name, handleChangeName, clearFilters }: Props) => {
 
     return (
-        <div className="card-base medico-filters-container">
-            <div className="medico-input-search">
+        <div className="card-base place-filters-container">
+            <div className="place-input-search">
                 <input
                     type="text"
                     value={name}  

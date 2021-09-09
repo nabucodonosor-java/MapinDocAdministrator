@@ -34,49 +34,49 @@ INSERT INTO tb_specialty (name) VALUES ('NEUROLOGIA');
 INSERT INTO tb_specialty (name) VALUES ('REUMATOLOGIA');
 INSERT INTO tb_specialty (name) VALUES ('VASCULAR');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Local Padrão', '14020050', 'RUA AMADEU AMARAL', '684', 'VILA SEIXAS', 'RIBEIRAO PRETO', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Santa Casa Araraquara', '14801150', 'RUA JOSE BONIFACIO', '794', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('IOT Araraquara', '14801250', 'RUA VOLUNTARIOS DA PATRIA', '2199', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Clínica de Ortopedia e Traumatologia', '14801190', 'AV MAUA', '387', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Medicina Esportiva Dr Guido Tsuha', '14800360', 'RUA PADRE DUARTE', '151 SALA 145', 'JD NOVA AMERICA', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Núcleo de Ortopedia e Coluna', '14800360', 'RUA PADRE DUARTE', '151 SALA 88', 'JD NOVA AMERICA', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Instituto de Ortopedia Especializada', '14802408', 'AV DR GASTÃO VIDIGAL', '75', 'JD PRIMAVERA', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Clínica Vascular e Estética Dra. Ana Scabello', '14801210', 'AV SÃO GERALDO', '269', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Dr. Fernando Linares - Consultório Vascular', '14801534', 'AV RODRIGO FERNANDO GRILLO', '207 SALA 208', 'JS DOS MANACÁS', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('DuoClin', '14801170', 'AV PRUDENTE DE MORAES', '1234', 'SÃO GERALDO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Consultório Dr. Willer', '14801280', 'RUA MAJ CARVALHO FILHO', '464', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Instituto de Neurociências', '14801140', 'AV FEIJO', '583', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Neuroclínica Dr. Edelton A. De Marco', '14801140', 'AV FEIJO', '583', 'CENTRO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Gastro Vita', '14806025', 'AV JOSÉ ZILIOLLI', '807', 'VILA SEDENHO', 'ARARAQUARA', 'SP');
 
-INSERT INTO tb_place_service (name, cep, street, complement, district, city, state) VALUES 
+INSERT INTO tb_place_service (name, cep, logradouro, complemento, bairro, localidade, uf) VALUES 
 ('Clínica Nasser Vascular S/S', '14800360', 'AV FEIJO', '809', 'CENTRO', 'ARARAQUARA', 'SP');
 
 

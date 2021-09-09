@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 import { makePrivateRequest } from "core/utils/request";
 import { toast } from "react-toastify";
 import BaseForm from "../../BaseForm";
+import InputMask from "react-input-mask";
 import "./styles.scss";
 
 import axios from "axios";
@@ -11,6 +12,8 @@ import axios from "axios";
 export type FormState = {
   id: number;
   name: string;
+  phone: string;
+  cellPhone: string;
 };
 
 type ParamsType = {
@@ -20,11 +23,11 @@ type ParamsType = {
 const BASE_URL = "https://viacep.com.br/ws";
 
 type Address = {
-  street: string;
-  complement: string;
-  district: string;
-  city: string;
-  state: string;
+  logradouro: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
 };
 
 const Form = () => {
@@ -54,11 +57,11 @@ const Form = () => {
         setValue("name", response.data.name);
         setValue("searchValue", searchValue);
         setValue("cep", response.data.cep);
-        setValue("street", response.data.street);
-        setValue("complement", response.data.complement);
-        setValue("district", response.data.district);
-        setValue("city", response.data.city);
-        setValue("state", response.data.state);
+        setValue("logradouro", response.data.logradouro);
+        setValue("complemento", response.data.complemento);
+        setValue("bairro", response.data.bairro);
+        setValue("localidade", response.data.localidade);
+        setValue("uf", response.data.uf);
       });
     }
   }, [placeId, isEditing, setValue, searchValue]);
@@ -85,19 +88,13 @@ const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)} onBlur={handleSubmitCep}>
       <BaseForm title={formTitle}>
         <>
-          <input
-            ref={register({ required: false })}
-            name="crm"
-            type="text"
-            className="form-control input-base input-crm"
-            placeholder="CRM do médico"
-          />
+          <h6>Nome do Local</h6>
 
           <input
             ref={register({ required: "Campo obrigatório" })}
             name="name"
             type="text"
-            className="form-control input-base"
+            className="form-control input-base mb-2"
             placeholder="Nome do local"
           />
           {errors.name && (
@@ -106,19 +103,46 @@ const Form = () => {
             </div>
           )}
 
-          <h6>Informações sobre Local de Visita</h6>
+          <div className="place-form-double-field mb-2">
 
-          <span className="">Busca CEP: </span>
+          <Controller
+            as={InputMask}
+            name="phone"
+            rules={{ required: false }}
+            control={control}
+            mask="(99) 9999-9999"
+            id="phone"
+            className="form-control input-base mr-1"
+            defaultValue=""
+            placeholder="Telefone"
+          />
+
+          <Controller
+            as={InputMask}
+            name="cellPhone"
+            rules={{ required: false }}
+            control={control}
+            mask="(99) 99999-9999"
+            id="cellPhone"
+            className="form-control input-base"
+            defaultValue=""
+            placeholder="Celular"
+          />
+
+          </div>
+          <div className="place-form-double-field card-base border-radius-10 mb-2 p-1">
+          <span className="cep-title">Digite o CEP: </span>
           <input
             ref={register({ required: false })}
             name="searchValue"
             type="text"
-            className="form-control input-base input-busca-cep mr-2"
+            className="form-control input-base mr-2"
             placeholder="Informe o CEP"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
             id="searchValue"
-          />
+          />        
+          </div>
 
           <input
             ref={register({ required: false })}
@@ -129,54 +153,54 @@ const Form = () => {
             value={searchValue}
             id="cep"
           />
-
+          <div className="place-form-double-field">
           <input
             ref={register({ required: false })}
-            name="street"
+            name="logradouro"
             type="text"
             className="form-control input-base mr-2"
             placeholder="Logradouro"
-            value={addressData?.street}
-            id="street"
+            value={addressData?.logradouro}
+            id="logradouro"
           />
 
           <input
             ref={register({ required: false })}
-            name="complement"
+            name="complemento"
             type="text"
-            className="form-control input-base mr-2"
+            className="form-control input-base"
             placeholder="Bairro"
-            value={addressData?.complement}
-            id="complement"
+            value={addressData?.complemento}
+            id="complemento"
           />
-
+          </div>
           <input
             ref={register({ required: false })}
-            name="district"
+            name="bairro"
             type="text"
             className="form-control input-base mr-2"
             placeholder="Bairro"
-            value={addressData?.district}
+            value={addressData?.bairro}
             id="district"
           />
 
           <input
             ref={register({ required: false })}
-            name="city"
+            name="localidade"
             type="text"
             className="form-control input-base"
             placeholder="Cidade"
-            value={addressData?.city}
+            value={addressData?.localidade}
             id="city"
           />
 
           <input
             ref={register({ required: false })}
-            name="state"
+            name="uf"
             type="text"
             className="form-control input-base"
             placeholder="Uf"
-            value={addressData?.state}
+            value={addressData?.uf}
             id="state"
           />
         </>

@@ -77,11 +77,14 @@ public class PlaceServiceService {
 		
 		entity.setName(dto.getName());
 		entity.setCep(dto.getCep());
-		entity.setStreet(dto.getStreet());
-		entity.setComplement(dto.getComplement());
-		entity.setDistrict(dto.getDistrict());
-		entity.setCity(dto.getCity());
-		entity.setState(dto.getState());
+		entity.setPhone(dto.getPhone());
+		entity.setCellPhone(dto.getCellPhone());
+		entity.setCep(dto.getCep());
+		entity.setLogradouro(dto.getLogradouro());
+		entity.setComplemento(dto.getComplemento());
+		entity.setBairro(dto.getBairro());
+		entity.setLocalidade(dto.getLocalidade());
+		entity.setUf(dto.getUf());
 		
 	}
 

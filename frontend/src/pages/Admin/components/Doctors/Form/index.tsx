@@ -128,7 +128,7 @@ const Form = () => {
       <BaseForm title={formTitle}>
         <div className="doctor-form-container">
 
-            <div className="col-6 doctor-form-content">  
+            <div className="doctor-form-content">  
              
               <div className="doctor-form-double-field">
                 <Controller
@@ -248,7 +248,7 @@ const Form = () => {
               />
             </div>
 
-            <div className="col-6 doctor-form-content">
+            <div className="doctor-form-content">
               <Controller
                 as={Select}
                 name="placeService"
