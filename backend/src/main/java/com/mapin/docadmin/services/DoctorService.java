@@ -107,7 +107,7 @@ public class DoctorService {
 
 	private void copyDtoToEntity(DoctorDto dto, Doctor entity) {
 		
-		if (dto.getImgUrl() == null) {
+		if (entity.getImgUrl() == null) {
 			entity.setImgUrl("https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/padrao-M.png");
 		} else {
 			entity.setImgUrl(dto.getImgUrl());

@@ -11,6 +11,12 @@
 .doctor-form-double-field {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.doctor-form-double-field span {
+    font-size: 18px;
+    margin: 0 5px 5px 0;
 }
 
 .combo-base-select__control {
@@ -28,7 +34,7 @@
 }
 
 .small-input {
-    min-width: 100px;
+    max-width: 150px;
 }
 
 .especializacoes-select__control {

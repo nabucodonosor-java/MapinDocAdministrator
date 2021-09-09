@@ -10,17 +10,17 @@
 
 .doctor-form-double-field {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
+    align-items: center;
 }
 
 .combo-base-select__control {
-    height: 50px;
+    max-height: 50px;
     border-radius: 10px !important;
     border: 1px solid #E1E1E1;
     font-weight: bold;
-    margin-bottom: 7px;
     width: 100%;
-    min-width: 160px;
+   
 }
 
 .large-input {
@@ -29,6 +29,7 @@
 
 .small-input {
     min-width: 100px;
+    margin-bottom: 7px;
 }
 
 .especializacoes-select__control {
@@ -36,9 +37,12 @@
     border-radius: 10px !important;
     border: 1px solid #E1E1E1;
     font-weight: bold;
-    margin-bottom: 7px;
     width: 100%;
     min-width: 270px;
+}
+
+.doctor-img-container {
+    display: none;
 }
 
 .especializacoes-select__indicator-separator {
@@ -78,15 +82,15 @@
 
     .doctor-form-container {
         flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .doctor-form-content {
+        min-width: 450px;
+        margin-right: 10px;
     }
       
     .combo-base-select__control {
-        height: 50px;
-        border-radius: 10px !important;
-        border: 1px solid #E1E1E1;
-        font-weight: bold;
-        margin-bottom: 7px;
-        width: 100%;
         min-width: 183px;
     }
     
@@ -116,5 +120,9 @@
         
     .doctor-form-table {
         text-align: center;
+    }
+
+    .doctor-img-container {
+        display: flex;
     }
 }

@@ -213,7 +213,7 @@ const Form = () => {
 
               <Controller
                 as={Select}
-                name="specializations"
+                name="specializations" 
                 rules={{ required: true }}
                 control={control}
                 isLoading={isLoadingSpecializations}
@@ -231,12 +231,16 @@ const Form = () => {
                   Campo obrigatório!
                 </div>
               )}
-         
-              <ImageUpload
-                onUploadSuccess={onUploadSuccess}
-                doctorImgUrl={doctorImgUrl}
-              />
-             
+              
+              { !isEditing ? <div></div> : (
+                <div className="doctor-img-container">
+                <ImageUpload
+                  onUploadSuccess={onUploadSuccess}
+                  doctorImgUrl={doctorImgUrl}
+                />
+                 </div>
+              )}
+            
               <h6 className="mt-2 text-center">Currículo & Observações</h6>
               <textarea
                 ref={register({ required: false })}

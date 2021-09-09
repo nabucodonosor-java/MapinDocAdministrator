@@ -77,10 +77,10 @@ const Form = () => {
               ref={register({ required: false })}
               name="visitDate"
               type="date"
-              className="form-control input-base small-input"
+              className="form-control input-base small-input mr-2"
               placeholder="Data da visita"
             />
-
+            <span>Falou com Dr.(a)</span>
             <input
               ref={register({ required: false })}
               name="success"

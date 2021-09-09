@@ -14,6 +14,7 @@
     &:hover {
         transform: scale(1);
         background-color: #71a8c4 !important;
+        color: #FFF;
     }
 }
 
@@ -33,6 +34,7 @@
     padding: 20px;
     transform: scale(0.9);
     opacity:0.8;
+    transition: 1s;
 
     &:hover {
         opacity:1;
@@ -54,20 +56,16 @@
 }
 
 .home-title img {
-    width: 40%;
-    border-radius: 50%; 
-
-    &:hover {
-        transform: rotate(-360deg);
-    }
     
+    width: 40%;
+    border-radius: 50%;     
 }
 
 .home-subtitle {
     display: flex;
     padding: 10px;
     opacity:0.8;
-
+    transition: 1s;
   
     transform: scale(0.9);
     &:hover {
@@ -99,6 +97,10 @@
     
 }
 
+@media (min-width: 768px) {
+    
+}
+
 @media (min-width: 1200px) {
 
     .home-subtitle {    
@@ -123,7 +125,7 @@
        font-size: 30px;
     }
 
-   .home-card-list {
-       display: flex;
-   }
+    .home-card-list {
+        display: flex;
+    }
 }
