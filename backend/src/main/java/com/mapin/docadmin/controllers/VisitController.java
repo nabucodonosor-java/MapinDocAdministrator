@@ -34,7 +34,7 @@ public class VisitController {
 	public ResponseEntity<Page<VisitDto>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "1000") Integer size,
-			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "direction", defaultValue = "DESC") String direction,
 			@RequestParam(value = "sort", defaultValue = "visitDate") String sort) {
 				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);

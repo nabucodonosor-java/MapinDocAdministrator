@@ -26,8 +26,8 @@ const NavbarAdmin = () => (
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/admin/lab" className="admin-nav-item">
-                    Laboratório
+                <NavLink to="/admin/visits" className="admin-nav-item">
+                    Visitas
                 </NavLink>
             </li>           
         </ul>

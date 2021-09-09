@@ -10,12 +10,12 @@
    text-transform: uppercase;
    color: #FFF;
    width: 200px;
-   height: 70px;
+   height: 40px;
    padding: 5px;
 }
 
 .btn-text h6 {
-  font-size: 18px;
+  font-size: 18px; 
 }
 
 .btn-arrow {
@@ -24,17 +24,21 @@
    border-radius: 0px 10px 10px 0;
    display: flex;
    justify-content: center;
-   max-height: 70px;
+   max-height: 40px;
 }
 
 .btn-arrow img {
-  width: 50%;
+  width:40%;
 }
 
 @media (min-width: 576px) {
    .btn-text {
   
-      width: 300px;
+      width: 400px;
+   }
+
+   .btn-arrow {
+      width: 20%;
    }
 }
 

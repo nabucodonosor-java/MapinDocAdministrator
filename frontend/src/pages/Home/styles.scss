@@ -1,48 +1,129 @@
 .home-container {
-    padding: 20px 10px;
+    padding: 0px 0 20px 0;
     text-align: center;
-    background-color: #c6d1d5 !important;
+    background-color: #FFF !important;
 }
 
 .home-card-container {
     padding: 10px;
     border-radius: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transform: scale(0.9);
     transition: 1s;
+    background-color: #a9cddf !important;
     &:hover {
         transform: scale(1);
+        background-color: #71a8c4 !important;
     }
 }
 
-.home-card-container h1 {
+.home-card-container h3 {
     margin-bottom: 10px;
 }
 
 .home-card-container p {
-    color: #9e9e9e;
-    font-size: 10px;
+    color: #FFF;
+    font-size: 14px;
+}
+
+.home-title {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    transform: scale(0.9);
+    opacity:0.8;
+
+    &:hover {
+        opacity:1;
+        transition: 2s;
+        transform: scale(1);
+        background:#71a8c4;
+      }
+
+}
+
+.home-title span {
+   font-size: 25px;
+}
+
+.home-title p {
+    padding: 5px;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.home-title img {
+    width: 40%;
+    border-radius: 50%; 
+
+    &:hover {
+        transform: rotate(-360deg);
+    }
+    
+}
+
+.home-subtitle {
+    display: flex;
+    padding: 10px;
+    opacity:0.8;
+
+  
+    transform: scale(0.9);
+    &:hover {
+        opacity:1;
+        transition: 2s;
+        transform: scale(1);
+      }
+
+}
+
+.home-subtitle h6 {
+    padding: 5px;
+    text-align: center;
+}
+
+.home-subtitle img {
+    width: 50%;
+    border-radius: 50%; 
+
+    &:hover {
+        transform: rotate(-360deg);
+    }
+    
 }
 
 .home-card-container img {
-    width: 60%;
+    width: 40%;
     border-radius: 50%;
     
 }
 
 @media (min-width: 1200px) {
 
-    .home-container {
-        display: flex;
-        padding: 50px 30px 70px 60px;
-
+    .home-subtitle {    
+        max-height: 200px;
+        justify-content: space-evenly;
+        margin: 40px 0;
     }
 
-    .home-card-container {
-        margin-right: 50px;
+    .home-title span {
+        font-size: 60px;
+     }
+
+    .home-title p {    
+        font-size: 45px;
     }
 
-    .home-card-container img {
-        width: 40%;
+    .home-subtitle img {
+        width: 20%;
     }
+
+    .home-subtitle h6 {
+       font-size: 30px;
+    }
+
+   .home-card-list {
+       display: flex;
+   }
 }

@@ -14,6 +14,7 @@ export type FormState = {
   name: string;
   phone: string;
   cellPhone: string;
+  complemento: string;
 };
 
 type ParamsType = {
@@ -24,7 +25,6 @@ const BASE_URL = "https://viacep.com.br/ws";
 
 type Address = {
   logradouro: string;
-  complemento: string;
   bairro: string;
   localidade: string;
   uf: string;
@@ -165,14 +165,17 @@ const Form = () => {
           />
 
           <input
-            ref={register({ required: false })}
+            ref={register({ required: "Campo obrigatório" })}
             name="complemento"
             type="text"
-            className="form-control input-base"
-            placeholder="Bairro"
-            value={addressData?.complemento}
-            id="complemento"
+            className="form-control input-base mb-2"
+            placeholder="Complemento"
           />
+          {errors.complemento && (
+            <div className="invalid-feedback d-block">
+              {errors.complemento.message}
+            </div>
+          )}
           </div>
           <input
             ref={register({ required: false })}

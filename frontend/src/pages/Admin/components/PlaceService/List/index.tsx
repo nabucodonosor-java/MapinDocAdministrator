@@ -6,8 +6,9 @@ import Pagination from "core/components/Pagination";
 import { PlaceServiceResponse } from "core/types/placeService";
 import PlaceServiceFilters from "core/components/Filters/PlaceServiceFilters";
 import HomeLoader from "pages/Home/components/HomeLoader";
-import "./styles.scss";
 import Card from "../Card";
+import "./styles.scss";
+
 
 const List = () => {
   const [placeResponse, setPlaceResponse] = useState<PlaceServiceResponse>();

@@ -2,7 +2,7 @@ import './styles.scss';
 
 type Props = {
   text: string;
-  img: string;
+  img: string; 
 };
 
 const ButtonIcon = ({ text, img }: Props) => (
