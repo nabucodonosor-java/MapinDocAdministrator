@@ -6,8 +6,6 @@ import java.time.format.DateTimeFormatter;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.mapin.docadmin.dto.VisitDto;
-import com.mapin.docadmin.services.S3Service;
 import com.mapin.docadmin.services.VisitService;
 
 @RestController
@@ -35,8 +32,6 @@ public class VisitController {
 	@Autowired
 	private VisitService service;	
 	
-	private static Logger LOG = LoggerFactory.getLogger(S3Service.class);
-
 	@GetMapping
 	public ResponseEntity<Page<VisitDto>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -52,7 +47,7 @@ public class VisitController {
 	}
 	
 	@GetMapping("/byPeriod")
-	public ResponseEntity<Page<VisitDto>> findAllByPeriod(
+	public ResponseEntity<Page<VisitDto>> findAllByPeriod(			
 			@RequestParam(value = "first", defaultValue = "") String first,
 			@RequestParam(value = "second", defaultValue = "") String second,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -60,13 +55,9 @@ public class VisitController {
 			@RequestParam(value = "direction", defaultValue = "DESC") String direction,
 			@RequestParam(value = "sort", defaultValue = "visitDate") String sort) {
 		
-		LocalDate ld1 = LocalDate.parse(first, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		LocalDate ld1 = LocalDate.parse(first, DateTimeFormatter.ofPattern("yyyy-MM-dd"));	
 		LocalDate ld2 = LocalDate.parse(second, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		
-		LOG.info(ld1.toString());
-		
-        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
 		Page<VisitDto> list = service.findAllByPeriod(ld1, ld2, pageRequest);
 		

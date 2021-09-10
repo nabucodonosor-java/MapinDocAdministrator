@@ -34,8 +34,11 @@ public class VisitService {
 	
 	@Transactional(readOnly = true)
 	public Page<VisitDto> findAllByPeriod(LocalDate first, LocalDate second, Pageable pageable) {
-		Page<Visit> page = repository.find(first, second, pageable);
+		
+		Page<Visit> page = repository.findByPeriod(first, second, pageable);
+		
 		return VisitDto.converter(page);
+		
 	}
 	
 	@Transactional(readOnly = true)

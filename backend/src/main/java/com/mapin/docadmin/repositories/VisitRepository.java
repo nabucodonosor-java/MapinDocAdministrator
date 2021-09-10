@@ -13,7 +13,7 @@ import com.mapin.docadmin.entities.Visit;
 @Repository
 public interface VisitRepository extends JpaRepository<Visit, Long> {
 	
-	@Query("SELECT obj FROM Visit obj WHERE obj.visitDate > :first AND obj.visitDate < :second")
-	Page<Visit> find(LocalDate first, LocalDate second, Pageable pageable);
+	@Query("SELECT obj FROM Visit obj WHERE obj.visitDate >= :first AND obj.visitDate <= :second")
+	Page<Visit> findByPeriod(LocalDate first, LocalDate second, Pageable pageable);
 	
 }
