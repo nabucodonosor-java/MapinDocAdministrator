@@ -11,6 +11,7 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 
+INSERT INTO tb_specialization (name) VALUES ('Pediatria');
 INSERT INTO tb_specialization (name) VALUES ('Amputação');
 INSERT INTO tb_specialization (name) VALUES ('Coluna');
 INSERT INTO tb_specialization (name) VALUES ('Distúrbios do Movimento');

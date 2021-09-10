@@ -6,7 +6,7 @@ import HomeLoader from "pages/Home/components/HomeLoader";
 import React, { useState } from "react";
 import './styles.scss';
 
-const App = () => {
+const VisitDTbyPeriod = () => {
   const [firstDate, setFirstDate] = useState("");
   const [secondDate, setSecondDate] = useState("");
   const [visitData, setVisitData] = useState<VisitResponse>();
@@ -100,4 +100,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default VisitDTbyPeriod;
