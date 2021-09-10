@@ -92,6 +92,16 @@ false, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00'
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 4);
 
-INSERT INTO tb_visit (doctor_id, success, description) VALUES 
-(1, true, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
+INSERT INTO tb_visit (visit_date, doctor_id, success, description) VALUES 
+(TIMESTAMP WITH TIME ZONE '2021-09-09', 1, true, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
+
+INSERT INTO tb_visit (visit_date, doctor_id, success, description) VALUES 
+(TIMESTAMP WITH TIME ZONE '2021-09-08', 1, true, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
+
+INSERT INTO tb_visit (visit_date, doctor_id, success, description) VALUES 
+(TIMESTAMP WITH TIME ZONE '2021-09-07', 1, false, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
+
+INSERT INTO tb_visit (visit_date, doctor_id, success, description) VALUES 
+(TIMESTAMP WITH TIME ZONE '2021-09-07', 1, true, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
+
 

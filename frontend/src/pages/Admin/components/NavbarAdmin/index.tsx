@@ -22,7 +22,7 @@ const NavbarAdmin = () => (
             </li>
             <li>
                 <NavLink to="/admin/places" className="admin-nav-item">
-                    Locais de Atendimento
+                    Locais
                 </NavLink>
             </li>
             <li>

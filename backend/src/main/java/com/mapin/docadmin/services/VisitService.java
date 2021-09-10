@@ -1,5 +1,6 @@
 package com.mapin.docadmin.services;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
@@ -28,6 +29,12 @@ public class VisitService {
 	@Transactional(readOnly = true)
 	public Page<VisitDto> findAllPaged(Pageable pageable) {
 		Page<Visit> page = repository.findAll(pageable);
+		return VisitDto.converter(page);
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<VisitDto> findAllByPeriod(LocalDate first, LocalDate second, Pageable pageable) {
+		Page<Visit> page = repository.find(first, second, pageable);
 		return VisitDto.converter(page);
 	}
 	

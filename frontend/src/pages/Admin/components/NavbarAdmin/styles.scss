@@ -48,7 +48,8 @@
 @media(min-width: 1200px) {
 
     .admin-nav-container {
-       margin: 0 30px;
+       background: #FFF;
+       margin-right: 30px;
     }
     
     .admin-nav-container ul {
@@ -59,7 +60,7 @@
     .admin-nav-item {
         display: flex;
         flex-direction: column;
-        border-radius: 0px;
+        border-radius: 40px;
         background: #F2F2F2;
         color: #FFF;
         padding: 5px;
@@ -67,6 +68,7 @@
         line-height: 25px;
         letter-spacing: -0.015em;
         color: rgb(10, 10, 10);
+        min-width: 200px;
     
         &.active {
             background: rgba(64, 123, 255, 0.3);

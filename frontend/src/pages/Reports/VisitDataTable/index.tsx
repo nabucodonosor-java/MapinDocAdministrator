@@ -43,8 +43,8 @@ const List = () => {
                     <table className="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>Data</th>
-                                <th>Médico Visitado?</th>
+                                <th className="text-center">Data</th>
+                                <th className="text-center">Médico Visitado?</th>
                                 <th>Dr.(a)</th>
                                 <th>Descrição</th>
                             </tr>
@@ -52,8 +52,10 @@ const List = () => {
                         <tbody>
                             {visitResponse?.content.map(item => (
                                 <tr key={item.id}>
-                                    <td>{formatLocalDate(item.visitDate, "dd/MM/yyyy")}</td>
-                                    <td>{item.success.valueOf}</td>
+                                    <td className="text-center">{formatLocalDate(item.visitDate, "dd/MM/yyyy")}</td>
+                                    <td className="text-center">
+                                    {item.success.toString().toUpperCase()}
+                                    </td>
                                     <td>{item.doctor.name}</td>
                                     <td>{item.description}</td>
                                 </tr>
