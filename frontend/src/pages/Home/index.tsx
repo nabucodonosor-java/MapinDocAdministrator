@@ -8,6 +8,7 @@ import MktImg from "core/assets/images/main-image.jpeg";
 import LabImg from "core/assets/images/main-image2.jpeg";
 import DocVisits from "core/assets/images/doc-visits.jpeg";
 import "./styles.scss";
+import Button from "core/components/Button";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -48,12 +49,18 @@ const Home = () => {
               <div className="card-base home-card-container">
                 <h4>Visitas Médicas</h4>
                 <img src={DocVisits} alt="mkt" className="mb-3" />
+             
                 <Link to="/visits">
-                  <ButtonIcon
-                    text="Visitas"
-                    img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-lab.png"
+                  <Button
+                    text="Todas"
                   />
                 </Link>
+                <Link to="/visits/byPeriod">
+                  <Button
+                    text="Por Período"
+                  />
+                </Link>
+              
               </div>
               <div className="card-base home-card-container">
                 <h4>Área Técnica</h4>

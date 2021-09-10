@@ -23,6 +23,11 @@ const Routes = () => (
             <Route path="/visits"  exact>
                 <VisitDataTable />
             </Route>
+
+            <Route path="/visits/byPeriod"  exact>
+                <VisitDataTable />
+            </Route>
+
             <Route path="/doctors/:doctorId">
                 <MedicoDetails />
             </Route>
