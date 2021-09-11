@@ -9,6 +9,7 @@ import Admin from './pages/Admin';
 import history from './core/utils/history';
 import VisitDT from 'pages/Reports/VisitDT';
 import VisitDTbyPeriod from 'pages/Reports/VisitDTbyPeriod';
+import DoctorDTbyDaysOfWeek from 'pages/Reports/DoctorDTbyDaysOfWeek';
 
 const Routes = () => (
     <Router history={history}>
@@ -21,7 +22,7 @@ const Routes = () => (
                 <Catalog />
             </Route>
 
-            <Route path="/visits"  exact>
+            <Route path="/visits" exact>
                 <VisitDT />
             </Route>
 
@@ -29,9 +30,14 @@ const Routes = () => (
                 <VisitDTbyPeriod />
             </Route>
 
-            <Route path="/doctors/:doctorId">
+            <Route path="/doctors/:doctorId" exact>
                 <MedicoDetails />
             </Route>
+
+            <Route path="/report/doctors/byDays" exact>
+                <DoctorDTbyDaysOfWeek />
+            </Route>
+
             <Redirect from="/auth" to="/auth/login" exact/>
             <Route path="/auth">
                 <Auth />

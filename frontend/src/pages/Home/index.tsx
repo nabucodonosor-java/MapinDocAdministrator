@@ -39,9 +39,17 @@ const Home = () => {
               <div className="card-base home-card-container">
                 <h4>Busca Médicos</h4>
                 <img src={MktImg} alt="mkt" className="mb-3" />
+
                 <Link to="/doctors">
                   <ButtonIcon
                     text="Busca Médicos"
+                    img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
+                  />
+                </Link>
+
+                <Link to="/report/doctors/byDays">
+                  <ButtonIcon
+                    text="Por atendimento"
                     img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
                   />
                 </Link>

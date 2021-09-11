@@ -88,7 +88,7 @@ specialty_id, place_service_id) VALUES
 '', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
 'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
 false, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
-6, 2);
+3, 2);
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 4);
@@ -100,7 +100,7 @@ specialty_id, place_service_id) VALUES
 '', 'ladeira@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
 'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
 true, false, true, false, true, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
-6, 2);
+2, 3);
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (2, 2);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (2, 6);
@@ -123,7 +123,7 @@ specialty_id, place_service_id) VALUES
 '', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
 'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
 true, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
-6, 2);
+5, 2);
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (4, 4);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (4, 8);
@@ -135,7 +135,7 @@ specialty_id, place_service_id) VALUES
 '', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
 'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
 false, false, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
-6, 2);
+3, 4);
 
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (5, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (5, 8);
