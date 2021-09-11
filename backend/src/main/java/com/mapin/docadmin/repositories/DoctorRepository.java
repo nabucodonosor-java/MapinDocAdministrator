@@ -22,4 +22,18 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 	@Query("SELECT obj FROM Doctor obj JOIN FETCH obj.specializations WHERE obj IN :doctors")
 	List<Doctor> findDoctorsWithSpecializations(List<Doctor> doctors);
 	
+	@Query("SELECT DISTINCT obj FROM Doctor obj WHERE obj.seg = true")
+	Page<Doctor> findAllDoctorMonday(Pageable pageable);
+	
+	@Query("SELECT DISTINCT obj FROM Doctor obj WHERE obj.ter = true")
+	Page<Doctor> findAllDoctorTuesday(Pageable pageable);
+	
+	@Query("SELECT DISTINCT obj FROM Doctor obj WHERE obj.qua = true")
+	Page<Doctor> findAllDoctorWednesday(Pageable pageable);
+	
+	@Query("SELECT DISTINCT obj FROM Doctor obj WHERE obj.qui = true")
+	Page<Doctor> findAllDoctorThursday(Pageable pageable);
+	
+	@Query("SELECT DISTINCT obj FROM Doctor obj WHERE obj.sex = true")
+	Page<Doctor> findAllDoctorFriday(Pageable pageable);
 }

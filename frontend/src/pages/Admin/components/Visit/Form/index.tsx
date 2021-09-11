@@ -66,13 +66,13 @@ const Form = () => {
       .catch(() => {
         toast.error("Erro ao salvar visita!");
       });
-  };
+  }; 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <BaseForm title={formTitle}>
-        <div className="doctor-form-container">
-          <div className="doctor-form-double-field">
+        <div className="visit-form-container">
+          <div className="visit-form-double-field">
             <input
               ref={register({ required: false })}
               name="visitDate"

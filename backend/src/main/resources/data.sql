@@ -93,6 +93,53 @@ false, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00'
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 1);
 INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (1, 4);
 
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, 
+seg, ter, qua, qui, sex, office_hours, 
+specialty_id, place_service_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/LUIZ+CLAUDIO+FONTES+MEGA.png', '637598', 'JOSE LUIZ LADEIRA', 
+'', 'ladeira@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
+'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
+true, false, true, false, true, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
+6, 2);
+
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (2, 2);
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (2, 6);
+
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, 
+seg, ter, qua, qui, sex, office_hours, 
+specialty_id, place_service_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/LUIZ+CLAUDIO+FONTES+MEGA.png', '12598', 'VINICIUS MARQUES CARNEIRO', 
+'', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
+'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
+false, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
+6, 2);
+
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (3, 3);
+
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, 
+seg, ter, qua, qui, sex, office_hours, 
+specialty_id, place_service_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/LUIZ+CLAUDIO+FONTES+MEGA.png', '78128', 'HARALDO PONFICK FIGUEIRA', 
+'', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
+'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
+true, true, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
+6, 2);
+
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (4, 4);
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (4, 8);
+
+INSERT INTO tb_doctor (img_url, crm, name, phone, email, birth_date, resume, 
+seg, ter, qua, qui, sex, office_hours, 
+specialty_id, place_service_id) VALUES 
+('https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/LUIZ+CLAUDIO+FONTES+MEGA.png', '65128', 'RENAN RE SILVA', 
+'', 'drmegavascular@gmail.com', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 
+'Médico chefe da residência médica vascular da Santa Casa de Ribeirão Preto',
+false, false, false, true, false, 'TER Das 08:00 às 11:00 / QUI Após às 16:00',
+6, 2);
+
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (5, 1);
+INSERT INTO tb_doctor_specialization (doctor_id, specialization_id) VALUES (5, 8);
+
 INSERT INTO tb_visit (visit_date, doctor_id, success, description) VALUES 
 (TIMESTAMP WITH TIME ZONE '2021-09-09', 1, true, 'Doutor sempre receptivo. Gostou da proposta do workshop e vai verificar disponibilidade');
 

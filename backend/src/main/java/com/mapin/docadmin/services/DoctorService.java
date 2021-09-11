@@ -57,6 +57,36 @@ public class DoctorService {
 	}
 	
 	@Transactional(readOnly = true)
+	public Page<DoctorDto> findAllDoctorMonday(Pageable pageable) {
+		Page<Doctor> page = repository.findAllDoctorMonday(pageable);
+		return page.map(x -> new DoctorDto(x, x.getSpecializations()));
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<DoctorDto> findAllDoctorTuesday(Pageable pageable) {
+		Page<Doctor> page = repository.findAllDoctorTuesday(pageable);
+		return page.map(x -> new DoctorDto(x, x.getSpecializations()));
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<DoctorDto> findAllDoctorWednesday(Pageable pageable) {
+		Page<Doctor> page = repository.findAllDoctorWednesday(pageable);
+		return page.map(x -> new DoctorDto(x, x.getSpecializations()));
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<DoctorDto> findAllDoctorThursday(Pageable pageable) {
+		Page<Doctor> page = repository.findAllDoctorThursday(pageable);
+		return page.map(x -> new DoctorDto(x, x.getSpecializations()));
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<DoctorDto> findAllDoctorFriday(Pageable pageable) {
+		Page<Doctor> page = repository.findAllDoctorFriday(pageable);
+		return page.map(x -> new DoctorDto(x, x.getSpecializations()));
+	}
+	
+	@Transactional(readOnly = true)
 	public DoctorDto findById(Long id) {
 		Optional<Doctor> obj = repository.findById(id);
 		Doctor entity = obj.orElseThrow(() -> new ResourceNotFoundException("Médico não encontrado!"));

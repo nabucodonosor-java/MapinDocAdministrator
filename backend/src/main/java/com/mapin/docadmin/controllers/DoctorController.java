@@ -48,6 +48,71 @@ public class DoctorController {
 
 	}
 	
+	@GetMapping("/byMonday")
+	public ResponseEntity<Page<DoctorDto>> findAllDoctorMonday(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<DoctorDto> list = service.findAllDoctorMonday(pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/byTuesday")
+	public ResponseEntity<Page<DoctorDto>> findAllDoctorTuesday(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<DoctorDto> list = service.findAllDoctorTuesday(pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/byWednesday")
+	public ResponseEntity<Page<DoctorDto>> findAllDoctorWednesday(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<DoctorDto> list = service.findAllDoctorWednesday(pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/byThursday")
+	public ResponseEntity<Page<DoctorDto>> findAllDoctorThursday(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<DoctorDto> list = service.findAllDoctorThursday(pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/byFriday")
+	public ResponseEntity<Page<DoctorDto>> findAllDoctorFriday(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<DoctorDto> list = service.findAllDoctorFriday(pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<DoctorDto> findById(@PathVariable Long id) {
 		DoctorDto entity = service.findById(id);

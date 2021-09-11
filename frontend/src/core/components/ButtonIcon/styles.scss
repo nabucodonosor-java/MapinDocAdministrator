@@ -1,6 +1,16 @@
 .btn-container {
    display: flex;
    justify-content: center;
+
+   transform: scale(0.9);
+    transition: 1s;
+    
+    &:hover {
+        transition: 1s;
+        transform: scale(1);
+        font-weight: bold;
+    }
+
 }
 
 .btn-text {

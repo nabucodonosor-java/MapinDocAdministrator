@@ -10,11 +10,12 @@
     margin-bottom: 5px;
     transform: scale(0.9);
     transition: 1s;
-    background-color: #a9cddf !important;
+    color: #FFF;
+    background-color: #0a0a0a !important;
     &:hover {
         transform: scale(1);
-        background-color: #71a8c4 !important;
-        color: #FFF;
+        background-color: #0a0a0a !important;
+        
     }
 }
 
@@ -40,7 +41,7 @@
         opacity:1;
         transition: 2s;
         transform: scale(1);
-        background:#71a8c4;
+        
       }
 
 }
@@ -62,18 +63,25 @@
 }
 
 .home-subtitle {
-    display: flex;
-    padding: 10px;
-    opacity:0.8;
-    transition: 1s;
+    
+    padding: 20px;
+    transform: scale(1.5);
   
-    transform: scale(0.9);
-    &:hover {
-        opacity:1;
-        transition: 2s;
-        transform: scale(1);
-      }
+    background: #2d769a; 
+}
 
+.home-subtitle h6 {
+
+    transition: 1s;
+    transform: scale(0.5);
+    color: black;
+    opacity: (0.9);
+
+    &:hover {
+        opacity: (1);
+        transition: 2s;
+        transform: scale(0.7);
+    }
 }
 
 .home-subtitle h6 {
