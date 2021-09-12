@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { DoctorResponse } from 'core/types/doctor';
+import { Specialization } from 'core/types/specialization';
+import { makePrivateRequest } from 'core/utils/request';
 import MedicoCard from './components/MedicoCard';
 import MedicoCardLoader from './components/Loaders/MedicoCardLoader';
+import Pagination from 'core/components/Pagination';
+import MedicoFilters from 'core/components/Filters/MedicosFilters';
 import './styles.scss';
-import { DoctorResponse } from '../../core/types/doctor';
-import { Specialization } from '../../core/types/specialization';
-import { makePrivateRequest } from '../../core/utils/request';
-import MedicoFilters from '../../core/components/Filters/MedicosFilters';
-import Pagination from '../../core/components/Pagination';
 
 const Catalog = () => { 
 

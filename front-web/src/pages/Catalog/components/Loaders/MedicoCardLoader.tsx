@@ -1,6 +1,6 @@
 import React from "react"
-import ContentLoader from "react-content-loader";
-import { generateList } from "core/utils/list";
+import ContentLoader from "react-content-loader"
+import { generateList } from "core/utils/list"
 
 const MedicoCardLoader = () => {
     const loaderItems = generateList(3);

@@ -3,14 +3,14 @@ import { Router, Switch, Route, Redirect  } from 'react-router-dom';
 import Navbar from './core/components/Navbar';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
+import MedicoDetails from 'pages/Catalog/components/MedicoDetails';
+import Auth from 'pages/Auth';
 import Admin from './pages/Admin';
 import history from './core/utils/history';
-import VisitDT from './pages/Reports/VisitDT';
-import VisitDTbyPeriod from './pages/Reports/VisitDTbyPeriod';
-import MedicoDetails from './pages/Catalog/components/MedicoDetails';
-import DoctorDTbyDaysOfWeek from './pages/Reports/DoctorDTbyDaysOfWeek';
-import PageInConstruction from './core/components/PageInConstruction';
-import Auth from './pages/Auth';
+import VisitDT from 'pages/Reports/VisitDT';
+import VisitDTbyPeriod from 'pages/Reports/VisitDTbyPeriod';
+import DoctorDTbyDaysOfWeek from 'pages/Reports/DoctorDTbyDaysOfWeek';
+import PageInConstruction from 'core/components/PageInConstruction';
 
 const Routes = () => (
     <Router history={history}>
