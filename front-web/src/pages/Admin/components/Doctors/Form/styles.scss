@@ -1,0 +1,128 @@
+.doctor-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-form-double-field {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.combo-base-select__control {
+    max-height: 50px;
+    border-radius: 10px !important;
+    border: 1px solid #E1E1E1;
+    font-weight: bold;
+    width: 100%;
+   
+}
+
+.large-input {
+    min-width: 160px;
+}
+
+.small-input {
+    min-width: 100px;
+    margin-bottom: 7px;
+}
+
+.especializacoes-select__control {
+    height: 100px;
+    border-radius: 10px !important;
+    border: 1px solid #E1E1E1;
+    font-weight: bold;
+    width: 100%;
+    min-width: 270px;
+}
+
+.doctor-img-container {
+    display: none;
+}
+
+.especializacoes-select__indicator-separator {
+    display: none;
+}
+
+.especializacoes-select__placeholder {
+    color: #9E9E9E; 
+}
+
+.doctor-form-col-xl {
+    display: none;
+}
+
+@media (min-width: 576px) {
+
+    .combo-base-select__control {
+
+        min-width: 307px;
+    }
+
+    .small-input {
+        max-width: 150px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .combo-base-select__control {
+
+        min-width: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .doctor-form-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .doctor-form-content {
+        min-width: 450px;
+        margin-right: 10px;
+    }
+      
+    .combo-base-select__control {
+        min-width: 183px;
+    }
+    
+    .input-select {
+        width: 100%;
+    }
+    
+    .small-input {
+        max-width: 150px;
+    }
+    
+    .especializacoes-select__control {
+        height: 100px;
+        border-radius: 10px !important;
+        border: 1px solid #E1E1E1;
+        font-weight: bold;
+        margin-bottom: 7px;
+    }
+    
+    .especializacoes-select__indicator-separator {
+        display: none;
+    }
+    
+    .especializacoes-select__placeholder {
+        color: #9E9E9E; 
+    }
+        
+    .doctor-form-table {
+        text-align: center;
+    }
+
+    .doctor-img-container {
+        display: flex;
+    }
+}
