@@ -61,7 +61,7 @@ const DoctorDTbyDaysOfWeek = () => {
         <HomeLoader />
       ) : (
         <div className="table-responsive">
-          <table className="table table-striped table-sm">
+          <table className="table table-hover table-sm">
             <thead>
               <tr>
               <th className="text-center">Cidade</th>

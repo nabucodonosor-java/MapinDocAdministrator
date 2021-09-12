@@ -31,15 +31,15 @@ const VisitDT = () => {
     
     return (
         <div className="report-div">
-            <h3 className="report-title">Pesquisas Avançadas - Médicos (as)</h3>
-            <div className="d-flex justify-content-between admin-div-btn">
-                <h1>FILTROS</h1>
+            
+            <div className="text-center mt-2 mb-2">
+            <h3>TODAS AS VISITAS</h3>
             </div>
             
             <div className="admin-list-container">
                 {isLoading ? <HomeLoader /> : (
                     <div className="table-responsive">
-                    <table className="table table-striped table-sm">
+                    <table className="table table-hover table-sm">
                         <thead>
                             <tr>
                                 <th>Data</th>
@@ -52,7 +52,7 @@ const VisitDT = () => {
                             {visitResponse?.content.map(item => (
                                 <tr key={item.id}>
                                     <td>{formatLocalDate(item.visitDate, "dd/MM/yyyy")}</td>
-                                    <td>{item.success.valueOf}</td>
+                                    <td>{item.success.toString().toUpperCase()}</td>
                                     <td>{item.doctor.name}</td>
                                     <td>{item.description}</td>
                                 </tr>

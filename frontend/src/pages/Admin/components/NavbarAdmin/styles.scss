@@ -15,32 +15,31 @@
     &:hover {
         transition: 1s;
         transform: scale(1.1);
-        font-weight: bold;
     }
 
 }
 
 .admin-nav-item {
     border-radius: 40px;
-    background: #2d769a;
-    color: #FFF;
+    
+    background: rgba(64, 123, 255, 0.3);
+   
     padding: 5px;
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.015em;
-    color: #FFF;
-    
+    transition: 1s;
 
     &.active {
-        background: rgba(64, 123, 255, 0.3);
-        color: #2d769a;
-        font-weight: bold;
+        background: #2d769a;
+        color: #FFF;
     }
 
     &:hover {
-        color: #2d769a;
-        transition: 2s;
+        
+        transition: 1s;
         transform: scale(0.9);
+        font-weight: bold;
     }
 
 }
@@ -82,15 +81,7 @@
         color: rgb(10, 10, 10);
         min-width: 200px;
     
-        &.active {
-            background: rgba(64, 123, 255, 0.3);
-            color: #2d769a;
-            font-weight: bold;
-        }
-    
-        &:hover {
-            color: #2d769a;
-        }
+      
     
     }
 }

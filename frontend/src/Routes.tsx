@@ -10,6 +10,7 @@ import history from './core/utils/history';
 import VisitDT from 'pages/Reports/VisitDT';
 import VisitDTbyPeriod from 'pages/Reports/VisitDTbyPeriod';
 import DoctorDTbyDaysOfWeek from 'pages/Reports/DoctorDTbyDaysOfWeek';
+import PageInConstruction from 'core/components/PageInConstruction';
 
 const Routes = () => (
     <Router history={history}>
@@ -38,10 +39,15 @@ const Routes = () => (
                 <DoctorDTbyDaysOfWeek />
             </Route>
 
+            <Route path="/lab" exact>
+                <PageInConstruction />
+            </Route>
+
             <Redirect from="/auth" to="/auth/login" exact/>
             <Route path="/auth">
                 <Auth />
             </Route>
+
             <Redirect from="/admin" to="/admin/doctors" exact/>
             <Route path="/admin">
                 <Admin />
