@@ -4,6 +4,8 @@ import Pagination from 'core/components/Pagination';
 import { VisitResponse } from 'core/types/visit';
 import HomeLoader from 'pages/Home/components/HomeLoader';
 import { formatLocalDate } from 'core/utils/format';
+import { Link } from 'react-router-dom';
+import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
 
 const VisitDT = () => {
     const [visitResponse, setVisitResponse] = useState<VisitResponse>();
@@ -33,7 +35,15 @@ const VisitDT = () => {
         <div className="report-div">
             
             <div className="text-center mt-2 mb-2">
-            <h3>TODAS AS VISITAS</h3>
+            <div className="visitDT-header">
+              <Link to="../" className="visitDT-goback mr-5">
+                <ArrowIcon className="visitDT-icon-goback"/>
+                <h3>VOLTAR</h3>
+                
+                </Link> 
+                <h3 className="ml-5">TODAS AS VISITAS</h3>
+            </div>
+            
             </div>
             
             <div className="admin-list-container">

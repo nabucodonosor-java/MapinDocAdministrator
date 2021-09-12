@@ -3,6 +3,8 @@ import { DoctorResponse } from "core/types/doctor";
 import { makePrivateRequest } from "core/utils/request";
 import HomeLoader from "pages/Home/components/HomeLoader";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
 import './styles.scss';
 
 const DoctorDTbyDaysOfWeek = () => {
@@ -36,8 +38,14 @@ const DoctorDTbyDaysOfWeek = () => {
   };
 
   return (
-    <div className="p-3">
-      <h6 className="text-center mb-1">Dr.(a) por dia de atendimento</h6>
+    <div>
+       <div className="visitDT-header p-4">
+              <Link to="/" className="visitDT-goback">
+                <ArrowIcon className="visitDT-icon-goback"/>
+                <h3>VOLTAR</h3>
+                </Link> 
+      </div>
+     
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="doc-filters-days-container">
         <select

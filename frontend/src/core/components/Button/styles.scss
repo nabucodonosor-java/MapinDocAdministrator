@@ -40,6 +40,17 @@
   width:40%;
 }
 
+@media (min-width: 425px) {
+   .btn-btn-text {
+  
+      width: 350px;
+   }
+
+   .btn-btn-arrow {
+      width: 20%;
+   }
+}
+
 @media (min-width: 576px) {
    .btn-btn-text {
   

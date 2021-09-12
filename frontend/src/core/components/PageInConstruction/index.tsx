@@ -1,6 +1,5 @@
 import Img from 'core/assets/images/pagina-em-construcao.png';
 import { Link } from 'react-router-dom';
-import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
 import './styles.scss';
 
 const PageInConstruction = () => {

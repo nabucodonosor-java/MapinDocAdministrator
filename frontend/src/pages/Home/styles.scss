@@ -56,7 +56,7 @@
     margin-right: 20px;
 }
 
-.home-title img {
+.home-title img { 
     
     width: 40%;
     border-radius: 50%;     
@@ -69,7 +69,8 @@
 }
 
 .home-subtitle h6 {
-
+    padding: 5px;
+    text-align: center;
     transition: 1s;
     transform: scale(0.5);
     color: black;
@@ -80,11 +81,6 @@
         transition: 2s;
         transform: scale(0.7);
     }
-}
-
-.home-subtitle h6 {
-    padding: 5px;
-    text-align: center;
 }
 
 .home-subtitle img {
@@ -103,8 +99,36 @@
     
 }
 
-@media (min-width: 768px) {
+@media (min-width: 425px) {
     
+    .home-subtitle h6 {
+        padding: 5px;
+        text-align: center;
+        transition: 1s;
+        transform: scale(0.5);
+        color: black;
+        opacity: (0.9);
+    
+        &:hover {
+            opacity: (1);
+            transition: 2s;
+            transform: scale(1);
+        }
+    }
+
+    .home-title {
+        transform: scale(0.9);
+        opacity:0.8;
+        transition: 1s;
+    
+        &:hover {
+            opacity:1;
+            transition: 2s;
+            transform: scale(1.1);
+            
+          }
+    
+    }
 }
 
 @media (min-width: 1200px) {

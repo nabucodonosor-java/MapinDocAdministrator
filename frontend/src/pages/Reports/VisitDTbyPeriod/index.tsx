@@ -4,6 +4,8 @@ import { formatLocalDate } from "core/utils/format";
 import { makePrivateRequest } from "core/utils/request";
 import HomeLoader from "pages/Home/components/HomeLoader";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
 import './styles.scss';
 
 const VisitDTbyPeriod = () => {
@@ -35,13 +37,18 @@ const VisitDTbyPeriod = () => {
       })
       .catch(() => console.error("ERRO!"));
   };
-
+  
   return (
     <div>
-        
-            <h5 className="text-center">Busca Visitas por Período</h5>
+            
             <form className="search-form" onSubmit={handleSubmit}>
             <div className="visit-filter-container">
+            <div className="visitDT-header">
+              <Link to="../" className="visitDT-goback">
+                <ArrowIcon className="visitDT-icon-goback"/>
+                <h3>VOLTAR</h3>
+                </Link> 
+            </div>
                 <input
                 type="date"
                 className="input-base mb-1"
@@ -57,7 +64,7 @@ const VisitDTbyPeriod = () => {
                 onChange={(event) => setSecondDate(event.target.value)}
                 />
                 <button className="btn btn-primary">Buscar</button>  
-                </div> 
+              </div> 
             </form>
         
       {isLoading ? (
