@@ -32,9 +32,7 @@ const Home = () => {
               <p><span><strong>DocAdmin</strong></span> <br/>Gerencie tudo que é necessário<br/> para impulsionar seu marketing<br/>  e suas vendas  </p>
               <img src={HomeImg} alt="mkt" />
             </div>
-            <div className="home-subtitle">
-              <h6>Busque informações detalhadas sobre médicos, visitas aos profissionais de saúde, serviços do laboratório ortopédico e dashboards com relatórios gerenciais para criar, auxiliar e mensurar as atividades de marketing de sua organização.</h6>  
-            </div>
+            
             <div className="home-card-list">
               <div className="card-base home-card-container">
                 <h4>Busca Médicos</h4>

@@ -35,13 +35,13 @@
     padding: 20px;
     transform: scale(0.9);
     opacity:0.8;
-    transition: 1s;
+    transition: 2s;
 
     &:hover {
         opacity:1;
         transition: 2s;
         transform: scale(1);
-        
+        background-color: #2d769a;
       }
 
 }
@@ -105,7 +105,7 @@
         padding: 5px;
         text-align: center;
         transition: 1s;
-        transform: scale(0.5);
+        transform: scale(0.8);
         color: black;
         opacity: (0.9);
     
@@ -124,7 +124,7 @@
         &:hover {
             opacity:1;
             transition: 2s;
-            transform: scale(1.1);
+            transform: scale(1);
             
           }
     
@@ -137,7 +137,7 @@
         max-height: 200px;
         justify-content: space-evenly;
         margin: 40px 0;
-        transform: scale(1.5);
+        transform: scale(1);
     }
 
     .home-title span {
