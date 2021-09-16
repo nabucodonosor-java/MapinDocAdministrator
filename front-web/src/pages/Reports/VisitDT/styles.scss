@@ -1,9 +1,18 @@
-
-
-@media(min-width: 1200px) {
-
-    .dt-body-td {
-        font-size: 18px !important;
-    }
-
+.table-field-success {
+    background-color: rgb(86, 86, 230);
+    font-weight: bold;
 }
+
+.table-field-not-success {
+    background-color: rgb(226, 44, 44);
+    font-weight: bold;
+}
+
+.visitDT-header h3 {
+    color: black;
+}
+
+.visitDT-icon-goback {
+    color: black;
+}
+

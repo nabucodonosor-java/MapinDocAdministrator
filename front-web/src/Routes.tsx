@@ -11,6 +11,7 @@ import VisitDT from 'pages/Reports/VisitDT';
 import VisitDTbyPeriod from 'pages/Reports/VisitDTbyPeriod';
 import DoctorDTbyDaysOfWeek from 'pages/Reports/DoctorDTbyDaysOfWeek';
 import PageInConstruction from 'core/components/PageInConstruction';
+import Footer from 'core/components/Footer';
 
 const Routes = () => (
     <Router history={history}>
@@ -53,6 +54,7 @@ const Routes = () => (
                 <Admin />
             </Route>
         </Switch>
+        <Footer />
     </Router>
 );
 

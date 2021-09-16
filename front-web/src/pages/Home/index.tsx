@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading ? ( 
         <HomeLoader />
       ) : (
         <div className="home-container">
@@ -79,6 +79,7 @@ const Home = () => {
                 </Link>
               </div>
           </div>
+          
         </div>
       )}
     </>
