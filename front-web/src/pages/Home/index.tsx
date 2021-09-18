@@ -8,7 +8,6 @@ import MktImg from "core/assets/images/main-image.jpeg";
 import LabImg from "core/assets/images/main-image2.jpeg";
 import Apae from "core/assets/images/apae.png";
 import DocVisits from "core/assets/images/doc-visits.jpeg";
-import Button from "core/components/Button";
 import Footer from "core/components/Footer";
 import "./styles.scss";
 
@@ -37,35 +36,37 @@ const Home = () => {
             
             <div className="home-card-list">
               <div className="card-base home-card-container">
-                <h4>Busca Médicos</h4>
+                <h4>Profissionais</h4>
                 <img src={MktImg} alt="mkt" className="mb-3" />
 
                 <Link to="/doctors">
                   <ButtonIcon
-                    text="Busca Médicos"
+                    text="Catálogo"
                     img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
                   />
                 </Link>
 
                 <Link to="/report/doctors/byDays">
                   <ButtonIcon
-                    text="Por atendimento"
+                    text="Por dia"
                     img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
                   />
                 </Link>
               </div>
               <div className="card-base home-card-container">
-                <h4>Visitas Médicas</h4>
+                <h4>Visitas</h4>
                 <img src={DocVisits} alt="mkt" className="mb-3" />
              
                 <Link to="/visits">
-                  <Button
-                    text="Todas"
+                <ButtonIcon
+                    text="todas"
+                    img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
                   />
                 </Link>
                 <Link to="/visits/byPeriod">
-                  <Button
-                    text="Por Período"
+                <ButtonIcon
+                    text="Por dia"
+                    img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-trade.png"
                   />
                 </Link>
               
@@ -75,14 +76,20 @@ const Home = () => {
                 <img src={LabImg} alt="mkt" className="mb-3" />
                 <Link to="/lab">
                   <ButtonIcon
-                    text="Serviços"
+                    text="todos"
+                    img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-lab.png"
+                  />
+                </Link>
+                <Link to="/lab">
+                  <ButtonIcon
+                    text="Por dia"
                     img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-lab.png"
                   />
                 </Link>
               </div>
 
               <div className="card-base home-card-container">
-                <h4>Apaes & Fundo Sociais</h4>
+                <h4>Apaes</h4>
                 <img src={Apae} alt="mkt" className="mb-3" />
                 <Link to="/lab">
                   <ButtonIcon
@@ -92,7 +99,7 @@ const Home = () => {
                 </Link>
                 <Link to="/lab">
                   <ButtonIcon
-                    text="Assistência Social"
+                    text="Assist. Social"
                     img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-lab.png"
                   />
                 </Link>

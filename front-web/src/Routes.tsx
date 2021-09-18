@@ -31,11 +31,11 @@ const Routes = () => (
                 <VisitDT />
             </Route>
 
-            <Route path="/visits/byPeriod"  exact>
+            <Route path="/visits/byPeriod">
                 <VisitDTbyPeriod />
             </Route>           
 
-            <Route path="/report/doctors/byDays" exact>
+            <Route path="/report/doctors/byDays">
                 <DoctorDTbyDaysOfWeek />
             </Route>
 

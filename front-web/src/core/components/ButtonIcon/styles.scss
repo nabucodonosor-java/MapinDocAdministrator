@@ -19,13 +19,13 @@
    border: #24231f;
    text-transform: uppercase;
    color: #FFF;
-   width: 200px;
-   height: 40px;
+   width: 120px;
+   height: 30px;
    padding: 5px;
 }
 
 .btn-text h6 {
-  font-size: 18px; 
+  font-size: 10px; 
 }
 
 .btn-arrow {
@@ -41,58 +41,22 @@
   width:40%;
 }
 
-@media (min-width: 375px) {
-   .btn-text {
-  
-      width: 250px;
-   }
-
-   .btn-arrow {
-      width: 20%;
-   }
-}
-
-@media (min-width: 425px) {
-   .btn-text {
-  
-      width: 300px;
-   }
-
-   .btn-arrow {
-      width: 20%;
-   }
-}
-
-@media (min-width: 576px) {
-   .btn-text {
-  
-      width: 350px;
-   }
-
-   .btn-arrow {
-      width: 20%;
-   }
-}
-
-@media (min-width: 768px) {
-   .btn-text {
-  
-      width: 400px;
-   }
-}
-
-@media (min-width: 1024px) {
-   .btn-text {
-  
-      width: 500px;
-   }
-}
-
 @media (min-width: 1200px) {
+
+   .btn-text {
+ 
+      height: 40px;
+
+   }
+
    .btn-text {
   
-      width: 300px;
+      width: 420px;
    }
+
+   .btn-text h6 {
+      font-size: 18px; 
+    }
 }
 
 
