@@ -8,7 +8,6 @@ import MktImg from "core/assets/images/main-image.jpeg";
 import LabImg from "core/assets/images/main-image2.jpeg";
 import Apae from "core/assets/images/apae.png";
 import DocVisits from "core/assets/images/doc-visits.jpeg";
-import Footer from "core/components/Footer";
 import "./styles.scss";
 
 const Home = () => {
@@ -28,6 +27,7 @@ const Home = () => {
       {isLoading ? ( 
         <HomeLoader />
       ) : (
+      
         <div className="home-container"> 
             <div className="home-title">
               <p><span><strong>DocAdmin</strong></span> <br/>Gerencie tudo que é necessário<br/> para impulsionar seu marketing<br/>  e suas vendas  </p>
@@ -105,8 +105,6 @@ const Home = () => {
                 </Link>
               </div>
           </div>
-         
-        <Footer />
         </div>
       )}
     </>
