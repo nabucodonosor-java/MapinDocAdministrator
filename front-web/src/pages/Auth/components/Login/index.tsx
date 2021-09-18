@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { saveSessionData } from 'core/utils/auth';
 import { makeLogin } from 'core/utils/request';
 import AuthCard from '../AuthCard';
-import ButtonIcon from 'core/components/ButtonIcon';
+import Button from 'core/components/Button';
 import './styles.scss';
 
 type FormData = {
@@ -78,11 +78,10 @@ const Login = () => {
                         </div>
                     )}
                 </div>
-                <div className="login-submit">
-                <ButtonIcon
-                text="logar"
-                img="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/icon-login.jpg"
-              />
+                <div className="login-submit"> 
+                <Button
+                text="login"
+                />
                 </div>
             </form>
         </AuthCard>

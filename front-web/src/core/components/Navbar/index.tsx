@@ -59,7 +59,7 @@ const Navbar = () => {
                                     }} >
                                         {`LOGOUT - ${currentUser}`}
                                     </a>
-                                )}
+                                )} 
                             </li>
                     )}
 

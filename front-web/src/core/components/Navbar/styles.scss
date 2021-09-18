@@ -25,6 +25,10 @@
     display: none;
 }
 
+.nav-link {
+    color: #FFF;
+}
+
 .navbar-menu-container {
    width: 55%;
    display: flex;
@@ -51,6 +55,7 @@
     font-style: normal;
     color: rgba(255, 255, 255, 0.5);
     margin-right: 5px;
+    color: #FFF;
 
     &.active {
          font-weight: bold;
