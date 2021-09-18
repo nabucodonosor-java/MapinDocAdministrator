@@ -142,7 +142,7 @@ const Form = () => {
                   getOptionValue={(option: Specialty) => String(option.id)}
                   classNamePrefix="combo-base-select"
                   className="input-select mr-2"
-                  placeholder="Especialidade Médica"
+                  placeholder="Profissional..."
                   inputId="specialty"
                   defaultValue=""
                 />
@@ -168,7 +168,7 @@ const Form = () => {
                   name="name"
                   type="text"
                   className="form-control input-base mb-2 mr-2 large-input"
-                  placeholder="Nome do médico"
+                  placeholder="Nome do profissional"
                 />
                 {errors.name && (
                   <div className="invalid-feedback d-block">

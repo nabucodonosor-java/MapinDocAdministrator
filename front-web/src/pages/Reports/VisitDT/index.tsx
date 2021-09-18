@@ -55,8 +55,8 @@ const VisitDT = () => {
                             <tr>
                                 <th>Data</th>
                                 <th>Cidade</th>
-                                <th>Especialidade</th>
-                                <th>Médico Visitado?</th>
+                                <th>Profissional</th>
+                                <th>Visitado?</th>
                                 <th>Dr.(a)</th>
                                 <th>Descrição</th>
                             </tr>
@@ -69,7 +69,7 @@ const VisitDT = () => {
                                     <td>{item.doctor.specialty.name}</td>
                                     <td className={ item.success ? "table-field-success text-center" : "table-field-not-success text-center" }>{item.success.toString().toUpperCase()}</td>
                                     <td>{item.doctor.name}</td>
-                                    <td>{item.description}</td>
+                                    <td className="visitDT-field-description">{item.description}</td>
                                 </tr>
                             ))}
                         </tbody>

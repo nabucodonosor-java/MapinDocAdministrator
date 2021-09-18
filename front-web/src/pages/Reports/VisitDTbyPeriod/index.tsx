@@ -41,7 +41,7 @@ const VisitDTbyPeriod = () => {
   return (
     <div>
       <form className="search-form" onSubmit={handleSubmit}>
-        <div className="visit-filter-container">
+        <div className="visit-filter-container"> 
           <div className="visitDT-header">
             <Link to="../" className="visitDT-goback">
               <ArrowIcon className="visitDT-icon-goback" />
@@ -75,13 +75,13 @@ const VisitDTbyPeriod = () => {
               <tr>
                 <th>Data</th>
                 <th>Cidade</th>
-                <th>Especialidade</th>
-                <th>Médico Visitado?</th>
+                <th>Profissional</th>
+                <th>Visitado?</th>
                 <th>Dr.(a)</th>
                 <th>Descrição</th>
               </tr>
-            </thead>
-            <tbody>
+            </thead> 
+            <tbody >
               {visitData?.content.map((item) => (
                 <tr key={item.id}>
                   <td>{formatLocalDate(item.visitDate, "dd/MM/yyyy")}</td>
@@ -97,7 +97,7 @@ const VisitDTbyPeriod = () => {
                     {item.success.toString().toUpperCase()}
                   </td>
                   <td>{item.doctor.name}</td>
-                  <td>{item.description}</td>
+                  <td className="visitDT-field-description">{item.description}</td>
                 </tr>
               ))}
             </tbody>

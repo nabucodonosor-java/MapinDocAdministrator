@@ -11,7 +11,6 @@ import VisitDT from 'pages/Reports/VisitDT';
 import VisitDTbyPeriod from 'pages/Reports/VisitDTbyPeriod';
 import DoctorDTbyDaysOfWeek from 'pages/Reports/DoctorDTbyDaysOfWeek';
 import PageInConstruction from 'core/components/PageInConstruction';
-import Footer from 'core/components/Footer';
 
 const Routes = () => (
     <Router history={history}>
@@ -24,17 +23,17 @@ const Routes = () => (
                 <Catalog />
             </Route>
 
+            <Route path="/doctors/:doctorId">
+                <MedicoDetails />
+            </Route>
+
             <Route path="/visits" exact>
                 <VisitDT />
             </Route>
 
             <Route path="/visits/byPeriod"  exact>
                 <VisitDTbyPeriod />
-            </Route>
-
-            <Route path="/doctors/:doctorId" exact>
-                <MedicoDetails />
-            </Route>
+            </Route>           
 
             <Route path="/report/doctors/byDays" exact>
                 <DoctorDTbyDaysOfWeek />
@@ -54,7 +53,6 @@ const Routes = () => (
                 <Admin />
             </Route>
         </Switch>
-        <Footer />
     </Router>
 );
 

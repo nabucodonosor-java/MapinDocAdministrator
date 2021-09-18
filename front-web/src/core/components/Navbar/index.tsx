@@ -40,7 +40,7 @@ const Navbar = () => {
                     <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/" activeClassName="active" exact>HOME</NavLink>
                     </li>
                     <li>
-                    <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/doctors" activeClassName="active" exact>MÉDICOS</NavLink>
+                    <NavLink onClick={() => setDrawerActive(false)} className="navbar-link" to="/doctors" activeClassName="active" exact>PROFISSIONAL</NavLink>
                     </li>
                     {isAllowebByRole(['ROLE_ADMIN']) && (
                         <li>

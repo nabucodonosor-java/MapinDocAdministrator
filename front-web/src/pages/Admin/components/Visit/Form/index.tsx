@@ -80,7 +80,7 @@ const Form = () => {
               className="form-control input-base small-input mr-2"
               placeholder="Data da visita"
             />
-            <span>Falou com Dr.(a)</span>
+            <span>Falou com profissional?</span>
             <input
               ref={register({ required: false })}
               name="success"
@@ -99,7 +99,7 @@ const Form = () => {
             getOptionValue={(option: Doctor) => String(option.id)}
             classNamePrefix="combo-base-select"
             className="input-select"
-            placeholder="Médico(a)"
+            placeholder="Profissional"
             inputId="doctor"
             defaultValue=""
           />

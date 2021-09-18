@@ -20,7 +20,7 @@ const Pagination = ({ totalPages, onChange }: Props) => {
         <div className="pagination-container">
            <ReactPaginate 
             pageCount={totalPages}
-            pageRangeDisplayed={5}
+            pageRangeDisplayed={3}
             marginPagesDisplayed={1}
             onPageChange={selectedItem => onChange(selectedItem.selected)}
             previousLabel={renderIcon('previous')}

@@ -11,7 +11,7 @@ const MedicoCardLoader = () => {
                <ContentLoader 
                key={item}
                speed={1}
-               width={250}
+               width={350}
                height={335}
                viewBox="0 0 250 335"
                backgroundColor="#ecebeb"
