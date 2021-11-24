@@ -35,14 +35,14 @@ public class UserController {
 	@GetMapping
 	public ResponseEntity<Page<UserDto>> findAllPaged(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "size", defaultValue = "12") Integer size,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "sort", defaultValue = "name") String sort) {
-		
+				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
 		Page<UserDto> list = service.findAllPaged(pageRequest);
-			
-		return ResponseEntity.ok().body(list);		
+		
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping("/{id}")
@@ -53,16 +53,16 @@ public class UserController {
 	
 	@PostMapping
 	public ResponseEntity<UserDto> insert(@Valid @RequestBody UserInsertDto dto) {
-		UserDto userDto = service.insert(dto);
+		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(userDto.getId()).toUri();
-		return ResponseEntity.created(uri).body(userDto);
+				.buildAndExpand(dto.getId()).toUri();
+		return ResponseEntity.created(uri).body(dto);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<UserDto> update(@PathVariable Long id, @Valid @RequestBody UserUpdateDto dto) {
-		UserDto newDto = service.update(id, dto);
-		return ResponseEntity.ok().body(newDto);
+		dto = service.update(id, dto);
+		return ResponseEntity.ok().body(dto);
 	}
 	
 	@DeleteMapping("/{id}")
@@ -70,5 +70,4 @@ public class UserController {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-
 }

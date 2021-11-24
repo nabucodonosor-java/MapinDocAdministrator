@@ -1,15 +1,22 @@
 package com.mapin.docadmin.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.springframework.data.domain.Page;
+import javax.validation.constraints.NotBlank;
 
+import com.mapin.docadmin.entities.HealthProfessional;
 import com.mapin.docadmin.entities.PlaceService;
+import com.mapin.docadmin.entities.Secretary;
+import com.mapin.docadmin.entities.SocialAssistence;
 
 public class PlaceServiceDto implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	private Long id;
+	
+	@NotBlank(message = "Campo obrigatório")
 	private String name;
 	private String phone;
 	private String cellPhone;
@@ -19,10 +26,22 @@ public class PlaceServiceDto implements Serializable {
 	private String bairro;
 	private String localidade;
 	private String uf;
-
-	public PlaceServiceDto() {
-	}
-
+	private boolean clinic;
+	private boolean hospital;
+	private boolean medicalCenter;
+	private boolean cir;
+	private boolean cityHall;
+	private boolean apae;
+	private String description;
+	
+	private List<SecretaryShortDto> secretaries = new ArrayList<>();
+	
+	private List<HealthProfessionalShortDto> healthPro = new ArrayList<>();
+	
+	private List<SocialAssistenceShortDto> socialPro = new ArrayList<>();
+	
+	public PlaceServiceDto() {}
+	
 	public PlaceServiceDto(PlaceService entity) {
 		id = entity.getId();
 		name = entity.getName();
@@ -34,23 +53,29 @@ public class PlaceServiceDto implements Serializable {
 		bairro = entity.getBairro();
 		localidade = entity.getLocalidade();
 		uf = entity.getUf();
-		
+		clinic = entity.isClinic();
+		hospital = entity.isHospital();
+		medicalCenter = entity.isMedicalCenter();
+		cir = entity.isCir();
+		cityHall = entity.isCityHall();
+		apae = entity.isApae();
+		description = entity.getDescription();
 	}
 	
-	public String getPhone() {
-		return phone;
+	public PlaceServiceDto(PlaceService entity, List<Secretary> secretaries, List<HealthProfessional> healthPro,
+			List<SocialAssistence> socialPro) {
+		this(entity);	
+		secretaries.forEach(s -> this.secretaries.add(new SecretaryShortDto(s)));
+		healthPro.forEach(hp -> this.healthPro.add(new HealthProfessionalShortDto(hp)));
+		socialPro.forEach(sp -> this.socialPro.add(new SocialAssistenceShortDto(sp)));
 	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
+	
+	public List<HealthProfessionalShortDto> getHealthPro() {
+		return healthPro;
 	}
-
-	public String getCellPhone() {
-		return cellPhone;
-	}
-
-	public void setCellPhone(String cellPhone) {
-		this.cellPhone = cellPhone;
+	
+	public List<SocialAssistenceShortDto> getSocialPro() {
+		return socialPro;
 	}
 
 	public Long getId() {
@@ -67,6 +92,22 @@ public class PlaceServiceDto implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getCellPhone() {
+		return cellPhone;
+	}
+
+	public void setCellPhone(String cellPhone) {
+		this.cellPhone = cellPhone;
 	}
 
 	public String getCep() {
@@ -117,8 +158,64 @@ public class PlaceServiceDto implements Serializable {
 		this.uf = uf;
 	}
 
-	public static Page<PlaceServiceDto> converter(Page<PlaceService> page) {
-		return page.map(PlaceServiceDto::new);
+	public boolean isClinic() {
+		return clinic;
+	}
+
+	public void setClinic(boolean clinic) {
+		this.clinic = clinic;
+	}
+
+	public boolean isHospital() {
+		return hospital;
+	}
+
+	public void setHospital(boolean hospital) {
+		this.hospital = hospital;
+	}
+
+	public boolean isMedicalCenter() {
+		return medicalCenter;
+	}
+
+	public void setMedicalCenter(boolean medicalCenter) {
+		this.medicalCenter = medicalCenter;
+	}
+
+	public boolean isCir() {
+		return cir;
+	}
+
+	public void setCir(boolean cir) {
+		this.cir = cir;
+	}
+
+	public boolean isCityHall() {
+		return cityHall;
+	}
+
+	public void setCityHall(boolean cityHall) {
+		this.cityHall = cityHall;
+	}
+
+	public boolean isApae() {
+		return apae;
+	}
+
+	public void setApae(boolean apae) {
+		this.apae = apae;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<SecretaryShortDto> getSecretaries() {
+		return secretaries;
 	}
 
 }

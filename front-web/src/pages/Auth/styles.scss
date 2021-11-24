@@ -1,39 +1,39 @@
 .auth-container {
     display: flex;
-    padding: 40px 40px 100px 0;
+    padding: 20px 0 80px 0;
     justify-content: center;
-    background: url(~core/assets/images/background-login.svg) no-repeat bottom;
+    background: url(~assets/images/background-login.svg) no-repeat bottom;
     background-size: 100%;
 }
 
-.auth-info-title {
-    font-size: 55px;
-    line-height: 75px;
-    letter-spacing: -0.015em;
-    color: #263238;
-    margin-top: 30px;
-    text-align: center;
+.auth-info {
+    display: none;
 }
 
-.auth-info-subtile {
-    margin-top: 25px;
-    margin-bottom: 15px;
-    font-size: 24px;
-    line-height: 33px;
-    letter-spacing: -0.015em;
-    color: #9E9E9E;
-    text-align: center;
-}
+@media(min-width:1200px) {
 
-@media (max-width: 768px) {
-    .auth-info {
-        display: none;
+    .auth-info-title {
+        font-size: 55px;
+        line-height: 75px;
+        letter-spacing: -0.015em;
+        color: #263238;
+        margin-top: 30px;
+        text-align: center; 
     }
-}
+    
+    .auth-info-subtile {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: -0.015em;
+        color: #9E9E9E;
+        text-align: center;
+    }
 
-@media (max-width: 576px) {
-    .auth-container {
-        margin: 0px;
-        padding: 40px 0 0 0;
+    .auth-info {
+        display: flex;
+        flex-direction: column;
+        max-height: 500px;
     }
 }

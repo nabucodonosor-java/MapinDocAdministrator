@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useLocation } from 'react-router-dom';
-import { saveSessionData } from 'core/utils/auth';
-import { makeLogin } from 'core/utils/request';
+import { saveSessionData } from 'utils/auth';
+import { makeLogin } from 'utils/request';
 import AuthCard from '../AuthCard';
-import Button from 'core/components/Button';
+import Button from 'components/Button';
 import './styles.scss';
 
 type FormData = {

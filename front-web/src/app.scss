@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+html, body {
+  scroll-behavior: target_top;
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
 }
@@ -30,7 +34,7 @@ a {
   border-radius: 20px;
 }
 
-.card-base {
+.base-card {
   background: #fff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }
@@ -39,7 +43,7 @@ a {
   margin-bottom: 30px;
 }
 
-.input-base {
+.base-input {
   border: 1px solid #E1E1E1;
   box-sizing: border-box;
   border-radius: 10px;
@@ -66,3 +70,199 @@ a {
 .dt-body-td {
   font-size: 12px;
 }
+
+.active-catalog-card {
+
+  opacity:0.8;
+    transition: 2s;
+    transform: scale(0.9);
+
+    &:hover {
+        opacity:1;
+        transition: 2s;
+        transform: scale(1);
+    }
+}
+
+.details-goback {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.details-goback svg {
+  color: #2d769a;
+  transform: rotate(-180deg);
+  margin-right: 30px;
+}
+
+
+
+// CSS FILTROS MÉDICOS INÍCIO
+
+.hp-filters-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.visit-filters-container {
+  max-height: 200px;
+}
+
+.hp-filters-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d769a;
+  border-radius: 20px 20px 0 0;
+}
+
+.hp-filters-title svg {
+  margin-left: 10px;
+}
+
+.hp-input-search input {
+  
+  margin-top: 5px;
+  border: none;
+
+  &::placeholder { 
+      color: #9E9E9E;
+  }
+
+  &:focus {
+      box-shadow: none;
+  }
+
+}
+
+.hp-select-btn button {
+  border-radius: 0 0 20px 20px;
+  background-color: #2d769a;
+  height: 50px;
+  width: 100%;
+}
+
+.hp-filter-select-container {
+  margin: 0 3px;
+
+  .hp-specializations-select__control {
+      height: 50px;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #E1E1E1;
+  }
+  
+  .hp-specializations-select__indicator-separator {
+      display: none;
+  }
+  
+  .hp-specializations-select__placeholder {
+      color: #8a8787;
+      font-size: 14px;
+  }
+}
+
+.prescription-filter-select-container {
+
+  margin: 0 3px;
+
+  .prescription-product-select__control {
+      height: 50px;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #E1E1E1;
+  }
+  
+  .prescription-products-select__indicator-separator {
+      display: none;
+  }
+  
+  .prescription-products-select__placeholder {
+      color: #8a8787;
+      font-size: 14px;
+  }
+}
+
+@media(min-width: 768px) {
+
+  .visit-filters-container {
+    max-height: 120px;
+  }
+
+  .hp-filters-container {
+      padding-bottom: 10px;
+      height: 170px;
+  }
+
+  .hp-input-search {
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-around;
+  }
+
+  .hp-input-search input {
+      border-bottom: 1px solid #E1E1E1;
+      width: 200px;
+  }
+
+  .hp-select-btn {
+      flex-direction: row;
+      justify-content: space-around;
+  }
+
+  .hp-specializations-select__control {
+      width: 500px;
+  }
+
+  // Estilização de forms INÍCIO
+
+  .mix-form-two-input {
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone-input {
+    max-width: 320px;
+    min-width: 320px; 
+  }
+
+  .cidade-input {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .uf-input {
+    max-width: 60px;
+  }
+}
+
+// Estilização de forms FIM
+
+@media(min-width: 1024px) {
+
+  .hp-input-search input {
+      width: 250px;
+  }
+
+  .hp-specializations-select__control {
+      width: 650px;
+  }
+}
+
+@media(min-width: 1200px) {
+
+  .hp-input-search input {
+      width: 400px;
+  }
+
+  .hp-specializations-select__control {
+      width: 850px;
+  }
+}
+
+// CSS FILTROS MÉDICOS FIM

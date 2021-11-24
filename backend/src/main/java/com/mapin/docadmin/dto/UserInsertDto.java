@@ -1,5 +1,6 @@
 package com.mapin.docadmin.dto;
 
+import com.mapin.docadmin.entities.User;
 import com.mapin.docadmin.services.validations.UserInsertValid;
 
 @UserInsertValid
@@ -16,6 +17,11 @@ public class UserInsertDto extends UserDto {
 		this.password = password;
 	}
 	
+	public UserInsertDto(User entity) {
+		super(entity);
+		password = entity.getPassword();
+	}
+
 	public String getPassword() {
 		return password;
 	}

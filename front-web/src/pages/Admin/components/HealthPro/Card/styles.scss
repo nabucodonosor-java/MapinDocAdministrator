@@ -1,0 +1,125 @@
+.hp-admin-card-container {
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.hp-admin-card-img {
+    border-bottom: 1px solid #E1E1E1;
+    text-align: center;
+}
+
+.hp-admin-card-img p {
+   margin-bottom: 0;
+}
+
+.hp-admin-card-img img {
+    margin-bottom: 5px;
+    width: 20%;
+}
+
+.hp-admin-card-specializations {
+    display: flex;
+    flex-direction: column;
+ }
+
+.hp-admin-card-specializations h6 {
+    margin-top: 5px;
+
+ }
+
+@media (min-width: 576px) {
+
+    .hp-admin-card-container {
+        display: flex;
+        border-radius: 20px;
+        padding: 10px 0 10px 15px;
+    }
+    
+    .hp-admin-card-img {
+        border-right: 1px solid #E1E1E1;
+        padding: 15px 10px 0 5px;
+        text-align: center;
+    }
+    
+    .hp-admin-card-img img {
+        margin-bottom: 5px;
+        width: 50%;
+    }
+    
+  
+    .hp-admin-card-specializations h6 {
+        margin-bottom: 20px;
+    }
+    
+    
+}
+
+@media (min-width: 768px) {
+
+    .hp-admin-card-container {
+        border-radius: 20px;
+        padding: 10px 0 10px 100px;
+    }
+
+    .hp-admin-card-img {
+        padding: 0;
+        min-width: 300px;
+    }
+
+    .hp-admin-card-specializations {
+        padding: 0 10px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .hp-admin-card-container {
+        display: flex;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .hp-admin-card-img {
+        padding: 0;
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .hp-admin-card-container {
+        width: 1120px;
+    }
+
+    .hp-admin-card-img {
+        padding: 10px 10px 0 10px;
+        border-bottom: none;
+        width: 400px;
+    }
+
+    .hp-admin-card-img img {
+        width: 30%;
+    }
+
+    .hp-admin-card-img h5 {
+        font-size: 16px;
+    }
+
+    .hp-admin-card-img p {
+        font-size: 12px;
+    }
+
+    .hp-admin-card-specializations {
+        margin-left: 100px;
+    }
+
+    .hp-admin-card-btn {
+        width: 100%;
+        justify-content: center;
+        
+    }
+}
+

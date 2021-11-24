@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
-import { makePrivateRequest } from "core/utils/request";
+import { makePrivateRequest } from "utils/request";
 import { toast } from "react-toastify";
 import BaseForm from "../../BaseForm";
 import InputMask from "react-input-mask";
-import "./styles.scss";
 
 import axios from "axios";
 
@@ -15,6 +14,12 @@ export type FormState = {
   phone: string;
   cellPhone: string;
   complemento: string;
+  clinic: boolean;
+  hospital: boolean;
+  medicalCenter: boolean;
+  cir: boolean;
+  cityHall: boolean;
+  apae: boolean;
 };
 
 type ParamsType = {
@@ -55,6 +60,8 @@ const Form = () => {
     if (isEditing) {
       makePrivateRequest({ url: `/places/${placeId}` }).then((response) => {
         setValue("name", response.data.name);
+        setValue("phone", response.data.phone);
+        setValue("cellPhone", response.data.cellPhone);
         setValue("searchValue", searchValue);
         setValue("cep", response.data.cep);
         setValue("logradouro", response.data.logradouro);
@@ -62,6 +69,12 @@ const Form = () => {
         setValue("bairro", response.data.bairro);
         setValue("localidade", response.data.localidade);
         setValue("uf", response.data.uf);
+        setValue("clinic", response.data.clinic);
+        setValue("hospital", response.data.hospital);
+        setValue("medicalCenter", response.data.medicalCenter);
+        setValue("cir", response.data.cir);
+        setValue("cityHall", response.data.cityHall);
+        setValue("apae", response.data.apae);
       });
     }
   }, [placeId, isEditing, setValue, searchValue]);
@@ -87,23 +100,95 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} onBlur={handleSubmitCep}>
       <BaseForm title={formTitle}>
-        <>
-          <h6>Nome do Local</h6>
+        <div className="p-2">
+        <table className="table base-card border-radius-10 text-center">
+                <tr>
+                  <th>Clínica</th>
+                  <th>Hospital</th>
+                </tr>
+                <tr>
+                  <td>
+                  <input
+                    ref={register({ required: false })}
+                    name="clinic"
+                    type="checkbox"
+                    className=""
+                  />
+                  </td>
+                  <td>
+                    <input
+                    ref={register({ required: false })}
+                    name="hospital"
+                    type="checkbox"
+                    className=""
+                    />
+                  </td>
+                </tr>
 
+                <br/>
+
+                <tr>
+                  <th>Centro Médico</th>
+                  <th>CIR</th>
+                </tr>
+                <tr>
+                  <td>
+                  <input
+                    ref={register({ required: false })}
+                    name="medicalCenter"
+                    type="checkbox"
+                    className=""
+                  />
+                  </td>
+                  <td>
+                    <input
+                    ref={register({ required: false })}
+                    name="cir"
+                    type="checkbox"
+                    className=""
+                    />
+                  </td>
+                </tr>
+
+                <br/>
+
+                <tr>
+                  <th>Unidade Pública</th>
+                  <th>Apae</th>
+                </tr>
+                <tr>
+                  <td>
+                  <input
+                    ref={register({ required: false })}
+                    name="cityHall"
+                    type="checkbox"
+                    className=""
+                  />
+                  </td>
+                  <td>
+                    <input
+                    ref={register({ required: false })}
+                    name="apae"
+                    type="checkbox"
+                    className=""
+                    />
+                  </td>
+                </tr>
+          </table>
           <input
             ref={register({ required: "Campo obrigatório" })}
             name="name"
             type="text"
-            className="form-control input-base mb-2"
+            className="form-control base-input mb-2"
             placeholder="Nome do local"
           />
           {errors.name && (
-            <div className="invalid-feedback d-block">
+            <div className="invalid-feedback d-block"> 
               {errors.name.message}
             </div>
           )}
 
-          <div className="place-form-double-field mb-2">
+          <div className="mix-form-two-input">
 
           <Controller
             as={InputMask}
@@ -112,7 +197,7 @@ const Form = () => {
             control={control}
             mask="(99) 9999-9999"
             id="phone"
-            className="form-control input-base mr-1"
+            className="form-control base-input phone-input mb-2 mr-2"
             defaultValue=""
             placeholder="Telefone"
           />
@@ -124,89 +209,91 @@ const Form = () => {
             control={control}
             mask="(99) 99999-9999"
             id="cellPhone"
-            className="form-control input-base"
+            className="form-control base-input phone-input mb-2"
             defaultValue=""
             placeholder="Celular"
           />
 
           </div>
-          <div className="place-form-double-field card-base border-radius-10 mb-2 p-1">
-          <span className="cep-title">Digite o CEP: </span>
+          <div className="base-card border-radius-10 p-1">
+          <span className="cep-title"><strong>Digite o CEP: </strong></span>
           <input
             ref={register({ required: false })}
             name="searchValue"
             type="text"
-            className="form-control input-base mr-2"
+            className="form-control"
             placeholder="Informe o CEP"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
             id="searchValue"
           />        
           </div>
+          <div className="mix-form-two-input">
+            <input
+              ref={register({ required: false })}
+              name="cep"
+              type="text"
+              className="form-control base-input mb-2"
+              placeholder="CEP"
+              value={searchValue}
+              id="cep"
+            />
+            
+            <input
+              ref={register({ required: false })}
+              name="logradouro"
+              type="text"
+              className="form-control base-input mb-2 large-input"
+              placeholder="Logradouro"
+              value={addressData?.logradouro}
+              id="logradouro"
+            />
 
-          <input
-            ref={register({ required: false })}
-            name="cep"
-            type="text"
-            className="form-control input-base input-cep mr-2"
-            placeholder="CEP"
-            value={searchValue}
-            id="cep"
-          />
-          <div className="place-form-double-field">
-          <input
-            ref={register({ required: false })}
-            name="logradouro"
-            type="text"
-            className="form-control input-base mr-2"
-            placeholder="Logradouro"
-            value={addressData?.logradouro}
-            id="logradouro"
-          />
-
-          <input
-            ref={register({ required: "Campo obrigatório" })}
-            name="complemento"
-            type="text"
-            className="form-control input-base mb-2"
-            placeholder="Complemento"
-          />
-          {errors.complemento && (
-            <div className="invalid-feedback d-block">
-              {errors.complemento.message}
-            </div>
-          )}
+            <input
+              ref={register({ required: "Campo obrigatório" })}
+              name="complemento"
+              type="text"
+              className="form-control base-input mb-2 small-input"
+              placeholder="Complemento"
+            />
+            {errors.complemento && (
+              <div className="invalid-feedback d-block">
+                {errors.complemento.message}
+              </div>
+            )}
           </div>
+          <div className="mix-form-two-input">
           <input
             ref={register({ required: false })}
             name="bairro"
             type="text"
-            className="form-control input-base mr-2"
+            className="form-control base-input mb-2"
             placeholder="Bairro"
             value={addressData?.bairro}
-            id="district"
+            id="bairro"
           />
 
           <input
             ref={register({ required: false })}
             name="localidade"
             type="text"
-            className="form-control input-base"
+            className="form-control base-input mb-2 cidade-input"
             placeholder="Cidade"
             value={addressData?.localidade}
-            id="city"
+            id="localidade"
           />
 
           <input
             ref={register({ required: false })}
             name="uf"
             type="text"
-            className="form-control input-base"
-            placeholder="Uf"
+            className="form-control base-input mb-2 uf-input"
+            placeholder="UF"
             value={addressData?.uf}
-            id="state"
+            id="uf"
           />
-        </>
+          </div>
+        </div>
       </BaseForm>
     </form>
   );

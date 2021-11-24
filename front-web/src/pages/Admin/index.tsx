@@ -1,34 +1,52 @@
 import { Switch } from 'react-router'; 
-import NavbarAdmin from './components/NavbarAdmin';
-import PrivateRoute from 'core/components/Routes/PrivateRoute';
-import Doctors from './components/Doctors';
-import PlaceService from './components/PlaceService';
-import Visit from './components/Visit';
+import NavbarAdmin from 'components/NavbarAdmin';
+import PrivateRoute from 'components/Routes/PrivateRoute';
+import PageInConstruction from 'components/PageInConstruction';
+import HealthPro from './components/HealthPro';
+import AdminPlaceService from './components/PlaceService';
+import MedicalVisit from './components/MedicalVisit';
+import AdminPrescription from './components/Prescription';
+import AdminProfession from './components/Profession';
+import AdminSpecialization from './components/Specialization';
+import AdminSecretary from './components/Secretary';
+import AdminSocialPro from './components/SocialAssistence';
+import AdminProduct from './components/Product';
 import './styles.scss';
-import PageInConstruction from 'core/components/PageInConstruction';
 
 const Admin = () => ( 
     <div className="admin-container">
         <NavbarAdmin />
         <div className="admin-content">
             <Switch>
-                <PrivateRoute path="/admin/doctors">
-                    <Doctors />
+                <PrivateRoute path="/admin/hp">
+                    <HealthPro />
                 </PrivateRoute>
                 <PrivateRoute path="/admin/places">
-                    <PlaceService />
+                    <AdminPlaceService />
                 </PrivateRoute>
                 <PrivateRoute path="/admin/visits">
-                    <Visit />
+                    <MedicalVisit />
                 </PrivateRoute>
-                <PrivateRoute path="/admin/specialties">
-                    <PageInConstruction />
+                <PrivateRoute path="/admin/prescriptions">
+                    <AdminPrescription />
+                </PrivateRoute>
+                <PrivateRoute path="/admin/products">
+                    <AdminProduct />
+                </PrivateRoute>
+                <PrivateRoute path="/admin/social">
+                    <AdminSocialPro />
+                </PrivateRoute>
+                <PrivateRoute path="/admin/professions">
+                    <AdminProfession />
                 </PrivateRoute>
                 <PrivateRoute path="/admin/specializations">
-                    <PageInConstruction />
+                    <AdminSpecialization />
+                </PrivateRoute>
+                <PrivateRoute path="/admin/secretaries">
+                    <AdminSecretary />
                 </PrivateRoute>
                 <PrivateRoute path="/admin/users" allowedRoutes={['ROLE_ADMIN']}>
-                    <h1>Users</h1>
+                    <PageInConstruction />
                 </PrivateRoute>
             </Switch>
         </div>

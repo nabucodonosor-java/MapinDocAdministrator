@@ -28,26 +28,26 @@ import com.mapin.docadmin.services.SpecializationService;
 public class SpecializationController {
 	
 	@Autowired
-	private SpecializationService service;	
-
+	private SpecializationService service;
+	
 	@GetMapping
-	public ResponseEntity<Page<SpecializationDto>> findAll(
+	public ResponseEntity<Page<SpecializationDto>> findAllPaged(
+			@RequestParam(value = "name", defaultValue = "") String name,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
-			@RequestParam(value = "sort", defaultValue = "id") String sort) {
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
 				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
-		Page<SpecializationDto> list = service.findAllPaged(pageRequest);
+		Page<SpecializationDto> list = service.findAllPaged(name.trim(), pageRequest);
 		
 		return ResponseEntity.ok().body(list);
-
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<SpecializationDto> findById(@PathVariable Long id) {
-		SpecializationDto entity = service.findById(id);
-		return ResponseEntity.ok().body(entity);
+		SpecializationDto dto = service.findById(id);
+		return ResponseEntity.ok().body(dto);
 	}
 	
 	@PostMapping
@@ -69,5 +69,4 @@ public class SpecializationController {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	
 }

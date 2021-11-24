@@ -1,12 +1,11 @@
-import React from 'react';
-import { ReactComponent as AuthImage } from 'core/assets/images/auth.svg';
+import { ReactComponent as AuthImage } from 'assets/images/auth.svg';
 import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
-import './styles.scss';
+import './styles.scss'; 
 
 const Auth = () => ( 
-    <div className="auth-container">
-        <div className="auth-info">
+    <div className="auth-container"> 
+        <div className="auth-info">  
             <h1 className="auth-info-title">
                 Base de Dados <br/> Jácomo Ortopedia
             </h1>

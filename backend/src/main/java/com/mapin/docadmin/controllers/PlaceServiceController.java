@@ -28,27 +28,115 @@ import com.mapin.docadmin.services.PlaceServiceService;
 public class PlaceServiceController {
 	
 	@Autowired
-	private PlaceServiceService service;	
-
+	private PlaceServiceService service;
+	
 	@GetMapping
-	public ResponseEntity<Page<PlaceServiceDto>> findAll(
+	public ResponseEntity<Page<PlaceServiceDto>> findAllPaged(
 			@RequestParam(value = "name", defaultValue = "") String name,
+			@RequestParam(value = "logradouro", defaultValue = "") String logradouro,
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "1000") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "sort", defaultValue = "name") String sort) {
 				
 		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
-		Page<PlaceServiceDto> list = service.findAllPaged(name, pageRequest);
+		Page<PlaceServiceDto> list = service.findAllPaged(name, logradouro, localidade, pageRequest);
 		
 		return ResponseEntity.ok().body(list);
-
+	}
+	
+	@GetMapping("/apae")
+	public ResponseEntity<Page<PlaceServiceDto>> findAllApae(
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<PlaceServiceDto> list = service.findAllApae(localidade, pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/hospital")
+	public ResponseEntity<Page<PlaceServiceDto>> findAllHospital(
+			@RequestParam(value = "name", defaultValue = "") String name,
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<PlaceServiceDto> list = service.findAllHospital(name, localidade, pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/clinic")
+	public ResponseEntity<Page<PlaceServiceDto>> findAllClinic(
+			@RequestParam(value = "name", defaultValue = "") String name,
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<PlaceServiceDto> list = service.findAllClinic(name, localidade, pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/medical_center")
+	public ResponseEntity<Page<PlaceServiceDto>> findAllMedicalCenter(
+			@RequestParam(value = "name", defaultValue = "") String name,
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<PlaceServiceDto> list = service.findAllMedicalCenter(name, localidade, pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/city_hall")
+	public ResponseEntity<Page<PlaceServiceDto>> findAllCityHall(
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<PlaceServiceDto> list = service.findAllCityHall(localidade, pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/cir")
+	public ResponseEntity<Page<PlaceServiceDto>> findAllCir(
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<PlaceServiceDto> list = service.findAllCir(localidade, pageRequest);
+		
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<PlaceServiceDto> findById(@PathVariable Long id) {
-		PlaceServiceDto entity = service.findById(id);
-		return ResponseEntity.ok().body(entity);
+		PlaceServiceDto dto = service.findById(id);
+		return ResponseEntity.ok().body(dto);
 	}
 	
 	@PostMapping
@@ -70,5 +158,4 @@ public class PlaceServiceController {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-
 }

@@ -21,12 +21,22 @@ public class Specialization implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
 	@Column(unique = true)
 	private String name;
-
+	
+	private Integer counter;
+	
 	@ManyToMany(mappedBy = "specializations")
-	private Set<Doctor> doctors = new HashSet<>();
+	private Set<HealthProfessional> professionals = new HashSet<>();
+	
+	public Integer getCounter() {
+		return counter;
+	}
+
+	public void setCounter(Integer counter) {
+		this.counter = counter;
+	}
 
 	public Long getId() {
 		return id;
@@ -44,8 +54,8 @@ public class Specialization implements Serializable {
 		this.name = name;
 	}
 
-	public Set<Doctor> getDoctors() {
-		return doctors;
+	public Set<HealthProfessional> getProfessionals() {
+		return professionals;
 	}
 
 	@Override
@@ -64,5 +74,5 @@ public class Specialization implements Serializable {
 		Specialization other = (Specialization) obj;
 		return Objects.equals(id, other.id);
 	}
-
+	
 }

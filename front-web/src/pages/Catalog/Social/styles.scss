@@ -1,0 +1,25 @@
+.social-catalog-container {
+    padding: 20px 20px 80px 20px;
+}
+
+.social-catalog-filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-catalog {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-gap: 30px 30px;
+    justify-content: space-between;
+}
+
+@media(min-width: 768px) {
+
+    .social-catalog {
+        grid-template-columns: repeat(auto-fill, 300px);
+    }
+}
+

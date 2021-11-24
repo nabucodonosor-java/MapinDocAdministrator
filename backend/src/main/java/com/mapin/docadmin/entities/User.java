@@ -33,9 +33,6 @@ public class User implements UserDetails, Serializable {
 	@Column(unique = true)
 	private String name;
 	
-	@Column(columnDefinition = "TEXT")
-	private String imgUrl;
-	
 	@Column(unique = true)
 	private String email;
 	
@@ -49,10 +46,9 @@ public class User implements UserDetails, Serializable {
 	public User() {
 	}
 
-	public User(Long id, String name, String imgUrl, String email, String password) {
+	public User(Long id, String name, String email, String password) {
 		this.id = id;
 		this.name = name;
-		this.imgUrl = imgUrl;
 		this.email = email;
 		this.password = password;
 	}
@@ -71,14 +67,6 @@ public class User implements UserDetails, Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getImgUrl() {
-		return imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
 	}
 
 	public String getEmail() {

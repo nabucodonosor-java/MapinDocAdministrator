@@ -1,8 +1,8 @@
 package com.mapin.docadmin.dto;
 
-import com.mapin.docadmin.entities.Role;
-
 import java.io.Serializable;
+
+import com.mapin.docadmin.entities.Role;
 
 public class RoleDto implements Serializable {
 	private static final long serialVersionUID = 1L;

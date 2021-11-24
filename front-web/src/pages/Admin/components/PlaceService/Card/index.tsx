@@ -1,6 +1,7 @@
 import React from "react";
-import { PlaceService } from "core/types/placeService";
+import { PlaceService } from "types/placeService";
 import { Link } from "react-router-dom";
+import { isAllowedByRole } from "utils/auth";
 import "./styles.scss";
 
 type Props = {
@@ -8,57 +9,62 @@ type Props = {
   onRemove: (placeId: number) => void; 
 }; 
 
-const Card = ({ place, onRemove }: Props) => {
+const HealthCard = ({ place, onRemove }: Props) => {
   return (
-    <div className="card-base admin-place-card-container">
-      <div className="admin-place-card-title">
-        <h5>{place.name}</h5>
-        <p>{place.localidade}</p>
-      </div> 
-
-      <div className="admin-place-card-content">
-        <div className="admin-place-card-address">
-        <table className="table place-form-table">
-                <tr>
-                  <th>Rua</th> 
-                  <th>N.º</th>
-                  <th>Bairro</th>
-                </tr>
-                <tr>
-                  <td>
-                    <label>{place.logradouro}</label>
-                  </td>
-                  <td>
-                  <label>{place.complemento}</label>
-                  </td>
-                  <td>
-                  <label>{place.bairro}</label>
-                  </td>
-                </tr>
+    <div className="base-card place-admin-card-container mb-2">
+      <h3>{place.name}</h3>
+      <table className="table text-center"> 
+        <tr>
+          <th>Endereço</th>
+          <th>Compl</th>
+        </tr>
+        <tr>
+          <td>
+            {place.logradouro}
+          </td>
+          <td>
+            {place.complemento}
+          </td>
+        </tr>    
+        <br/>
+        <tr>
+          <th>Bairro</th>
+          <th>Cidade</th>
+        </tr>
+        <tr>
+          <td>
+            {place.bairro}
+          </td>
+          <td>
+            {place.localidade}
+          </td>
+        </tr>        
+      </table>
+     
                 
-              </table>
-    
-        </div>
-        </div>
-        <div className="admin-place-card-btn">
-        <Link
-          to={`/admin/places/${place.id}`}
-          type="button"
-          className="btn btn-outline-secondary border-radius-10 mr-3"
-        >
-          EDITAR
-        </Link>
+      
+     
+        <div className="place-admin-card-btn">
+          {isAllowedByRole(['ROLE_ADMIN']) && (
+            <>
+              <Link
+                to={`/admin/places/${place.id}`}
+                type="button"
+                className="btn btn-outline-secondary border-radius-10 mr-3">
+              EDITAR
+            </Link>
 
-        <button
-          type="button"
-          className="btn btn-outline-danger border-radius-10"
-          onClick={() => onRemove(place.id)}
-        >
-          EXCLUIR
-        </button>
+            <button
+              type="button"
+              className="btn btn-outline-danger border-radius-10"
+              onClick={() => onRemove(place.id)}>
+              EXCLUIR
+            </button>
+            </>    
+          )}
       </div>
     </div>
   );
 };
 
-export default Card;
+export default HealthCard;

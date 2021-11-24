@@ -1,0 +1,77 @@
+.visit-form-double-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.visit-form-double-field span {
+    font-size: 18px;
+    margin: 0 5px 5px 0;
+}
+
+.combo-base-select__control {
+    height: 50px;
+    border-radius: 10px !important;
+    border: 1px solid #E1E1E1;
+    font-weight: bold;
+    margin-bottom: 7px;
+    width: 100%;
+    min-width: 160px;
+}
+
+@media (min-width: 576px) {
+
+    .combo-base-select__control {
+
+        min-width: 307px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .combo-base-select__control {
+
+        min-width: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .visit-form-container {
+        flex-direction: column;
+    }
+      
+    .combo-base-select__control {
+        height: 50px;
+        border-radius: 10px !important;
+        border: 1px solid #E1E1E1;
+        font-weight: bold;
+        margin-bottom: 7px;
+        width: 100%;
+        min-width: 183px;
+    }
+    
+    .input-select {
+        width: 100%;
+    }
+    
+    .especializacoes-select__control {
+        height: 100px;
+        border-radius: 10px !important;
+        border: 1px solid #E1E1E1;
+        font-weight: bold;
+        margin-bottom: 7px;
+    }
+    
+    .especializacoes-select__indicator-separator {
+        display: none;
+    }
+    
+    .especializacoes-select__placeholder {
+        color: #9E9E9E; 
+    }
+        
+    .doctor-form-table {
+        text-align: center;
+    }
+}

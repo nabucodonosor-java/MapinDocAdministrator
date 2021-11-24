@@ -1,11 +1,13 @@
 package com.mapin.docadmin.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import javax.validation.constraints.NotBlank;
 
-import org.springframework.data.domain.Page;
-
+import com.mapin.docadmin.entities.HealthProfessional;
 import com.mapin.docadmin.entities.Specialization;
 
 public class SpecializationDto implements Serializable {
@@ -15,6 +17,8 @@ public class SpecializationDto implements Serializable {
 
 	@NotBlank(message = "Campo obrigatório")
 	private String name;
+	
+	private List<HealthProfessionalDto> healthPro = new ArrayList<>();
 
 	public SpecializationDto() {
 	}
@@ -23,7 +27,12 @@ public class SpecializationDto implements Serializable {
 		id = entity.getId();
 		name = entity.getName();
 	}
-
+	
+	public SpecializationDto(Specialization entity, Set<HealthProfessional> healthPro) {
+		this(entity);
+		healthPro.forEach(s -> this.healthPro.add(new HealthProfessionalDto(s)));
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -38,10 +47,6 @@ public class SpecializationDto implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public static Page<SpecializationDto> converter(Page<Specialization> page) {
-		return page.map(SpecializationDto::new);
 	}
 
 }

@@ -1,0 +1,78 @@
+.apae-filters-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.apae-filters-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d769a;
+    border-radius: 20px 20px 0 0;
+}
+
+.apae-input-search {
+   padding: 5px;
+   width: 100%;
+}
+
+.apae-input-search button {
+    width: 100%;
+}
+
+.apae-input-search input {
+    
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #E1E1E1;
+
+    &::placeholder {
+        color: #9E9E9E;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+  
+}
+
+@media(min-width: 768px) {
+
+    .apae-filters-container {
+        padding-bottom: 10px;
+    }
+
+    .apae-input-search {
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+
+    .apae-input-search button {
+        width: 40%;
+        margin-left: 10px;
+    }
+}
+
+@media(min-width: 1024px) {
+
+    .apae-input-search button {
+        width: 30%;
+        margin-left: 10px;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .apae-input-search {
+        padding: 5px 5px 0 5px;
+        margin-bottom: 0px;
+     }
+
+    .apae-input-search button {
+        width: 20%;
+        margin-left: 10px;
+    }
+}

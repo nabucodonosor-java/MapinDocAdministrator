@@ -19,8 +19,6 @@ public class UserDto implements Serializable {
 	@NotBlank(message = "Campo obrigatório")
 	private String name;
 
-	private String imgUrl;
-
 	@Email(message = "Digitar email válido!")
 	@NotBlank(message = "Campo obrigatório")
 	private String email;
@@ -32,7 +30,6 @@ public class UserDto implements Serializable {
 	public UserDto(User entity) {
 		id = entity.getId();
 		name = entity.getName();
-		imgUrl = entity.getImgUrl();
 		email = entity.getEmail();
 		entity.getRoles().forEach(r -> this.roles.add(new RoleDto(r)));
 	}
@@ -51,14 +48,6 @@ public class UserDto implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getImgUrl() {
-		return imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
 	}
 
 	public String getEmail() {

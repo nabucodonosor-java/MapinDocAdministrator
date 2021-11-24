@@ -1,40 +1,8 @@
 .home-container {
     padding: 0;
     margin: 0;
-    text-align: center;
-    background-color: #FFF !important;
-}
-
-.home-card-list {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-
-.home-card-container {
-    padding: 10px;
-    border-radius: 20px;
-    margin-bottom: 5px;
-    transform: scale(0.9);
-    transition: 1s;
-    color: #FFF;
-    background-color: #0a0a0a !important;
-    min-width: 200px;
-
-    &:hover {
-        transform: scale(1);
-        background-color: #0a0a0a !important;
-        
-    }
-}
-
-.home-card-container h3 {
-    margin-bottom: 10px;
-}
-
-.home-card-container p {
-    color: #FFF;
-    font-size: 14px;
+    background-color: #FFF;
+    padding-bottom: 49px;
 }
 
 .home-title {
@@ -45,129 +13,232 @@
     transform: scale(0.9);
     opacity:0.8;
     transition: 2s;
+}
 
-    &:hover {
-        opacity:1;
-        transition: 2s;
-        transform: scale(1);
-        background-color: #2d769a;
-      }
-
+.home-title:hover {
+    opacity:1;
+    transition: 2s;
+    transform: scale(1);
+    background-color: #2d769a;
+    color: #FFF;
 }
 
 .home-title span {
    font-size: 25px;
 }
 
-.home-title p {
-    padding: 5px;
-    text-align: left;
-    margin-right: 20px;
-}
-
-.home-title img { 
-    
+.home-title img {  
     width: 40%;
     border-radius: 50%;     
 }
 
-.home-subtitle {
-    
-    padding: 20px;  
-    background: #2d769a; 
+.home-target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2d769a;
 }
 
-.home-subtitle h6 {
-    padding: 5px;
-    text-align: center;
-    transition: 1s;
-    transform: scale(0.5);
-    color: black;
-    opacity: (0.9);
-
-    &:hover {
-        opacity: (1);
-        transition: 2s;
-        transform: scale(0.7);
-    }
+.home-target p {
+    font-weight: bold;
+    font-size: 10px;
+    color: #FFF;
 }
 
-.home-subtitle img {
-    width: 50%;
-    border-radius: 50%; 
-
-    &:hover {
-        transform: rotate(-360deg);
-    }
-    
-}
-
-.home-card-container img {
+.home-target img {
     width: 40%;
-    border-radius: 50%;
-    
+    border-radius: 20px;
+    margin-right: 10px;
 }
 
-@media (min-width: 425px) {
-    
-    .home-subtitle h6 {
-     
-    
-        transform: scale(0.8);
-      
-        
-    
-        &:hover {
-         
-           
-            transform: scale(1);
-        }
-    }
-
-    .home-title {
-        transform: scale(0.9);
-        opacity:0.8;
-        transition: 1s;
-    
-        &:hover {
-            opacity:1;
-            transition: 2s;
-            transform: scale(1);
-            
-          }
-    
-    }
+.home-carousel {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 50px 10px 40px;
+    background-image: linear-gradient(#2d769a, #c6d1d6);
 }
 
-@media (min-width: 1200px) {
-
-    .home-subtitle {    
-        max-height: 200px;
-        justify-content: space-evenly;
-        margin: 40px 0;
+.home-carousel-item {
+    transform: scale(0.8);
+    transition: 4s;
+    padding: 0 30px;
+    background-color: linear-gradient(#2d769a, #c6d1d6);
+    &:hover {
         transform: scale(1);
+        transition: 4s;
+        color: #FFF;
     }
+}
 
-    .home-card-container {
-        flex: none;
-        width: 40%;
+.home-carousel-item h6 {
+   margin: 5px 0;
+}
+
+.home-carousel-item img {
+    height: 150px;
+    border-radius: 50px;
+    transition: 3s;
+    &:hover {
+        border-radius: 200px;
+        transition: 2s;
     }
+ }
+
+.home-sections {
+    display: flex;
+    padding: 10px 20px;
+    transform: scale(0.8);
+    opacity:0.8;
+    transition: 2s;
+    width: 100%;
+}
+
+.home-sections:hover {
+    opacity:1;
+    transition: 2s;
+    transform: scale(1);
+    background-color: #2d769a;
+    color: #FFF;
+}
+
+.home-sections span {
+   font-size: 20px;
+}
+
+.home-sections-img {    
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.home-sections-img img {    
+    width: 55%;
+    border-radius: 50%;
+    transition: 2s;
+    &:hover {
+        transition: 2s;
+        border-radius: 20%;
+    }     
+}
+
+.padd-social {
+    padding: 50px 0;
+}
+
+
+.home-sections-btn button {
+    width: 100%;
+    transform: scale(0.9);
+    opacity:0.8;
+    transition: 2s;
+
+    &:hover {
+        opacity:1;
+        transition: 2s;
+        transform: scale(1.1);
+    }
+}
+
+@media(min-width:375px) {
+    .home-target p {
+        font-size: 12px;
+    }
+}
+
+@media(min-width: 425px) {
 
     .home-title span {
-        font-size: 60px;
-     }
-
-    .home-title p {    
         font-size: 45px;
     }
 
-    .home-subtitle img {
+    .home-title p {
+        font-size: 14px;
+    }
+
+    .home-target p {
+        font-size: 14px;
+    }
+
+    .home-sections {    
+        justify-content: center;
+    }
+
+    .home-sections-img {   
+        max-width: 150px;
+    }
+
+    .home-sections-img img {   
+        width: 100%;
+    }
+
+    .home-sections-btn {
+        min-width: 100px;
+    }
+
+    .home-sections-btn button {
+        max-width: 100px;
+    }
+}
+
+@media(min-width: 768px) {
+
+    .home-title img {  
+        width: 35%;     
+    }
+
+    .home-title span {
+        font-size: 85px;
+    }
+
+    .home-title p {
+        font-size: 18px;
+    }
+
+    .home-target p {
+        font-size: 16px;
+    }
+
+    .home-target img {
         width: 20%;
     }
 
-    .home-subtitle h6 {
-       font-size: 30px;
+    .home-sections {    
+        justify-content: center;
     }
 
-  
+    .home-sections-img {   
+        max-width: 300px;
+    }
+
+    .home-sections-img img {     
+        width: 50%;    
+    }
+
+    .home-sections-btn {
+        min-width: 300px;
+    }
+
+    .home-sections-btn button {
+        max-width: 200px;
+    }
 }
+
+@media(min-width: 1200px) {
+
+    .home-carousel-item img {
+        height: 250px;
+     }
+
+     .home-target img {
+        margin-right: 50px;
+    }
+
+    .home-target p {
+        font-size: 20px;
+    }
+}
+
+

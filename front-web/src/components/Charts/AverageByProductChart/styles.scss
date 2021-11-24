@@ -1,0 +1,37 @@
+.donut-chart-warning {
+    background-color: #2d769a;
+}
+
+.donut-chart-warning p {
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 5px 5px 5px;
+}
+
+.donut-chart-warning img {
+    width: 100%;
+    
+}
+.donut-chart-1200 {
+    display: none;
+}
+
+@media(min-width:1024px) {
+
+    .donut-chart-warning {
+        display: none;
+    }
+
+    .donut-chart-1200 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .donut-chart-1200 h1 {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+}

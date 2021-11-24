@@ -1,61 +1,12 @@
-.admin-place-card-container {
-    display: flex;
-    flex-direction: column;
+.place-admin-card-container {
+    border-radius: 10px;
 }
 
-.admin-place-card-container { 
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 10px;
+.place-admin-card-container h3 {
+    padding: 5px;
 }
 
-.admin-place-card-title {
-    border-bottom: 1px solid #E1E1E1;
+.place-admin-card-btn {
     text-align: center;
+    padding: 5px;
 }
-
-.admin-place-card-address {
-    display: flex;
-}
-
-.place-form-table {
-    text-align: center;
-}
-
-.admin-place-card-btn {
-    text-align: center;
-}
-
-@media (min-width: 576px) {
-
-   
-  
-}
-
-@media (min-width: 768px) {
-
-    .admin-place-card-container {
-        display: flex;
-        border-radius: 20px;
-        padding: 10px 0 10px 100px;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .admin-place-card-container {
-        display: flex;
-        border-radius: 20px;
-        padding: 10px;
-    }
-}
-
-@media (min-width: 1200px) {
-
-    .admin-card-btn {
-        width: 100%;
-        justify-content: center;
-        
-    }
-}
-

@@ -14,7 +14,7 @@ const BaseForm = ( { title, children }: Props) => {
         history.push('../');
     }
     return (
-        <div className="admin-base-form card-base">
+        <div className="admin-base-form base-card">
             <h1 className="admin-base-form-title">
                 {title}
             </h1>

@@ -1,0 +1,13 @@
+.prescription-list-container {
+    padding: 10px 10px 50px 10px;
+}
+
+.prescription-list-filters-container button {
+    width: 100%;  
+}
+
+@media(min-width: 1024px) {
+    .admin-visit-list-container {
+        padding: 30px 30px 50px 30px;
+    }
+}
