@@ -152,7 +152,7 @@ const Form = () => {
           <div className="hp-form-content"> 
 
             <div className="text-center"> 
-              <span><strong>Profissional parceiro?:</strong> 
+              <span><strong>Profissional estratégico?:</strong> 
                 <input
                   ref={register({ required: false })}
                   name="partner"

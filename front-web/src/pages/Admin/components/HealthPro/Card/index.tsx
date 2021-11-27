@@ -1,4 +1,3 @@
-import React from "react";
 import { HealthProfessional } from "types/healthProfessional";
 import { Link } from "react-router-dom";
 import "./styles.scss";
@@ -10,8 +9,15 @@ type Props = {
 };  
 
 const HealthCard = ({ hp, onRemove }: Props) => {
+
+  let isStrategic = false;
+
+  if (hp.partner.valueOf()) {
+    isStrategic = true;
+  }
+
   return (
-    <div className="base-card hp-admin-card-container">
+    <div className={isStrategic ? "base-card hp-admin-card-container hp-strategic" : "base-card hp-admin-card-container"}>
       <div className="hp-admin-card-img">
         <img src={hp.imgUrl} alt={hp.name} />
         <h5>{hp.cardName}</h5>

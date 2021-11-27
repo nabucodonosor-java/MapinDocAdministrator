@@ -22,7 +22,7 @@ const List = () => {
   const getPlaces = useCallback(() => {
     const params = {
       page: activePage,
-      size: 20,
+      size: 10,
       direction: "DESC",
       sort: "id",
       name,

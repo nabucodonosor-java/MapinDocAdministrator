@@ -5,8 +5,17 @@ type Props = {
     hp: HealthProfessional; 
 }
 
-const HealthProCard = ({ hp }: Props) => (
-    <div className="base-card border-radius-10 medico-card">
+const HealthProCard = ({ hp }: Props) => { 
+
+    let isStrategic = false;
+
+    if (hp.partner.valueOf()) {
+    isStrategic = true;
+    }
+
+    return (
+        
+    <div className={isStrategic ? "base-card border-radius-10 medico-card hp-strategic" : "base-card border-radius-10 medico-card"}>
         <img src={hp.imgUrl} alt={hp.cardName} className="medico-card-image"/>
         <div className="medico-card-info">
             <h6 className="medico-card-name">
@@ -30,5 +39,5 @@ const HealthProCard = ({ hp }: Props) => (
         </div>
     </div>
 );
-
+}
 export default HealthProCard;
