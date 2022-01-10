@@ -43,6 +43,8 @@ public class HealthProfessionalDto implements Serializable {
 	private String sabPeriod;
 	private String officeHours;
 	private boolean partner;
+	private boolean strategic;
+	private boolean potencial;
 	private LocalDate schedulingDate;
 	private ProfessionDto profession;
 	private PlaceServiceShortDto placeService;
@@ -120,6 +122,8 @@ public class HealthProfessionalDto implements Serializable {
 		
 		officeHours = entity.getOfficeHours();
 		partner = entity.isPartner();
+		strategic = entity.isStrategic();
+		potencial = entity.isPotencial();
 		schedulingDate = entity.getSchedulingDate();
 		
 		profession = new ProfessionDto(entity.getProfession());
@@ -132,6 +136,22 @@ public class HealthProfessionalDto implements Serializable {
 		specializations.forEach(s -> this.specializations.add(new SpecializationDto(s)));
 	}
 	
+	public boolean isStrategic() {
+		return strategic;
+	}
+
+	public void setStrategic(boolean strategic) {
+		this.strategic = strategic;
+	}
+
+	public boolean isPotencial() {
+		return potencial;
+	}
+
+	public void setPotencial(boolean potencial) {
+		this.potencial = potencial;
+	}
+
 	public Long getId() {
 		return id;
 	}

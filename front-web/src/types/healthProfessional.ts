@@ -39,6 +39,8 @@ export type HealthProfessional = {
     sabPeriod: string;
     officeHours: string;
     partner: boolean;
+    strategic: boolean;
+    potencial: boolean;
     schedulingDate: string;
     profession: Profession;
     placeService: PlaceService;

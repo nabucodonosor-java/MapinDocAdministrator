@@ -1,14 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
-html, body {
+html,
+body {
   scroll-behavior: target_top;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0;
   font-weight: 700;
 }
@@ -27,7 +35,8 @@ a {
 }
 
 .hp-strategic {
-  background-image: linear-gradient(to left, #2d769a, #c6d1d6) !important;
+  background-image: linear-gradient(to left, #2d769a, #286d8d) !important;
+  color: #fff;
 }
 
 .border-radius-10 {
@@ -48,7 +57,7 @@ a {
 }
 
 .base-input {
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   box-sizing: border-box;
   border-radius: 10px;
   font-size: 14px;
@@ -58,15 +67,15 @@ a {
   height: 50px;
 
   &::placeholder {
-    color: #9E9E9E;
+    color: #9e9e9e;
   }
 }
 
 .btn-outline-secondary {
-  color: #9E9E9E;
+  color: #9e9e9e;
 }
 
-.title-dash-success { 
+.title-dash-success {
   font-size: 18px;
   color: black;
 }
@@ -76,16 +85,15 @@ a {
 }
 
 .active-catalog-card {
+  opacity: 0.8;
+  transition: 2s;
+  transform: scale(0.9);
 
-  opacity:0.8;
+  &:hover {
+    opacity: 1;
     transition: 2s;
-    transform: scale(0.9);
-
-    &:hover {
-        opacity:1;
-        transition: 2s;
-        transform: scale(1);
-    }
+    transform: scale(1);
+  }
 }
 
 .details-goback {
@@ -100,8 +108,6 @@ a {
   transform: rotate(-180deg);
   margin-right: 30px;
 }
-
-
 
 // CSS FILTROS MÉDICOS INÍCIO
 
@@ -130,18 +136,16 @@ a {
 }
 
 .hp-input-search input {
-  
   margin-top: 5px;
   border: none;
 
-  &::placeholder { 
-      color: #9E9E9E;
+  &::placeholder {
+    color: #9e9e9e;
   }
 
   &:focus {
-      box-shadow: none;
+    box-shadow: none;
   }
-
 }
 
 .hp-select-btn button {
@@ -155,72 +159,70 @@ a {
   margin: 0 3px;
 
   .hp-specializations-select__control {
-      height: 50px;
-      border: none;
-      border-radius: 0;
-      border-bottom: 1px solid #E1E1E1;
+    height: 50px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e1e1e1;
   }
-  
+
   .hp-specializations-select__indicator-separator {
-      display: none;
+    display: none;
   }
-  
+
   .hp-specializations-select__placeholder {
-      color: #8a8787;
-      font-size: 14px;
+    color: #8a8787;
+    font-size: 14px;
   }
 }
 
 .prescription-filter-select-container {
-
   margin: 0 3px;
 
   .prescription-product-select__control {
-      height: 50px;
-      border: none;
-      border-radius: 0;
-      border-bottom: 1px solid #E1E1E1;
+    height: 50px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e1e1e1;
   }
-  
+
   .prescription-products-select__indicator-separator {
-      display: none;
+    display: none;
   }
-  
+
   .prescription-products-select__placeholder {
-      color: #8a8787;
-      font-size: 14px;
+    color: #8a8787;
+    font-size: 14px;
   }
 }
 
-@media(min-width: 768px) {
-
+@media (min-width: 768px) {
   .visit-filters-container {
     max-height: 120px;
   }
 
   .hp-filters-container {
-      padding-bottom: 10px;
-      height: 170px;
+    padding-bottom: 10px;
+    height: 170px;
   }
 
   .hp-input-search {
-      display: flex;
-      margin-bottom: 10px;
-      justify-content: space-around;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-around;
   }
 
   .hp-input-search input {
-      border-bottom: 1px solid #E1E1E1;
-      width: 200px;
+    border-bottom: 1px solid #e1e1e1;
+    width: 200px;
   }
 
   .hp-select-btn {
-      flex-direction: row;
-      justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .hp-specializations-select__control {
-      width: 500px;
+    width: 500px;
   }
 
   // Estilização de forms INÍCIO
@@ -232,7 +234,7 @@ a {
 
   .phone-input {
     max-width: 320px;
-    min-width: 320px; 
+    min-width: 320px;
   }
 
   .cidade-input {
@@ -247,25 +249,23 @@ a {
 
 // Estilização de forms FIM
 
-@media(min-width: 1024px) {
-
+@media (min-width: 1024px) {
   .hp-input-search input {
-      width: 250px;
+    width: 250px;
   }
 
   .hp-specializations-select__control {
-      width: 650px;
+    width: 650px;
   }
 }
 
-@media(min-width: 1200px) {
-
+@media (min-width: 1200px) {
   .hp-input-search input {
-      width: 400px;
+    width: 400px;
   }
 
   .hp-specializations-select__control {
-      width: 850px;
+    width: 850px;
   }
 }
 

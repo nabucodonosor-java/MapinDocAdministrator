@@ -1,14 +1,13 @@
 .admin-container {
-    padding: 5px;
+  padding: 5px;
 }
 
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
+  .admin-container {
+    display: flex;
+  }
 
-    .admin-container {
-        display: flex;
-    }
-
-    .admin-content { 
-        width: 1160px;
-    }
+  .admin-content {
+    width: 1040px;
+  }
 }

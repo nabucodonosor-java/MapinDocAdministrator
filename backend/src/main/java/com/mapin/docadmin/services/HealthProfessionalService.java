@@ -210,6 +210,8 @@ public class HealthProfessionalService {
 		entity.setOfficeHours(dto.getOfficeHours());
 		
 		entity.setPartner(dto.isPartner());
+		entity.setStrategic(dto.isStrategic());
+		entity.setPotencial(dto.isPotencial());
 		entity.setSchedulingDate(dto.getSchedulingDate());
 		
 		if (dto.getProfession() == null) {

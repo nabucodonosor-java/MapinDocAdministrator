@@ -62,6 +62,8 @@ public class HealthProfessional implements Serializable {
 	private String officeHours;
 	
 	private boolean partner;
+	private boolean strategic;
+	private boolean potencial;
 	
 	private LocalDate schedulingDate;
 	
@@ -81,7 +83,7 @@ public class HealthProfessional implements Serializable {
 	private PlaceService placeService;
 	
 	public HealthProfessional() {}
-
+	
 	public HealthProfessional(HealthProfessionalDto dto) {
 		id = dto.getId();
 		imgUrl = dto.getImgUrl();
@@ -113,6 +115,8 @@ public class HealthProfessional implements Serializable {
 		sabPeriod = dto.getSabPeriod();
 		officeHours = dto.getOfficeHours();
 		partner = dto.isPartner();
+		strategic = dto.isStrategic();
+		potencial = dto.isPotencial();
 		schedulingDate = dto.getSchedulingDate();
 		profession = new Profession(dto.getProfession());
 		if (profession.getName().equalsIgnoreCase("ortopedista")) {
@@ -128,6 +132,22 @@ public class HealthProfessional implements Serializable {
 		specializations.forEach(s -> this.specializations.add(s));
 	}
 	
+	public boolean isStrategic() {
+		return strategic;
+	}
+
+	public void setStrategic(boolean strategic) {
+		this.strategic = strategic;
+	}
+
+	public boolean isPotencial() {
+		return potencial;
+	}
+
+	public void setPotencial(boolean potencial) {
+		this.potencial = potencial;
+	}
+
 	public Integer getCountOrto() {
 		return countOrto;
 	}
