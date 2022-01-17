@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -33,6 +34,8 @@ import com.mapin.docadmin.services.exception.ResourceNotFoundException;
 @Service
 public class HealthProfessionalService {
 	
+	 private static Logger logger = org.slf4j.LoggerFactory.getLogger(HealthProfessionalService.class);
+	
 	@Autowired
 	private HealthProfessionalRepository repository;
 	
@@ -49,7 +52,16 @@ public class HealthProfessionalService {
 	private ProfessionRepository professionRepository;
 	
 	@Transactional(readOnly = true)
-	public Page<HealthProfessionalDto> findAllPaged(Long specializationId, String profession, String localidade, 
+	public Page<HealthProfessionalDto> findAllPagedProStatus(Long specializationId, String profession, String localidade,
+		Boolean partner, Boolean strategic, Boolean potencial, String name, Pageable pageable) {
+		List<Specialization> specialization = (specializationId == 0) ? null : Arrays.asList(specializationRepository.getOne(specializationId));
+		Page<HealthProfessional> page = repository.findAllPagedProStatus(specialization, profession, localidade, partner, strategic, potencial, name, pageable);
+		repository.find(page.getContent());
+		return page.map(x -> new HealthProfessionalDto(x, x.getSpecializations()));
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<HealthProfessionalDto> findAllPaged(Long specializationId, String profession, String localidade,
 			String name, Pageable pageable) {
 		List<Specialization> specialization = (specializationId == 0) ? null : Arrays.asList(specializationRepository.getOne(specializationId));
 		Page<HealthProfessional> page = repository.findAllPaged(specialization, profession, localidade, name, pageable);

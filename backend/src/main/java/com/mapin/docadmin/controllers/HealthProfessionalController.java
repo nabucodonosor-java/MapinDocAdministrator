@@ -37,6 +37,27 @@ public class HealthProfessionalController {
 			@RequestParam(value = "specializationId", defaultValue = "0") Long specializationId,
 			@RequestParam(value = "profession", defaultValue = "") String profession,
 			@RequestParam(value = "localidade", defaultValue = "") String localidade,
+			@RequestParam(value = "partner", defaultValue = "") Boolean partner,
+			@RequestParam(value = "strategic", defaultValue = "") Boolean strategic,
+			@RequestParam(value = "potencial", defaultValue = "") Boolean potencial,
+			@RequestParam(value = "name", defaultValue = "") String name,
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "1000") Integer size,
+			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
+			@RequestParam(value = "sort", defaultValue = "name") String sort) {
+				
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), sort);
+		Page<HealthProfessionalDto> list = service.findAllPagedProStatus(specializationId, profession.trim(), localidade.trim(), 
+				partner, strategic, potencial, name.trim(), pageRequest);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	/*
+	@GetMapping
+	public ResponseEntity<Page<HealthProfessionalDto>> findAllPaged(
+			@RequestParam(value = "specializationId", defaultValue = "0") Long specializationId,
+			@RequestParam(value = "profession", defaultValue = "") String profession,
+			@RequestParam(value = "localidade", defaultValue = "") String localidade,
 			@RequestParam(value = "name", defaultValue = "") String name,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "1000") Integer size,
@@ -49,7 +70,7 @@ public class HealthProfessionalController {
 		
 		return ResponseEntity.ok().body(list);
 	}
-	
+	*/
 	@GetMapping("/apae")
 	public ResponseEntity<Page<HealthProfessionalDto>> findAllProApaePaged(
 			@RequestParam(value = "specializationId", defaultValue = "0") Long specializationId,

@@ -132,6 +132,7 @@ const Form = () => {
       ...data,
       imgUrl: uploadedImgUrl || hpImgUrl,
     };
+
     makePrivateRequest({
       url: isEditing ? `/hp/${hpId}` : "/hp",
       method: isEditing ? "PUT" : "POST",

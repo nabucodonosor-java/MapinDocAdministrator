@@ -70,17 +70,29 @@ public interface HealthProfessionalRepository extends JpaRepository<HealthProfes
 			+ "(COALESCE(:specializations) IS NULL OR esp IN :specializations) AND "
 			+ "(LOWER(obj.profession.name) LIKE LOWER(CONCAT('%',:profession,'%'))) AND "
 			+ "(LOWER(obj.placeService.localidade) LIKE LOWER(CONCAT('%',:localidade,'%'))) AND "
-			+ "(LOWER(obj.name) LIKE LOWER(CONCAT('%',:name,'%')))")
-	Page<HealthProfessional> findAllPaged(List<Specialization> specializations, String profession, String localidade, 
-			String name, Pageable pageable);
-	@Query("SELECT DISTINCT obj FROM HealthProfessional obj INNER JOIN obj.specializations esp WHERE "
-			+ "(COALESCE(:specializations) IS NULL OR esp IN :specializations) AND "
-			+ "(LOWER(obj.profession.name) LIKE LOWER(CONCAT('%',:profession,'%'))) AND "
-			+ "(LOWER(obj.placeService.localidade) LIKE LOWER(CONCAT('%',:localidade,'%'))) AND "
 			+ "obj.placeService.apae = true AND "
 			+ "(LOWER(obj.name) LIKE LOWER(CONCAT('%',:name,'%')))")
 	Page<HealthProfessional> findAllProApaePaged(List<Specialization> specializations, String profession, String localidade, 
 			String name, Pageable pageable);
+	
+	@Query("SELECT DISTINCT obj FROM HealthProfessional obj INNER JOIN obj.specializations esp WHERE "
+			+ "(COALESCE(:specializations) IS NULL OR esp IN :specializations) AND "
+			+ "(LOWER(obj.profession.name) LIKE LOWER(CONCAT('%',:profession,'%'))) AND "
+			+ "(LOWER(obj.placeService.localidade) LIKE LOWER(CONCAT('%',:localidade,'%'))) AND "
+			+ "(LOWER(obj.name) LIKE LOWER(CONCAT('%',:name,'%')))")
+	Page<HealthProfessional> findAllPaged(List<Specialization> specializations, String profession, String localidade, 
+			String name, Pageable pageable);
+	
+	@Query("SELECT DISTINCT obj FROM HealthProfessional obj INNER JOIN obj.specializations esp WHERE "
+			+ "(COALESCE(:specializations) IS NULL OR esp IN :specializations) AND "
+			+ "(LOWER(obj.profession.name) LIKE LOWER(CONCAT('%',:profession,'%'))) AND "
+			+ "(LOWER(obj.placeService.localidade) LIKE LOWER(CONCAT('%',:localidade,'%'))) AND "
+			+ "(:partner IS NULL OR obj.partner = :partner) AND "
+			+ "(:strategic IS NULL OR obj.strategic = :strategic) AND "
+			+ "(:potencial IS NULL OR obj.potencial = :potencial) AND "
+			+ "(LOWER(obj.name) LIKE LOWER(CONCAT('%',:name,'%')))")
+	Page<HealthProfessional> findAllPagedProStatus(List<Specialization> specializations, String profession, String localidade, 
+			Boolean partner, Boolean strategic, Boolean potencial, String name, Pageable pageable);
 	
 	@Query("SELECT obj FROM HealthProfessional obj JOIN FETCH obj.specializations WHERE obj IN :healthProfessional")
 	List<HealthProfessional> find(List<HealthProfessional> healthProfessional);
