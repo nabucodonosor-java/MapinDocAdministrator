@@ -22,7 +22,7 @@ const DTHealthProByDay = () => {
   const getHP = useCallback(() => {
     const params = {
       page: activePage,
-      size: 10,
+      size: 100,
       periodo,
       profession,
       localidade,

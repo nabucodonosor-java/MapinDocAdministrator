@@ -15,100 +15,98 @@ const VisitDTbyPeriod = () => {
   const [visitData, setVisitData] = useState<MedicalVisitResponse>();
   const [activePage, setActivePage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [name, setName] = useState('');
-  const [profession, setProfession] = useState('');
-  const [localidade, setLocalidade] = useState('');
+  const [name, setName] = useState("");
+  const [profession, setProfession] = useState("");
+  const [localidade, setLocalidade] = useState("");
 
   const getVisitsByPeriod = useCallback(() => {
     const params = {
-        page: activePage,
-        size: 10,
-        name,
-        profession,
-        localidade
-    }
+      page: activePage,
+      size: 20,
+      name,
+      profession,
+      localidade,
+    };
 
     setIsLoading(true);
-    makePrivateRequest({ url: `/visits/byPeriod?page=${activePage}&first=${firstDate}&second=${secondDate}`, params })
-        .then(response => setVisitData(response.data))
-        .finally(() => {
-            setIsLoading(false);
-        })
-}, [activePage, profession, localidade, firstDate, secondDate, name]);
+    makePrivateRequest({
+      url: `/visits/byPeriod?page=${activePage}&first=${firstDate}&second=${secondDate}`,
+      params,
+    })
+      .then((response) => setVisitData(response.data))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [activePage, profession, localidade, firstDate, secondDate, name]);
 
-useEffect(() => {
-  getVisitsByPeriod();
-}, [getVisitsByPeriod]);
+  useEffect(() => {
+    getVisitsByPeriod();
+  }, [getVisitsByPeriod]);
 
   const handleChangeName = (name: string) => {
     setActivePage(0);
     setName(name);
-}
+  };
 
-const handleChangeProfession = (profession: string) => {
+  const handleChangeProfession = (profession: string) => {
     setActivePage(0);
     setProfession(profession);
-}
+  };
 
-const handleChangeLocalidade = (localidade: string) => {
+  const handleChangeLocalidade = (localidade: string) => {
     setActivePage(0);
     setLocalidade(localidade);
-}
+  };
 
-const clearFilters = () => {
+  const clearFilters = () => {
     setActivePage(0);
-    setName('');
-    setProfession('');
-    setLocalidade('');
-    setFirstDate('');
-    setSecondDate('');
-}
+    setName("");
+    setProfession("");
+    setLocalidade("");
+    setFirstDate("");
+    setSecondDate("");
+  };
 
   return (
-    <div className="dt-medicalV-period-container"> 
+    <div className="dt-medicalV-period-container">
       <div>
         <Link to="/" className="details-goback">
-          <ArrowIcon/>
+          <ArrowIcon />
           <h2>voltar</h2>
         </Link>
       </div>
-     
-        <div className="dt-medicalV-period-form"> 
-        
-            <input
-              type="date"
-              className="base-input"
-              placeholder="Data inicial"
-              value={firstDate}
-              onChange={(event) => setFirstDate(event.target.value)}
-            />
-            <input
-              type="date"
-              className="base-input"
-              placeholder="Data final"
-              value={secondDate}
-              onChange={(event) => setSecondDate(event.target.value)}
-            />
 
-            <VisitFilters 
-                name={name}
-                profession={profession}
-                localidade={localidade}
-                handleChangeName={handleChangeName}
-                handleChangeProfession={handleChangeProfession}
-                handleChangeLocalidade={handleChangeLocalidade}
-                clearFilters={clearFilters}
-            />
-      
-        </div>
-     
+      <div className="dt-medicalV-period-form">
+        <input
+          type="date"
+          className="base-input"
+          placeholder="Data inicial"
+          value={firstDate}
+          onChange={(event) => setFirstDate(event.target.value)}
+        />
+        <input
+          type="date"
+          className="base-input"
+          placeholder="Data final"
+          value={secondDate}
+          onChange={(event) => setSecondDate(event.target.value)}
+        />
+
+        <VisitFilters
+          name={name}
+          profession={profession}
+          localidade={localidade}
+          handleChangeName={handleChangeName}
+          handleChangeProfession={handleChangeProfession}
+          handleChangeLocalidade={handleChangeLocalidade}
+          clearFilters={clearFilters}
+        />
+      </div>
 
       {isLoading ? (
         <BasicLoader />
       ) : (
-        
         <div className="table-responsive">
-            
           <table className="table table-hover table-sm">
             <thead>
               <tr>
@@ -119,8 +117,8 @@ const clearFilters = () => {
                 <th>Dr.(a)</th>
                 <th>Descrição</th>
               </tr>
-            </thead> 
-            <tbody >
+            </thead>
+            <tbody>
               {visitData?.content.map((item) => (
                 <tr key={item.id}>
                   <td>{formatLocalDate(item.visitDate, "dd/MM/yyyy")}</td>

@@ -110,7 +110,7 @@ const HealthProDetails = () => {
                 <strong>EMAIL: </strong>
                 {hp?.email == undefined ? "sem e-mail cadastrado" : hp.email}
               </span>
-              <h4>Currículo</h4>
+              <h4>Currículo&Observações</h4>
 
               <p>{hp?.resume}</p>
             </div>

@@ -34,8 +34,6 @@ import com.mapin.docadmin.services.exception.ResourceNotFoundException;
 @Service
 public class HealthProfessionalService {
 	
-	 private static Logger logger = org.slf4j.LoggerFactory.getLogger(HealthProfessionalService.class);
-	
 	@Autowired
 	private HealthProfessionalRepository repository;
 	

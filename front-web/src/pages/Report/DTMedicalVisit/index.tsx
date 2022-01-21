@@ -20,7 +20,7 @@ const MedicalVisitDT = () => {
   const getVisits = useCallback(() => {
     const params = {
       page: activePage,
-      size: 100,
+      size: 20,
       direction: "DESC",
       sort: "visitDate",
       name,

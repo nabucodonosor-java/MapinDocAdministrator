@@ -1,17 +1,22 @@
 .place-card-container {
-    padding: 10px;
-    margin-top: 30px;
+  padding: 10px;
+  margin-top: 30px;
 }
 
-.place-card-container h4, h5 {
-    text-align: center;
+.place-card-container h4,
+h5 {
+  text-align: center;
 }
 
 .place-card-info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .place-card-pro {
-    padding: 5px;
+  padding: 5px;
+}
+
+.place-card-pro span {
+  color: #fff;
 }

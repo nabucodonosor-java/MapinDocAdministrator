@@ -36,9 +36,7 @@ const DashSpecialty = () => {
             {hp.profession.name === "FISIOTERAPEUTA"
               ? ++countFisio
               : countFisio}
-            {hp.profession.name === "TERAPEUTA OCUPACIONAL"
-              ? ++countTO
-              : countTO}
+            {hp.profession.name === "TERAPEUTA OCUP." ? ++countTO : countTO}
             {hp.profession.name === "REUMATOLOGISTA"
               ? ++countReumato
               : countReumato}
