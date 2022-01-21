@@ -21,6 +21,23 @@ h6 {
   font-weight: 700;
 }
 
+.input-upper-case {
+  text-transform: uppercase;
+}
+::-webkit-input-placeholder {
+  text-transform: lowercase;
+}
+:-moz-placeholder {
+  text-transform: lowercase;
+}
+::-moz-placeholder {
+  text-transform: lowercase;
+}
+
+:-ms-input-placeholder {
+  text-transform: lowercase;
+}
+
 ul {
   list-style-type: none;
   margin-bottom: 0;

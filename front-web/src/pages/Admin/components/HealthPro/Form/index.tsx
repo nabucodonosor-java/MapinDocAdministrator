@@ -237,7 +237,7 @@ const Form = () => {
                 ref={register({ required: "Campo obrigatório" })}
                 name="name"
                 type="text"
-                className="form-control base-input large-input mb-2"
+                className="form-control base-input large-input mb-2 input-upper-case"
                 placeholder="Nome do profissional"
               />
               {errors.name && (
