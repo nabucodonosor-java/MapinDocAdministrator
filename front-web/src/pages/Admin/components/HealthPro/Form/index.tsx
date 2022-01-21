@@ -144,6 +144,7 @@ const Form = () => {
       })
       .catch(() => {
         toast.error("Erro ao salvar profissional!");
+        window.scrollTo(0, 0);
       });
   };
 
