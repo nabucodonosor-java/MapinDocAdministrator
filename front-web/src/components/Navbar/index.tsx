@@ -26,7 +26,7 @@ const Navbar = () => {
     <nav className="bg-primary navbar-main">
       <Link to="/" className="navbar-logo-text">
         <img
-          src="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/logo.png"
+          src="https://doc-admin-jacomo.s3.sa-east-1.amazonaws.com/logo-blue.png"
           alt="Foto"
           className="navbar-logo"
         />

@@ -33,6 +33,12 @@
   .auth-info {
     display: flex;
     flex-direction: column;
-    max-height: 500px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-info img {
+    width: 90%;
+    border-radius: 50%;
   }
 }
